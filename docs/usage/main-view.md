@@ -119,15 +119,23 @@ When enabled, this feature aligns all times to the day, allowing you to:
 
 ## Live Mode
 
-Live mode provides real-time tracking functionality:
+Live mode provides real-time tracking functionality with a kiosk-style display:
 
-- **Real-time Updates** – See your current location updating in real-time
-- **Movement Tracking** – Watch your path being drawn as you move
-- **Speed Display** – View your current movement speed
-- **Battery Status** – Monitor device battery levels (when supported by tracking app)
-- **Accuracy Indicators** – Visual indicators showing location accuracy
-- **Auto-follow** - Map automatically centers on your current location
+### Real-time Tracking
+- **Automatic Updates** – The display automatically updates as soon as new location data arrives
+- **Latest Locations** – Shows the most recent known location of you and all connected users
+- **User Avatars** – Each user is represented by their avatar on the map
+- **Hover Information** – Hover over an avatar to display additional information including when the data was last updated
 
+### Multi-User Display
+- **Connected Users** – View all users you have access to via [Share Access](share-access.md) or [Reitti Integration](../integrations/reitti.md)
+- **Real-time Movement** – Watch as user locations update in real-time as they move
+
+### Kiosk Mode
+- **Continuous Display** – Ideal for wall-mounted displays or shared screens
+- **Minimal Interface** – Clean, focused display optimized for at-a-glance viewing
+- **Automatic Refresh** – No user interaction required to see updated locations
+- 
 ## Navigation Tips
 
 - **Zoom Controls** – Use mouse wheel, +/- buttons, or double-click to zoom
