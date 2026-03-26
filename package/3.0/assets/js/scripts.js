@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const isLatest = v.aliases.includes("latest");
 
                 // If it's the latest, point to the /latest/ alias instead of the version folder
-                opt.value = isLatest ? `/${base_url}/latest/` : `/${base_url}/${v.version}/`;
+                opt.value = isLatest ? `/${base_path}/latest/` : `/${base_path}/${v.version}/`;
 
                 opt.textContent = isLatest ? `${v.title} (latest)` : v.title;
 
