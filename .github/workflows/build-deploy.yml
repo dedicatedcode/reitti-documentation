@@ -42,12 +42,12 @@ jobs:
 
           if [ "$BRANCH_NAME" == "main" ]; then
             echo "Deploying MAIN as Version ${{ env.CURRENT_MAJOR_VERSION }} (Latest)"
-            uv run mike deploy --deploy-prefix package -b deploy --rebase ${{ env.CURRENT_MAJOR_VERSION }} latest --update-aliases --push
+            uv run mike deploy --deploy-prefix package -b deploy ${{ env.CURRENT_MAJOR_VERSION }} latest --update-aliases --push
           else
             # Extracts version from branch name (e.g., v3.0 -> 3.0)
             VERSION=$(echo $BRANCH_NAME | sed 's/^v//')
             echo "Deploying LEGACY Version: $VERSION"
-            uv run mike deploy --deploy-prefix package -b deploy --rebase $VERSION --push
+            uv run mike deploy --deploy-prefix package -b deploy $VERSION --push
           fi
 
       - name: Switch Workspace to HTML Branch
