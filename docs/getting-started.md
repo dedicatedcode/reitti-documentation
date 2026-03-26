@@ -13,19 +13,26 @@ You have several options to get your location data into Reitti:
 
 #### Option A: Upload Files
 Visit the **Settings > Import Data** to upload:
+
 - **GPX files** from GPS devices or fitness apps
 - **GeoJSON files** with location data
 - **Google Timeline exports** from Google Takeout
 
+For detailed instructions on supported formats and requirements, see [Import Data](usage/import-data.md).
+
 #### Option B: Set Up Live Integrations
 Configure real-time location tracking at **Settings > Integrations**:
+
 - **OwnTracks**: For continuous location tracking from mobile devices
 - **GPSLogger**: Alternative mobile app integration
 - **API endpoints**: For custom data sources
 
+For detailed instructions on supported apps, see [Mobile Apps](integrations/mobile-apps.md).
+
 ###  2. Explore Your Data
 
 Once data is imported, you can:
+
 - View your timeline and significant places on the main map
 - Analyze movement patterns and statistics
 - Browse location-based photos (if Immich is configured)
