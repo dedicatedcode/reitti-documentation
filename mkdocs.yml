@@ -1,6 +1,8 @@
 site_name: Reitti Documentation
 site_url: https://www.dedicatedcode.com/projects/reitti/
 repo_url: https://github.com/dedicatedcode/reitti
+site_author: Daniel Graf
+edit_url: https://github.com/dedicatedcode/reitti-documentation/edit/main/docs/
 
 theme:
   name: shadcn
@@ -11,6 +13,7 @@ theme:
     dark: github-dark
   topbar_sections: false
   show_datetime: true
+  custom_dir: theme/overrides
 plugins:
 - mkdocs-nav-weight
 - badges
@@ -21,6 +24,10 @@ plugins:
       'configurations/reitti-integration.md': 'integrations/reitti.md'
 markdown_extensions:
   - codehilite
-
+extra:
+  version:
+    provider: mike
+extra_javascript:
+  - assets/js/scripts.js
 extra_css:
   - assets/css/styles.css
