@@ -1,0 +1,4 @@
+/site/
+/.idea/
+/.venv/
+/uv.lock

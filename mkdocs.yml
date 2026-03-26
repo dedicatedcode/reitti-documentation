@@ -1,0 +1,26 @@
+site_name: Reitti Documentation
+site_url: https://www.dedicatedcode.com/projects/reitti/
+repo_url: https://github.com/dedicatedcode/reitti
+
+theme:
+  name: shadcn
+  show_title: true
+  show_stargazers: true
+  pygments_style: # default styles
+    light: shadcn-light
+    dark: github-dark
+  topbar_sections: false
+  show_datetime: true
+plugins:
+- mkdocs-nav-weight
+- badges
+- search
+- redirects:
+    redirect_maps:
+      'configurations/mobile-app-integration.md': 'integrations/mobile-apps.md'
+      'configurations/reitti-integration.md': 'integrations/reitti.md'
+markdown_extensions:
+  - codehilite
+
+extra_css:
+  - assets/css/styles.css

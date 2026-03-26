@@ -1,0 +1,12 @@
+[project]
+name = "reitti-documentation"
+version = "3.0"
+requires-python = ">=3.12"
+dependencies = [
+    "mike>=2.1.4",
+    "mkdocs>=1.6.1",
+    "mkdocs-badges>=0.5.2",
+    "mkdocs-nav-weight>=0.3.0",
+    "mkdocs-redirects>=1.2.2",
+    "mkdocs-shadcn>=0.10.2",
+]
