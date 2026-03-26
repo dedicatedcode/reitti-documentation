@@ -1,7 +1,7 @@
 ---
 title: "Edit Places"
 description: "How to edit existing places"
-weight: 1
+weight: 20
 tags: ["usage"]
 ---
 

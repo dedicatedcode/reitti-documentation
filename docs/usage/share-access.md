@@ -1,7 +1,7 @@
 ---
 title: "Share Access"
 description: "Share your location data with others"
-weight: 2
+weight: 30
 since: "v1.5.0"
 tags: ["usage"]
 ---

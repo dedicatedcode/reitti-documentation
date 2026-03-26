@@ -1,7 +1,7 @@
 ---
 title: "Import Data"
 description: "Import location data into Reitti from various sources and formats."
-weight: 0
+weight: 10
 tags: ["usage", "import", "data"]
 ---
 
