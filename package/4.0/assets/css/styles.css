@@ -1,0 +1,20 @@
+table {
+    word-wrap: break-word;
+}
+
+article table tbody tr td {
+    white-space: initial;
+}
+
+.badge.version-badge {
+    font-size: 0.9em;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+.badge.version-badge .title {
+    background-color: black;
+}
+.badge.version-badge .value {
+    background-color: #fddca1;
+    color: black;
+}
