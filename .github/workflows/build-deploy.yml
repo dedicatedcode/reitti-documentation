@@ -7,24 +7,25 @@ on:
       - 'v*'
 
 env:
-  CURRENT_MAJOR_VERSION: "3.0"
+  CURRENT_MAJOR_VERSION: "4.0"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
         with:
-          python-version: '3.x'
+          enable-cache: true
+          version: "latest"
 
-      - name: Install Dependencies
-        run: pip install mkdocs mike
+      - name: Set up Python
+        run: uv python install 3.x
 
       - name: Configure Git and Fetch Deploy Branch
         run: |
@@ -36,22 +37,24 @@ jobs:
         run: |
           BRANCH_NAME=${{ github.ref_name }}
           
+          # Install everything from pyproject.toml including mike
+          uv sync
+
           if [ "$BRANCH_NAME" == "main" ]; then
-            # Uses the variable defined at the top of the file
             echo "Deploying MAIN as Version ${{ env.CURRENT_MAJOR_VERSION }} (Latest)"
-            mike deploy --rebase ${{ env.CURRENT_MAJOR_VERSION }} latest --update-aliases --push
+            uv run mike deploy --rebase ${{ env.CURRENT_MAJOR_VERSION }} latest --update-aliases --push
           else
             # Extracts version from branch name (e.g., v3.0 -> 3.0)
             VERSION=$(echo $BRANCH_NAME | sed 's/^v//')
             echo "Deploying LEGACY Version: $VERSION"
-            mike deploy --rebase $VERSION --push
+            uv run mike deploy --rebase $VERSION --push
           fi
 
       - name: Switch Workspace to HTML Branch
         run: git checkout gh-pages
 
       - name: Deploy Entire Collection to Server
-        uses: Burnett01/rsync-deployments@5.2.1
+        uses: Burnett01/rsync-deployments@v8
         with:
           switches: -avzr --delete
           path: ./
