@@ -135,18 +135,29 @@ Live mode provides real-time tracking functionality with a kiosk-style display:
 - **Continuous Display** – Ideal for wall-mounted displays or shared screens
 - **Minimal Interface** – Clean, focused display optimized for at-a-glance viewing
 - **Automatic Refresh** – No user interaction required to see updated locations
-- 
+
 ## Navigation Tips
 
 - **Zoom Controls** – Use mouse wheel, +/- buttons, or double-click to zoom
 - **Pan Navigation** – Click and drag to move around the map
 - **Search Locations** – Use the search bar to find specific places
 - **Fullscreen Mode** – Expand the map to fullscreen for better visibility
-- **Export View** – Export the current map view as an image or PDF
+- **Quick Date Navigation** – Use the date picker's horizontal scroll and mode switching for efficient time travel
+- **Interactive Timeline** – Click timeline entries to zoom to specific locations or trips
+- **Multi-User Switching** – Use the user switcher in the timeline to view different users' data
 
 ## Getting the Most from the Main View
 
-1. **Combine Components** – Use the timeline with date picker to analyze specific time periods
-2. **Customize Display** – Adjust map settings to highlight the information most relevant to you
-3. **Use Live Mode** – Enable live tracking when actively moving to see real-time updates
-4. **Save Views** – Bookmark frequently used date ranges and map settings combinations
+1. **Analyze Daily Patterns** – Use **24-Hour Aggregate Mode** to identify your regular routines and commute patterns
+2. **Explore Movement History** – Switch between **Standard**, **Raw Path**, and **Edge Bundling** modes to analyze your movement data at different levels of detail
+3. **Customize Your View** – Adjust map settings like **3D View**, **Terrain Layer**, and **Satellite View** to match your analysis needs
+4. **Use Live Mode for Real-time Tracking** – Enable live tracking for current movement monitoring or set up a **Kiosk Mode** display for shared viewing
+5. **Leverage Replay Features** – Use the **Replay Controls** with different speeds to review your movements over selected time ranges
+6. **Compare Multi-User Data** – If you have access to other users' data, use the **User Switcher** to compare movement patterns and coordinate activities
+
+## View Mode Use Cases
+
+- **Route Planning** – Use **Edge Bundling** mode to identify your most frequently traveled routes
+- **Pattern Recognition** – Enable **24-Hour Aggregate Mode** to discover daily routines and habitual locations
+- **Presentation Mode** – Use **Fullscreen** with a simplified interface for sharing your location history with others
+- **Real-time Monitoring** - **Live Mode** is ideal for tracking current movements or monitoring multiple users simultaneously
