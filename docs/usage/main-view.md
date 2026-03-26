@@ -7,6 +7,8 @@ tags: ["usage", "interface", "navigation"]
 
 The main view is the central interface of Reitti where you can visualize and interact with your location data. This page provides an overview of its key components and features.
 
+![Main View Interface](../img/main-view-with-controls.png)
+
 ## Main Menu
 
 Located in the top navigation bar, the main menu provides access to all major sections of Reitti:
