@@ -91,25 +91,70 @@ Photon is an open-source geocoder built for OpenStreetMap data, based on Elastic
 **Self-hosting with Docker Compose:**
 
 ```yaml
+version: '3.8'
+services:
   photon:
-    image: rtuszik/photon-docker:1.3.0
-    environment:
-      - UPDATE_STRATEGY=PARALLEL
-      - REGION=de
+    image: docker.io/rtuszik/photon:latest
+    restart: unless-stopped
     ports:
       - "2322:2322"
     volumes:
-      - photon-data:/photon/data
+      - photon_data:/var/lib/photon
+    environment:
+      - REGION=de  # Set to your country code (e.g., de, us, fr, gb)
+      - UPDATE_STRATEGY=SEQUENTIAL  # Options: SEQUENTIAL or PARALLEL
+      - JAVA_OPTS=-Xmx4g -Xms4g
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:2322/api"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5m
+
+volumes:
+  photon_data:
 ```
 
-**Data Import:**
-Photon requires importing OSM data. You can use pre-built extracts from GraphHopper or import your own data using the provided import scripts.
+**Important Configuration Notes:**
+
+**Region Selection:**
+
+- **CRITICAL:** You **must** set the `REGION` environment variable to your country code
+- Available regions: See [Photon Docker Available Regions](https://github.com/rtuszik/photon-docker?tab=readme-ov-file#available-regions)
+- Examples: `de` (Germany), `us` (United States), `fr` (France), `gb` (United Kingdom)
+- **Warning:** If you fail to set a valid `REGION`, the container will download the **entire planet dataset** (~200GB)
+
+**Storage Requirements:**
+
+- **Country-specific:** 1-10GB depending on country size
+- **Global dataset:** ~200GB for the complete worldwide index
+- **PARALLEL update mode:** Doubles storage requirements during updates (400GB total for global)
+
+**Update Strategy:**
+
+- `SEQUENTIAL` (default): Updates in-place, requires less storage
+- `PARALLEL`: Faster updates but requires double storage space during updates
+
+**First Start Behavior:**
+
+- On first start, the container automatically downloads and imports the selected region's data
+- This process can take several minutes to hours depending on region size
+- The health check allows 5 minutes (`start_period: 5m`) for initial data import
+- Subsequent starts will use the already imported data
+
+**Memory Configuration:**
+
+- Adjust `JAVA_OPTS` based on your available RAM:
+   - Small countries: `-Xmx2g -Xms2g`
+   - Medium countries: `-Xmx4g -Xms4g`
+   - Large countries/global: `-Xmx8g -Xms8g` or more
 
 ### GeoApify
 
 GeoApify is a commercial geocoding service that offers reverse geocoding capabilities with various pricing plans including a free tier.
 
 **Key Features:**
+
 - Commercial service with free tier (3,000 requests/day)
 - Based on OpenStreetMap data
 - Localized results in multiple languages
@@ -119,11 +164,13 @@ GeoApify is a commercial geocoding service that offers reverse geocoding capabil
 **Website:** (https://www.geoapify.com/reverse-geocoding-api/)
 
 **Free Tier:**
+
 - 3,000 requests per day (90,000 per month)
 - Requires attribution for commercial use
 - Can be used for commercial projects with attribution
 
 **API Configuration:**
+
 - **URL:** `https://api.geoapify.com/v1/geocode/reverse`
 - **API Key:** Required (sign up at MyProject Geoapify)
 - **Format:** Supports JSON, GeoJSON, and XML
@@ -133,12 +180,14 @@ GeoApify is a commercial geocoding service that offers reverse geocoding capabil
 A generic geocoder that supports any service returning GeoJSON format. This provides maximum flexibility for custom geocoding solutions.
 
 **Key Features:**
+
 - Supports any service that returns GeoJSON
 - Customizable endpoint configuration
 - Flexible response parsing
 - Ideal for custom or proprietary geocoding services
 
 **Configuration Requirements:**
+
 - Service must return valid GeoJSON
 - Response should include address information in properties
 - Supports custom authentication headers if needed
@@ -174,6 +223,7 @@ For users who require the highest level of privacy, **self-hosting** a geocoding
     - [Self-hosting instructions](https://nominatim.org/release-docs/latest/admin/Installation/)
 
 **Benefits of Self-hosting:**
+
 - **Complete Control:** Your location data never leaves your infrastructure
 - **No Rate Limits:** No restrictions on request volume
 - **Customization:** Tailor the service to your specific needs
@@ -183,6 +233,7 @@ For users who require the highest level of privacy, **self-hosting** a geocoding
 ### Mixed Deployment Strategy
 
 For balanced privacy and convenience:
+
 1. Use self-hosted services as **high-priority** geocoders
 2. Configure public services as **lower-priority fallbacks**
 3. Monitor error rates to ensure your self-hosted service is working correctly
@@ -208,6 +259,7 @@ For balanced privacy and convenience:
 ## Best Practices
 
 ### 1. **Service Selection**
+
 - **Privacy-First:** Self-host Paikka, Photon, or Nominatim for sensitive data
 - **Default:** Use the public Paikka instance for general use
 - **High Volume:** Consider self-hosting for production deployments
