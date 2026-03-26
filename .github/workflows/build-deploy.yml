@@ -51,7 +51,7 @@ jobs:
           fi
 
       - name: Switch Workspace to HTML Branch
-        run: git checkout gh-pages
+        run: git checkout deploy
 
       - name: Deploy Entire Collection to Server
         uses: Burnett01/rsync-deployments@v8
