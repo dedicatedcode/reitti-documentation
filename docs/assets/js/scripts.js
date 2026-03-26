@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const base_url = window.location.pathname.split('/')[1];
-    const json_url = '/' + base_url + "/versions.json";
+    const path = window.location.pathname;
+    const match = path.match(/(.*\/)(?:v?\d+\.\d+|latest)\//);
+    const base_path = match ? match[1] : path.substring(0, path.lastIndexOf('/') + 1);
+    const json_url = `${base_path}versions.json`;
     const stargazers_element = document.querySelector('header div div:nth-child(3) a');
 
     if (!stargazers_element) {
