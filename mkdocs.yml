@@ -21,6 +21,10 @@ plugins:
       'configurations/reitti-integration.md': 'integrations/reitti.md'
 markdown_extensions:
   - codehilite
-
+extra:
+  version:
+    provider: mike
+extra_javascript:
+  - assets/js/scripts.js
 extra_css:
   - assets/css/styles.css
