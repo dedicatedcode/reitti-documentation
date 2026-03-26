@@ -53,3 +53,7 @@ html.dark #version-selector:hover {
     background-color: #2c333a;
     border-color: #768390;
 }
+
+article .codehilite {
+    overflow: scroll;
+}
