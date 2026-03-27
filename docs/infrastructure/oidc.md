@@ -81,6 +81,23 @@ Reitti uses a flexible process to match OIDC users with existing accounts:
 2. **Fallback Match**: If no external ID match, searches by the OIDC `preferred_username`
 3. **Account Linking**: When a username match is found, the account is linked with the external ID for future logins
 
+### Username Assignment Logic
+
+When a user logs in via OIDC for the first time, Reitti follows this priority to determine their username:
+
+1. **`preferred_username` claim** from the ID token
+2. **`preferred_username` claim** from the OIDC user object
+3. **`preferred_username` claim** from user info endpoint (if available)
+4. **Email address** (`email` claim)
+5. **Generated name** (`given_name` + "." + `family_name` in lowercase)
+6. **OIDC subject** (`sub` claim) as final fallback
+
+This means Reitti will try multiple OIDC claims before falling back to the subject identifier. For example:
+- If your OIDC provider supplies `preferred_username: "jane.doe"`, that becomes the username
+- If not, but `email: "jane@example.com"` is available, that becomes the username
+- If only `given_name: "Jane"` and `family_name: "Doe"` are available, the username becomes `"jane.doe"`
+- As a last resort, the OIDC subject (e.g., `"1234567890"`) is used
+
 #### User Data Synchronization
 
 User information is automatically updated from OIDC claims on each login:
