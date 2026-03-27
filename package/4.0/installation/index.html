@@ -1075,7 +1075,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-03-27T12:09:12+01:00');
+        const date = new Date('2026-03-27T13:48:51+01:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1090,6 +1090,43 @@
 </code></pre>
 
 <p>This will start all services and make Reitti available at http://localhost:8080. When you first open Reitti, it will prompt you to set the admin password.</p>
+<h3 id="docker-tag-strategy-and-best-practices">Docker Tag Strategy and Best Practices</h3>
+<p>Reitti is published to Docker Hub with multiple tags for each release:</p>
+<ul>
+<li><strong><code>latest</code></strong>: Always points to the most recent release</li>
+<li><strong><code>4</code></strong>: Points to the latest v4.x.x release (e.g., 4.1.2)</li>
+<li><strong><code>4.1</code></strong>: Points to the latest v4.1.x release (e.g., 4.1.2)</li>
+<li><strong><code>4.1.0</code></strong>: Specific patch version (immutable)</li>
+</ul>
+<p><strong>Why use major version tags instead of <code>latest</code>?</strong></p>
+<ol>
+<li><strong>Controlled Updates</strong>: Using <code>reitti:4</code> ensures you only receive updates within the v4.x series, preventing unexpected major version upgrades that could break your setup.</li>
+<li><strong>Stability</strong>: Major version tags give you time to review release notes and prepare for upgrades, while still receiving important bug fixes and security patches.</li>
+<li><strong>Reproducibility</strong>: If you need to roll back, you can easily revert to a known working version within the same major version.</li>
+<li><strong>Scheduled Maintenance</strong>: You can plan upgrades on your own schedule rather than being forced to upgrade immediately when a new major version is released.</li>
+</ol>
+<p><strong>Recommended approach:</strong></p>
+<pre class="codehilite"><code class="language-yaml">services:
+  reitti:
+    # Good: Updates within v4.x series only
+    image: dedicatedcode/reitti:4
+
+    # Better for production: Specific minor version
+    # image: dedicatedcode/reitti:4.1
+
+    # Best for critical stability: Exact patch version
+    # image: dedicatedcode/reitti:4.1.0
+</code></pre>
+
+<p><strong>When to use <code>latest</code>:</strong>
+- Development environments where you want to test the newest features
+- When you actively monitor the project and can handle breaking changes
+- In automated testing pipelines</p>
+<p><strong>When to avoid <code>latest</code>:</strong>
+- Production deployments
+- When you value stability over new features
+- When you have limited time for maintenance and troubleshooting</p>
+<p>By using major version tags, you maintain control over your upgrade schedule while still benefiting from security patches and bug fixes within your chosen version series.</p>
 <h3 id="using-pre-built-jar">Using Pre-built JAR</h3>
 <p>If you prefer to run Reitti without Docker but don't want to build from source, you can download the pre-built JAR file from the releases page.</p>
 <h4 id="prerequisites">Prerequisites</h4>
@@ -1537,6 +1574,14 @@ spring.data.redis.password=
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#docker-installation-recommended');">
             Docker Installation (Recommended)
+        </a>
+        
+
+        
+        <a href="#docker-tag-strategy-and-best-practices"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#docker-tag-strategy-and-best-practices');">
+            Docker Tag Strategy and Best Practices
         </a>
         
 
