@@ -8,8 +8,8 @@ tags: ["configuration"]
 
 ## General Information
 
-When deploying **Reitti** with Docker Swarm or Docker Compose you can keep sensitive
-information (e.g. database credentials) out of the plain‑text `docker‑compose.yml`
+When deploying **Reitti** with Docker Swarm or Docker Compose, you can keep sensitive
+information (for example database credentials) out of the plain‑text `docker‑compose.yml`
 by using Docker **secrets**.
 
 The workflow consists of three steps:
