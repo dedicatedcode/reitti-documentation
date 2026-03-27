@@ -4,9 +4,9 @@ description: "Step-by-step guide to install and configure Reitti"
 ---
 ### Docker Installation (Recommended)
 
-Docker is the easiest way to get Reitti up and running. The provided Docker Compose configuration handles all the required services including PostgreSQL with PostGIS, RabbitMQ, Redis, and Photon geocoding service.
+Docker is the easiest way to get Reitti up and running. The provided Docker Compose configuration handles all the required services including PostgreSQL with PostGIS and Redis.
 
-Simply download the [docker-compose.yml](https://github.com/dedicatedcode/reitti/blob/main/docker-compose.yml) file and run:
+Download the [docker-compose.yml](https://github.com/dedicatedcode/reitti/blob/main/docker-compose.yml) file and run:
 
 ```bash
 docker-compose up -d
@@ -19,9 +19,8 @@ This will start all services and make Reitti available at http://localhost:8080.
 If you prefer to run Reitti without Docker but don't want to build from source, you can download the pre-built JAR file from the releases page.
 
 #### Prerequisites
-- Java 24 or higher
+- Java 25 or higher
 - PostgreSQL with PostGIS extensions
-- RabbitMQ
 - Redis
 
 #### Installation Steps
@@ -43,12 +42,6 @@ spring.data.redis.port=6379
 spring.data.redis.username=
 spring.data.redis.password=
 
-# RabbitMQ Configuration
-spring.rabbitmq.host=localhost
-spring.rabbitmq.port=5672
-spring.rabbitmq.username=reitti
-spring.rabbitmq.password=reitti
-
 # Storage configuration (optional)
 # Default: reitti.storage.path=data/
 # Make sure the user running Reitti has write permissions to this directory
@@ -69,10 +62,9 @@ The application will be available at http://localhost:8080. When you first open 
 To build and run Reitti from source code:
 
 #### Prerequisites
-- Java 24 or higher
+- Java 25 or higher
 - Maven 3.6 or higher
 - PostgreSQL with PostGIS extensions
-- RabbitMQ
 - Redis
 
 #### Build Steps
@@ -97,12 +89,6 @@ spring.data.redis.host=localhost
 spring.data.redis.port=6379
 spring.data.redis.username=
 spring.data.redis.password=
-
-# RabbitMQ Configuration
-spring.rabbitmq.host=localhost
-spring.rabbitmq.port=5672
-spring.rabbitmq.username=reitti
-spring.rabbitmq.password=reitti
 
 # Storage configuration (optional)
 # Default: reitti.storage.path=data/
