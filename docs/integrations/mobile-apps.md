@@ -1,7 +1,6 @@
 ---
 title: "Mobile App Integration"
 description: "Real-time location tracking with mobile applications"
-weight: 0
 tags: ["integrations"]
 ---
 

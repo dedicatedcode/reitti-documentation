@@ -5,7 +5,7 @@ weight: 4
 tags: ["overview"] 
 ---
 
-Reitti depends on a consistent stream of geo location data to process and calculate visits, places, and trips between visits. The data processing pipeline follows these steps:
+Reitti depends on a consistent stream of geolocation data to process and calculate visits, places, and trips between visits. The data processing pipeline follows these steps:
 
 ### Data Processing Pipeline
 
@@ -22,10 +22,10 @@ Around each datapoint, Reitti calculates potential visits. This process can iden
 Successive visits are merged into ProcessedVisits, combining related location points into meaningful stay periods.
 
 #### 5. Significant Places Creation
-After visits are merged into ProcessedVisits, SignificantPlaces are created or matched for each ProcessedVisit. SignificantPlaces represent locations on the map where you spend time - such as your home, workplace, or any other location where you stayed more than 5 minutes.
+After visits are merged into ProcessedVisits, SignificantPlaces are created or matched for each ProcessedVisit. SignificantPlaces represent locations on the map where you spend time – such as your home, workplace, or any other location where you stayed more than 5 minutes.
 
 #### 6. Address Resolution
-SignificantPlaces are processed through reverse geocoding to assign human-readable names and addresses, making them easier to identify and understand.
+SignificantPlaces are processed through reverse geocoding to assign human-readable names and addresses, making them easier to identify and understand. See [Reverse Geocoding](../configurations/reverse-geocoding.md) for more details.
 
 #### 7. Trip Calculation
 Finally, the system calculates Trips between successive ProcessedVisits, tracking your movement patterns and transportation between significant locations.

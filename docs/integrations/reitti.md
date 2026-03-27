@@ -1,7 +1,6 @@
 ---
 title: "Shared Instances: Federated Connections"
 description: "Connect with users on other Reitti instances for federated location sharing and collaboration"
-weight: 1
 tags: [ "integrations" ]
 ---
 |since|v1.3.0|.version-badge|

@@ -15,7 +15,7 @@ theme:
   show_datetime: true
   custom_dir: theme/overrides
 plugins:
-- mkdocs-nav-weight
+- awesome-nav
 - badges
 - search
 - redirects:
