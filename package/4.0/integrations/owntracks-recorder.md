@@ -1,7 +1,6 @@
 ---
 title: "OwnTracks Recorder Integration"
 description: "Alternative data collection method with backup storage capabilities"
-weight: 4
 tags: ["integrations"]
 ---
 

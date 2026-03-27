@@ -47,7 +47,7 @@ Memories transform your raw location data into narrative-driven travel logs, all
 #### Privacy & Self-hosting
 - **Complete Data Control**: Your location data never leaves your server
 - **Self-hosted Solution**: Deploy on your own infrastructure
-- **Asynchronous Processing**: Handle large datasets efficiently with RabbitMQ-based processing
+- **Asynchronous Processing**: Handle large datasets efficiently
 
 ### Quick Start
 

@@ -1,7 +1,6 @@
 ---
 title: "Home-Assistant"
 description: "Connect Home-Assistant to Reitti"
-weight: 3
 tags: [ "integrations" ]
 ---
 

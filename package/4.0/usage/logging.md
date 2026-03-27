@@ -1,7 +1,7 @@
 ---
 title: "Logging"
 description: "Live log view and log level management for Reitti"
-weight: 0
+weight: 100
 tags: ["admin"]
 ---
 |since|v3.0.0|.version-badge|
@@ -16,7 +16,7 @@ From **Settings > Logging** you can view a live stream of the current instan
 1. Open the Reitti web UI and navigate to **Settings > Logging**.  
 2. The page shows a continuously updating view of the log output from the running instance.  
 
-![Logging View](./img/logging.png)
+![Logging View](../img/logging.png)
 
 ### Adjusting Log Levels
 

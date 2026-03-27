@@ -8,8 +8,8 @@ tags: ["configuration"]
 
 ## General Information
 
-When deploying **Reitti** with Docker Swarm or Docker Compose you can keep sensitive
-information (e.g. database credentials) out of the plain‑text `docker‑compose.yml`
+When deploying **Reitti** with Docker Swarm or Docker Compose, you can keep sensitive
+information (for example database credentials) out of the plain‑text `docker‑compose.yml`
 by using Docker **secrets**.
 
 The workflow consists of three steps:
@@ -66,8 +66,6 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      rabbitmq:
-        condition: service_healthy
       postgis:
         condition: service_healthy
         restart: true
@@ -102,8 +100,7 @@ the contents of the secret files.
 ## Full Example `docker-compose.yml`
 
 Below is a minimal compose file that demonstrates the complete setup for the
-`reitti` service with Docker secrets.  The other services (`postgis`, `rabbitmq`,
-`redis`, etc.) are omitted for brevity – add them back as required by your
+`reitti` service with Docker secrets.  The other services (`postgis`, `redis`, etc.) are omitted for brevity – add them back as required by your
 deployment.
 
 ```yaml
@@ -115,8 +112,6 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      rabbitmq:
-        condition: service_healthy
       postgis:
         condition: service_healthy
         restart: true
@@ -136,7 +131,7 @@ services:
       - postgis_user
       - postgis_password
 
-  # ... other services such as postgis, rabbitmq, redis, etc. ...
+  # ... other services such as postgis, redis, etc. ...
 
 volumes:
   reitti-data:

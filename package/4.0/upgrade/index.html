@@ -39,11 +39,11 @@
     
 
 
-<title>OpenID Connect</title>
+<title>Upgrading Reitti</title>
 
 
 
-<meta name="description" content="Enable authentication through an OpenID-Connect provider">
+<meta name="description" content="Guide for upgrading between Reitti versions">
 
 
 
@@ -53,20 +53,20 @@
 
 
 
-<link rel="canonical" href="https://www.dedicatedcode.com/projects/reitti/4.0/configurations/oidc/">
+<link rel="canonical" href="https://www.dedicatedcode.com/projects/reitti/4.0/upgrade/">
 
 
 <!-- Open Graph (Facebook, LinkedIn) -->
 
-<meta property="og:title" content="OpenID Connect">
+<meta property="og:title" content="Upgrading Reitti">
 
 
 
-<meta property="og:description" content="Enable authentication through an OpenID-Connect provider">
+<meta property="og:description" content="Guide for upgrading between Reitti versions">
 
 
 
-<meta property="og:url" content="https://www.dedicatedcode.com/projects/reitti/4.0/configurations/oidc/">
+<meta property="og:url" content="https://www.dedicatedcode.com/projects/reitti/4.0/upgrade/">
 
 
 
@@ -75,11 +75,11 @@
 
 <!-- Twitter Card -->
 
-<meta name="twitter:title" content="OpenID Connect">
+<meta name="twitter:title" content="Upgrading Reitti">
 
 
 
-<meta name="twitter:description" content="Enable authentication through an OpenID-Connect provider">
+<meta name="twitter:description" content="Guide for upgrading between Reitti versions">
 
 
 
@@ -90,16 +90,16 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "OpenID Connect",
-    "url": "https://www.dedicatedcode.com/projects/reitti/4.0/configurations/oidc/",
-    "description": "Enable authentication through an OpenID-Connect provider",
+    "headline": "Upgrading Reitti",
+    "url": "https://www.dedicatedcode.com/projects/reitti/4.0/upgrade/",
+    "description": "Guide for upgrading between Reitti versions",
     
     
     
     
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://www.dedicatedcode.com/projects/reitti/4.0/configurations/oidc/"
+      "@id": "https://www.dedicatedcode.com/projects/reitti/4.0/upgrade/"
     },
     
     
@@ -108,28 +108,28 @@
 
 
 
-    <link rel="icon" href="../../img/favicon.ico">
+    <link rel="icon" href="../img/favicon.ico">
 
-    <link href="../../css/base.css" rel="stylesheet">
-    <link href="../../css/geist.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/geist.css" rel="stylesheet">
 
     
     
 
 <link id="pygments-light" rel="stylesheet"
-    href="../../css/pygments/shadcn-light.css">
+    href="../css/pygments/shadcn-light.css">
 <link id="pygments-dark" rel="stylesheet"
-    href="../../css/pygments/github-dark.css"
+    href="../css/pygments/github-dark.css"
     media="(prefers-color-scheme: dark)">
 
 
     
-    <link href="../../assets/css/styles.css" rel="stylesheet">
-    <link href="../../assets/stylesheets/badge.css" rel="stylesheet">
+    <link href="../assets/css/styles.css" rel="stylesheet">
+    <link href="../assets/stylesheets/badge.css" rel="stylesheet">
 
     
 
-    <script src="../../js/callbacks.js"></script>
+    <script src="../js/callbacks.js"></script>
 
     
 
@@ -372,25 +372,6 @@
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/logging/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        Logging
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-            
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
         data-size="default" href="/projects/reitti/4.0/getting-started/"
         class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
@@ -409,12 +390,12 @@
             
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/backup/"
+    <a data-slot="sidebar-menu-button" data-active="true" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/upgrade/"
         class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
-        Backup
+        Upgrading Reitti
         
 
         
@@ -483,249 +464,6 @@
 <div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
     <div data-slot="sidebar-group-label" data-sidebar="group-label"
         class="flex h-8 shrink-0 items-center rounded-md px-2 text-xs ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 font-medium text-muted-foreground">
-        Configurations</div>
-    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
-        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/configurations/reverse-geocoding/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        Reverse Geocoding
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="true" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/configurations/oidc/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        OpenID Connect
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/configurations/visit-detection/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        Visit Detection
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/configurations/transportation-modes/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        Transportation Mode Detection
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/configurations/photo-integration/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        Photo Integration
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/configurations/docker-secrets/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        Using Docker Swarm / Compose Secrets
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-        </ul>
-    </div>
-</div>
-
-
-
-<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
-    <div data-slot="sidebar-group-label" data-sidebar="group-label"
-        class="flex h-8 shrink-0 items-center rounded-md px-2 text-xs ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 font-medium text-muted-foreground">
-        Infrastrcture</div>
-    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
-        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/infrastrcture/reverse-proxy/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        Reverse Proxy Configuration
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-        </ul>
-    </div>
-</div>
-
-
-
-<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
-    <div data-slot="sidebar-group-label" data-sidebar="group-label"
-        class="flex h-8 shrink-0 items-center rounded-md px-2 text-xs ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 font-medium text-muted-foreground">
-        Integrations</div>
-    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
-        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/integrations/mobile-apps/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        Mobile App Integration
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/integrations/reitti/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        Shared Instances: Federated Connections
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/integrations/home-assistant/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        Home-Assistant
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/integrations/owntracks-recorder/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        OwnTracks Recorder Integration
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/integrations/custom-file-upload/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        Custom File Upload
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-        </ul>
-    </div>
-</div>
-
-
-
-<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
-    <div data-slot="sidebar-group-label" data-sidebar="group-label"
-        class="flex h-8 shrink-0 items-center rounded-md px-2 text-xs ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 font-medium text-muted-foreground">
         Usage</div>
     <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
         <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
@@ -754,6 +492,23 @@
 
         
         Import Data
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/usage/logging/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Logging
         
 
         
@@ -813,6 +568,23 @@
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/memories/editing/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Edit a memory
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
         data-size="default" href="/projects/reitti/4.0/memories/"
         class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
@@ -847,11 +619,41 @@
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/memories/editing/"
+        data-size="default" href="/projects/reitti/4.0/memories/sharing/"
         class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
-        Edit a memory
+        Sharing a memory
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
+    <div data-slot="sidebar-group-label" data-sidebar="group-label"
+        class="flex h-8 shrink-0 items-center rounded-md px-2 text-xs ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 font-medium text-muted-foreground">
+        Configuration</div>
+    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
+        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/configurations/photo-integration/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Photo Integration
         
 
         
@@ -864,11 +666,224 @@
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/memories/sharing/"
+        data-size="default" href="/projects/reitti/4.0/configurations/reverse-geocoding/"
         class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
-        Sharing a memory
+        Reverse Geocoding
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/configurations/transportation-modes/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Transportation Mode Detection
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/configurations/visit-detection/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Visit Detection
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
+    <div data-slot="sidebar-group-label" data-sidebar="group-label"
+        class="flex h-8 shrink-0 items-center rounded-md px-2 text-xs ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 font-medium text-muted-foreground">
+        Integrations</div>
+    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
+        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/integrations/mobile-apps/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Mobile App Integration
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/integrations/custom-file-upload/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Custom File Upload
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/integrations/home-assistant/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Home-Assistant
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/integrations/owntracks-recorder/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        OwnTracks Recorder Integration
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/integrations/reitti/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Shared Instances: Federated Connections
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
+    <div data-slot="sidebar-group-label" data-sidebar="group-label"
+        class="flex h-8 shrink-0 items-center rounded-md px-2 text-xs ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 font-medium text-muted-foreground">
+        Infrastructure</div>
+    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
+        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/backup/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Backup
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/infrastructure/docker-secrets/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Using Docker Swarm / Compose Secrets
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/infrastructure/oidc/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        OpenID Connect
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/infrastructure/reverse-proxy/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Reverse Proxy Configuration
         
 
         
@@ -911,11 +926,28 @@
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/api/visits/"
+        data-size="default" href="/projects/reitti/4.0/api/gpx-export/"
         class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
-        Visits API
+        GPX Export API
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/4.0/api/gpx-import/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        GPX Import API
         
 
         
@@ -962,28 +994,11 @@
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/api/gpx-import/"
+        data-size="default" href="/projects/reitti/4.0/api/visits/"
         class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
-        GPX Import API
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/4.0/api/gpx-export/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        GPX Export API
+        Visits API
         
 
         
@@ -1014,7 +1029,7 @@
     <div class="flex flex-col gap-2">
       <div id="page-header" class="flex items-start justify-between">
         <h1 class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
-          OpenID Connect
+          Upgrading Reitti
         </h1>
 
         <div class="flex items-center gap-2 pt-1.5">
@@ -1022,7 +1037,7 @@
           
           <a data-slot="button" id="previous-button"
             class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 extend-touch-target size-8 shadow-none md:size-7"
-            href="/projects/reitti/4.0/configurations/reverse-geocoding/">
+            href="/projects/reitti/4.0/infrastructure/reverse-proxy/">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="tabler-icon tabler-icon-arrow-left">
@@ -1036,7 +1051,7 @@
           
           <a data-slot="button" id="next-button"
             class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 extend-touch-target size-8 shadow-none md:size-7"
-            href="/projects/reitti/4.0/configurations/visit-detection/">
+            href="/projects/reitti/4.0/api/">
             <span class="sr-only">Next</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -1060,7 +1075,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-03-26T06:41:55+01:00');
+        const date = new Date('2026-03-27T12:09:12+01:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1068,264 +1083,107 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <h2 id="general-information">General Information</h2>
-<p>Reitti can be configured to use an OpenID Connect (OIDC) provider for user authentication. This allows you to integrate
-Reitti with existing identity management systems and leverage
-features like single sign-on (SSO) and multi-factor authentication (MFA) provided by your OIDC provider.</p>
-<h3 id="configuration">Configuration</h3>
-<h4 id="docker">Docker</h4>
-<p>To enable OIDC authentication when running Reitti with Docker, you need to set the following environment variables in
-your <strong>docker-compose.yml</strong> file under the <strong>reitti</strong> service.</p>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align: left;">Environment Variable</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Default Value</th>
-<th style="text-align: left;">Example Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>OIDC_ENABLED</code></td>
-<td style="text-align: left;">Whether to enable OIDC sign-ins</td>
-<td style="text-align: left;"><code>false</code></td>
-<td style="text-align: left;"><code>true</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>OIDC_CLIENT_ID</code></td>
-<td style="text-align: left;">Your OpenID Connect Client ID (from your provider)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><code>google</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>OIDC_CLIENT_SECRET</code></td>
-<td style="text-align: left;">Your OpenID Connect Client secret (from your provider)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><code>F0oxfg8b2rp5X97YPS92C2ERxof1oike</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>OIDC_ISSUER_URI</code></td>
-<td style="text-align: left;">Your OpenID Connect Provider Discovery URI (don't include the <code>/.well-known/openid-configuration</code> part of the URI)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><code>https://github.com/login/oauth</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>OIDC_SCOPE</code></td>
-<td style="text-align: left;">Your OpenID Connect scopes for your user (set to the values in the example if you're unsure). This variable is optional.</td>
-<td style="text-align: left;"><code>openid,profile</code></td>
-<td style="text-align: left;"><code>openid,profile</code></td>
-</tr>
-</tbody>
-</table></div>
-<p>Here's an example of how you might add these to your <strong>docker-compose.yml</strong>:</p>
-<pre class="codehilite"><code class="language-yaml">services:                                                                                                                                                                                                                                                                           
-  reitti:                                                                                                                                                                                                                                                                             
-    image: dedicatedcode/reitti:latest                                                                                                                                                                                                                                                  
-    environment:                                                                                                                                                                                                                                                                        
-      - OIDC_ENABLED=true                                                                                                                                                                                                                                                               
-      - OIDC_CLIENT_ID=your_client_id                                                                                                                                                                                                                                                   
-      - OIDC_CLIENT_SECRET=your_client_secret                                                                                                                                                                                                                                           
-      - OIDC_ISSUER_URI=https://your_oidc_provider.com                                                                                                                                                                                                                                
-# ... other configurations                                                                                                                                                                                                                                                          
+    <p>Reitti follows (https://semver.org/), which means:</p>
+<ul>
+<li><strong>Major versions</strong> (v1.x → v2.x): Contain breaking changes that may require manual intervention</li>
+<li><strong>Minor versions</strong> (v2.1 → v2.2): Add new features in a backward-compatible manner</li>
+<li><strong>Patch versions</strong> (v2.1.0 → v2.1.1): Include bug fixes and minor improvements</li>
+</ul>
+<p>For most upgrades, simply pulling the latest Docker image or updating the source code is enough. 
+Only upgrades between major versions require special attention.</p>
+<h2 id="upgrading-from-v3-to-v4">Upgrading from v3 to v4</h2>
+<p>This guide covers the changes when upgrading from Reitti v3 to v4. These are breaking changes that require manual updates to your configuration.</p>
+<h3 id="1-rabbitmq-removal">1. RabbitMQ Removal</h3>
+<p>RabbitMQ is no longer required. Remove all RabbitMQ-related configuration from your <code>docker-compose.yml</code>:</p>
+<p><strong>Remove these services:</strong></p>
+<pre class="codehilite"><code class="language-yaml"># Remove this entire service
+rabbitmq:
+  image: rabbitmq:3-management-alpine
+  # ... other rabbitmq configuration
 </code></pre>
 
-<h4 id="running-from-source">Running from source</h4>
-<p>When running Reitti directly from its source code, OIDC authentication can be enabled by placing an <strong>oidc.properties</strong>
-file in the same directory as your <strong>application.properties</strong> file. This <strong>oidc.properties</strong> file should contain the
-necessary OIDC configuration details.</p>
-<pre class="codehilite"><code class="language-properties">reitti.security.oidc.enabled=true
-spring.security.oauth2.client.registration.oauth.client-id=&lt;client id from your provider&gt;
-spring.security.oauth2.client.registration.oauth.client-secret=&lt;client secret from your provider&gt;
-spring.security.oauth2.client.provider.oauth.issuer-uri=&lt;url of your provider&gt;
-spring.security.oauth2.client.registration.oauth.scope=openid,profile
-</code></pre>
-
-<h3 id="additional-configuration">Additional Configuration</h3>
-<h4 id="user-registration-control">User Registration Control</h4>
-<p>By default, Reitti automatically creates new user accounts when someone logs in via OIDC for the first time. You can control this behavior with the following setting:</p>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align: left;">Environment Variable</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Default Value</th>
-<th style="text-align: left;">Example Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>OIDC_SIGN_UP_ENABLED</code></td>
-<td style="text-align: left;">Whether to automatically create new users on first OIDC login. When disabled, only existing users can log in via OIDC.</td>
-<td style="text-align: left;"><code>true</code></td>
-<td style="text-align: left;"><code>false</code></td>
-</tr>
-</tbody>
-</table></div>
-<h4 id="local-authentication-control">Local Authentication Control</h4>
-<p>You can configure whether users can still use local passwords alongside OIDC authentication:</p>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align: left;">Environment Variable</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Default Value</th>
-<th style="text-align: left;">Example Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>DISABLE_LOCAL_LOGIN</code></td>
-<td style="text-align: left;">When enabled, disables local password authentication and clears existing passwords to enforce OIDC-only login.</td>
-<td style="text-align: left;"><code>false</code></td>
-<td style="text-align: left;"><code>true</code></td>
-</tr>
-</tbody>
-</table></div>
-<h4 id="user-matching-and-account-linking">User Matching and Account Linking</h4>
-<p>Reitti uses a flexible process to match OIDC users with existing accounts:</p>
-<ol>
-<li><strong>Primary Match</strong>: Searches for users by external ID (format: <code>{issuer}:{subject}</code>)</li>
-<li><strong>Fallback Match</strong>: If no external ID match, searches by the OIDC <code>preferred_username</code></li>
-<li><strong>Account Linking</strong>: When a username match is found, the account is linked with the external ID for future logins</li>
-</ol>
-<h4 id="user-data-synchronization">User Data Synchronization</h4>
-<p>User information is automatically updated from OIDC claims on each login:</p>
-<ul>
-<li><strong>Username</strong>: Set from the <code>preferred_username</code> claim</li>
-<li><strong>Display Name</strong>: Updated from the <code>name</code> claim</li>
-<li><strong>Profile URL</strong>: Updated from the <code>profile</code> claim (if available)</li>
-<li><strong>Avatar</strong>: Automatically downloaded from the <code>picture</code> claim (if provided)</li>
-</ul>
-<h4 id="required-oidc-claims">Required OIDC Claims</h4>
-<p>Your OIDC provider must provide these claims for successful authentication:</p>
-<ul>
-<li><code>sub</code> (subject) - <strong>Required</strong> for external ID generation</li>
-<li><code>preferred_username</code> - <strong>Required</strong> for username assignment</li>
-<li><code>name</code> - <strong>Recommended</strong> for display name</li>
-<li><code>profile</code> - <strong>Optional</strong> for profile URL</li>
-<li><code>picture</code> - <strong>Optional</strong> for avatar download</li>
-</ul>
-<h4 id="security-notes">Security Notes</h4>
-<ul>
-<li>External IDs are immutable once set, ensuring account security even if usernames change in the OIDC provider</li>
-<li>User data is refreshed on each login to keep information current</li>
-<li>Avatar downloads are performed securely with proper error handling</li>
-</ul>
-<h3 id="provider-examples">Provider Examples</h3>
-<p>This section provides examples of how to configure Reitti with different OpenID Connect providers.</p>
-<h4 id="pocketid">PocketId</h4>
-<p>PocketId is a self-hosted OpenID Connect provider. You can find more information about the project <a href="https://github.com/pfortin/pocketid">here</a>.</p>
-<p>To configure Reitti to use PocketId:</p>
-<p><strong>Create a new client in PocketId</strong>:</p>
-<ul>
-<li>Log in to your PocketId instance.</li>
-<li>Navigate to the client registration section.</li>
-<li>Create a new client, providing a name for your Reitti installation (e.g., "Reitti App").</li>
-<li>Crucially, set the URI to the URL of your Reitti installation.</li>
-<li>If you want to be logged out of Reitti when you log out in PocketId, make sure to set the <strong>Logout Callback Url</strong> to <strong>https://<your-reitti-url>/logout/connect/back-channel/oauth</strong></li>
-</ul>
-<p><img alt="" src="../../img/oidc-create-client.png" /></p>
-<p><strong>Obtain Client ID and Client Secret</strong>:</p>
-<p>After creating the client, PocketId will display a <strong>Client ID</strong> and a <strong>Client Secret</strong>. Copy these values.</p>
-<p><img alt="" src="../../img/oidc-secrets.png" /></p>
-<p><strong>Configure Reitti</strong>:</p>
-<ul>
-<li><strong>For Docker</strong>: Set the <strong>OIDC_CLIENT_ID</strong> and <strong>OIDC_CLIENT_SECRET</strong> environment variables in your <strong>docker-compose.yml</strong> file to the values you copied from PocketId.</li>
-<li><strong>For Running from Source</strong>: Enter the <strong>Client ID</strong> and <strong>Client Secret</strong> into the <strong>oidc.properties</strong> file for <strong>spring.security.oauth2.client.registration.oauth.client-id</strong> and <strong>spring.security.oauth2.client.registration.oauth.client-secret</strong> respectively.</li>
-<li>The <strong>OIDC_ISSUER_URI</strong> (for Docker) or <strong>spring.security.oauth2.client.provider.oauth.issuer-uri</strong> (for <strong>oidc.properties</strong>) should be set to the base URL of your PocketId installation (e.g., https://your-pocketid-domain.com).</li>
-</ul>
-<h4 id="authelia">Authelia</h4>
-<p>Authelia is an open-source authentication server that provides single sign-on (SSO) and two-factor authentication. For integrating Reitti with Authelia using OpenID Connect (OIDC), follow these steps:</p>
-<p><strong>Generate Client Secret</strong></p>
-<p>Run the following command to generate a secure client secret. <strong>You must save this value as it cannot be recovered</strong>:</p>
-<pre class="codehilite"><code class="language-bash">docker run authelia/authelia:latest authelia crypto hash generate pbkdf2 \
-  --variant sha512 \
-  --random \
-  --random.length 72 \
-  --random.charset rfc3986
-</code></pre>
-
-<p><strong>Configure Authelia</strong></p>
-<p>Add the following OIDC client configuration to your Authelia <code>config.yml</code> under <code>identity_providers:oidc:clients</code>, replacing these values:
-- <code>&lt;CLIENT-SECRET-DIGEST&gt;</code> with the hash from step 1
-- Redirect URIs with your Reitti's actual URLs</p>
-<pre class="codehilite"><code class="language-yaml">- client_id: 'reitti'
-  client_name: 'Reitti'
-  client_secret: '&lt;CLIENT-SECRET-DIGEST&gt;'
-  public: false
-  scopes:
-    - 'openid'
-    - 'profile'
-  authorization_policy: one_factor
-  consent_mode: pre-configured
-  token_endpoint_auth_method: &quot;client_secret_basic&quot;
-  pre_configured_consent_duration: 1w
-  redirect_uris:
-    - https://&lt;your reitti domain&gt;/login/oauth2/code/oauth
-    - https://&lt;your reitti domain&gt;/login
-  grant_types:
-    - refresh_token
-    - authorization_code
-  response_types:
-    - code
-  response_modes:
-    - form_post
-    - query
-    - fragment
-</code></pre>
-
-<p><strong>Configure Reitti</strong></p>
-<p><strong>For Docker Deployment:</strong>
-Add these environment variables in your <code>docker-compose.yml</code> file:
-- <code>OIDC_CLIENT_ID</code>: Use the client ID ("reitti" as shown above)
-- <code>OIDC_CLIENT_SECRET</code>: Use the original secret value (before hashing)
-- <code>OIDC_ISSUER_URI</code>: Your Authelia base URL (e.g., <code>https://auth.yourdomain.com</code>)</p>
-<p><strong>For Source Deployment:</strong>
-Configure these properties in <code>oidc.properties</code>:</p>
-<pre class="codehilite"><code class="language-properties">spring.security.oauth2.client.registration.oauth.client-id=reitti
-spring.security.oauth2.client.registration.oauth.client-secret=&lt;original-secret&gt;
-spring.security.oauth2.client.provider.oauth.issuer-uri=https://auth.yourdomain.com
-</code></pre>
-
-<p>After making these changes, restart both Authelia and Reitti for the configuration to take effect.</p>
-<p>If you need more information, here is a good tutorial for setting up Immich, the basics are the same for Reitti. <a href="https://blog.lrvt.de/configuring-authelia-oidc-for-immich/">blog.lrvt.de/configuring-authelia-oidc-for-immich/</a></p>
-<h4 id="google">Google</h4>
-<p>Google can be used as an OpenID Connect provider for Reitti. Because Google does <strong>not</strong> provide the <code>preferred_username</code> claim, you must request the <code>email</code> scope in addition to <code>openid</code> and <code>profile</code>. The email address will be used as the username fallback.</p>
-<p><strong>Steps to obtain the required information</strong></p>
-<ol>
-<li><strong>Create a Google Cloud project</strong> (or use an existing one) in the <a href="https://console.cloud.google.com/">Google Cloud Console</a>.</li>
-<li><strong>Enable the “Google Identity Services” API</strong> for the project if it is not already enabled.</li>
-<li><strong>Configure OAuth consent screen</strong>  </li>
-<li>Choose <strong>External</strong> or <strong>Internal</strong> depending on your organization.  </li>
-<li>Fill in the required fields (application name, support email, etc.).  </li>
-<li><strong>Create OAuth 2.0 credentials</strong>  </li>
-<li>Go to <strong>APIs &amp; Services → Credentials</strong>.  </li>
-<li>Click <strong>Create Credentials → OAuth client ID</strong>.  </li>
-<li>Select <strong>Web application</strong>.  </li>
-<li>Set <strong>Authorized redirect URIs</strong> to the Reitti callback URL, e.g.:<br />
-<code>https://&lt;your-reitti-domain&gt;/login/oauth2/code/oauth</code>.  </li>
-<li>After creation, note the <strong>Client ID</strong> and <strong>Client secret</strong>.</li>
-</ol>
-<p><strong>Configuration</strong></p>
-<p><em>For Docker</em> – add the following environment variables to your <code>docker-compose.yml</code>:</p>
+<p><strong>Remove RabbitMQ environment variables from the Reitti service:</strong></p>
 <pre class="codehilite"><code class="language-yaml">environment:
-  - OIDC_ENABLED=true
-  - OIDC_CLIENT_ID=&lt;your-google-client-id&gt;
-  - OIDC_CLIENT_SECRET=&lt;your-google-client-secret&gt;
-  - OIDC_ISSUER_URI=https://accounts.google.com
-  - OIDC_SCOPE=openid,profile,email
+  # Remove these lines if they exist:
+  - RABBITMQ_HOST=rabbitmq
+  - RABBITMQ_PORT=5672
+  - RABBITMQ_USERNAME=guest
+  - RABBITMQ_PASSWORD=guest
 </code></pre>
 
-<p><em>For source deployment</em> – add the corresponding entries to <code>oidc.properties</code> (replace placeholders with your values):</p>
-<pre class="codehilite"><code class="language-properties">spring.security.oauth2.client.registration.oauth.client-id=&lt;your-google-client-id&gt;
-spring.security.oauth2.client.registration.oauth.client-secret=&lt;your-google-client-secret&gt;
-spring.security.oauth2.client.provider.oauth.issuer-uri=https://accounts.google.com
-spring.security.oauth2.client.registration.oauth.scope=openid,profile,email
+<h3 id="2-photon-geocoder-configuration-changes">2. Photon Geocoder Configuration Changes</h3>
+<p>Photon is now configured like other reverse geocoding services through the web interface. If you had <code>PHOTON_BASEURL</code> configured:</p>
+<ol>
+<li><strong>First start with v4:</strong> Reitti will automatically create a Photon geocoder entry in <strong>Settings &gt; Geocoding</strong> using your existing <code>PHOTON_BASEURL</code> environment variable.</li>
+<li><strong>After verification:</strong> Once you confirm the Photon service is working in the web interface, you can remove the <code>PHOTON_BASEURL</code> environment variable from your <code>docker-compose.yml</code>.</li>
+</ol>
+<p>For more details on configuring reverse geocoding services, see the <a href="../configurations/reverse-geocoding/">Reverse Geocoding documentation</a>.</p>
+<h3 id="3-new-default-geocoder-paikka">3. New Default Geocoder: Paikka</h3>
+<p>Reitti v4 includes a new default reverse geocoding service called <strong>Paikka</strong>. This service is specifically designed for Reitti and provides:</p>
+<ul>
+<li>Optimized results for personal location tracking</li>
+<li>Administrative boundary information when available</li>
+<li>Lightweight and efficient processing</li>
+</ul>
+<p>On first start, Reitti will automatically add Paikka to your geocoding services using the public instance at <code>https://geo.dedicatedcode.com</code>.</p>
+<p><strong>Privacy consideration:</strong> If you prefer not to use the public Paikka instance for privacy reasons:</p>
+<ol>
+<li>Go to <strong>Settings &gt; Geocoding</strong></li>
+<li>Find the "Paikka" service in the list</li>
+<li>Click the Disable button or remove it entirely</li>
+</ol>
+<p>You can also visit <a href="https://github.com/dedicatedcode/paikka">Paikka</a> for information about it and how to self-host it.</p>
+<h3 id="4-tile-service-configuration-changes">4. Tile Service Configuration Changes</h3>
+<p>The custom tile configuration has been simplified:</p>
+<p><strong>Remove these environment variables:</strong></p>
+<pre class="codehilite"><code class="language-yaml">environment:
+  # Remove these lines:
+  - CUSTOM_TILES_SERVICE=https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
+  - CUSTOM_TILES_ATTRIBUTION='&amp;copy; &lt;a href=&quot;https://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors'
 </code></pre>
 
-<p><strong>Important note:</strong> Because Google does not supply <code>preferred_username</code>, Reitti will fall back to the <code>email</code> claim for the username. Ensure that the <code>email</code> scope is requested; otherwise login will fail.</p>
-<p>With these settings in place, restart Reitti (and the Docker container if applicable) and you should be able to log in using Google accounts.</p>
+<p>At the moment there is no equivalent for these in Reitti v4.0. If you need this, please open an issue.</p>
+<h3 id="5-tile-cache-replacement">5. Tile Cache Replacement</h3>
+<p>The previous nginx-based tile cache has been replaced with a dedicated tile cache service:</p>
+<p><strong>Update your <code>docker-compose.yml</code>:</strong></p>
+<p>Replace the existing tile cache configuration with if you had one:</p>
+<pre class="codehilite"><code class="language-yaml">services:
+  tile-cache:
+    image: dedicatedcode/reitti-tile-cache:next
+    restart: unless-stopped
+    healthcheck:
+      test: [&quot;CMD&quot;, &quot;wget&quot;, &quot;--quiet&quot;, &quot;--tries=1&quot;, &quot;--spider&quot;, &quot;http://127.0.0.1/osm/0/0/0.png&quot;]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - tile-cache-data:/var/cache/nginx
+</code></pre>
+
+<h3 id="6-verification-steps">6. Verification Steps</h3>
+<p>After making these changes:</p>
+<ol>
+<li><strong>Compare configurations:</strong> Review the latest <code>docker-compose.yml</code> example in the Reitti repository and compare it with your current configuration.</li>
+<li><strong>Backup your data:</strong> Always back up your database before major upgrades.</li>
+<li><strong>Start the services:</strong> Start the updated containers with <code>docker-compose up -d</code>.</li>
+<li><strong>Check logs:</strong> Monitor the logs for any errors during startup: <code>docker-compose logs -f reitti</code>.</li>
+<li><strong>Verify functionality:</strong><ul>
+<li>Log in to the web interface</li>
+<li>Check <strong>Settings &gt; Geocoding</strong> for configured services</li>
+<li>Verify map tiles are loading correctly</li>
+<li>Test location tracking and geocoding</li>
+</ul>
+</li>
+</ol>
+<h3 id="7-troubleshooting">7. Troubleshooting</h3>
+<p>If you encounter issues after upgrading:</p>
+<ol>
+<li><strong>Check the logs:</strong> <code>docker-compose logs reitti</code> for error messages.</li>
+<li><strong>Database migrations:</strong> Reitti v4 includes database schema changes that are applied automatically on startup.</li>
+<li><strong>Service dependencies:</strong> Ensure all required services (database, redis) are running and accessible.</li>
+<li><strong>Configuration validation:</strong> Double-check that all removed environment variables have been deleted from your configuration.</li>
+</ol>
+<p>For additional help, check the <a href="https://github.com/dedicatedcode/reitti/issues">GitHub issues</a> or community discussions.</p>
   </div>
   
   <script>
@@ -1338,7 +1196,7 @@ spring.security.oauth2.client.registration.oauth.scope=openid,profile,email
     
     <a data-slot="button"
         class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 shadow-none"
-        href="/projects/reitti/4.0/configurations/reverse-geocoding/">
+        href="/projects/reitti/4.0/infrastructure/reverse-proxy/">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="tabler-icon tabler-icon-arrow-left ">
@@ -1346,14 +1204,14 @@ spring.security.oauth2.client.registration.oauth.scope=openid,profile,email
             <path d="M5 12l6 6"></path>
             <path d="M5 12l6 -6"></path>
         </svg>
-        <span class="max-[500px]:hidden">Reverse Geocoding</span>
+        <span class="max-[500px]:hidden">Reverse Proxy Configuration</span>
     </a>
     
     
     <a data-slot="button"
         class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 ml-auto shadow-none"
-        href="/projects/reitti/4.0/configurations/visit-detection/">
-        <span class="max-[500px]:hidden">Visit Detection</span>
+        href="/projects/reitti/4.0/api/">
+        <span class="max-[500px]:hidden">API Documentation</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="tabler-icon tabler-icon-arrow-right ">
@@ -1380,33 +1238,27 @@ spring.security.oauth2.client.registration.oauth.scope=openid,profile,email
                 <div class="text-muted-foreground text-sm font-medium">Menu</div>
                 <div class="flex flex-col gap-3">
                     
-                    <a class="text-2xl font-medium" href="../..">
+                    <a class="text-2xl font-medium" href="..">
                         
                         Overview
                         
                     </a>
                     
-                    <a class="text-2xl font-medium" href="../../installation/">
+                    <a class="text-2xl font-medium" href="../installation/">
                         
                         Installation
                         
                     </a>
                     
-                    <a class="text-2xl font-medium" href="../../logging/">
-                        
-                        Logging
-                        
-                    </a>
-                    
-                    <a class="text-2xl font-medium" href="../../getting-started/">
+                    <a class="text-2xl font-medium" href="../getting-started/">
                         
                         Getting Started
                         
                     </a>
                     
-                    <a class="text-2xl font-medium" href="../../backup/">
+                    <a class="text-2xl font-medium" href="./">
                         
-                        Backup
+                        Upgrading Reitti
                         
                     </a>
                     
@@ -1422,114 +1274,15 @@ spring.security.oauth2.client.registration.oauth.scope=openid,profile,email
                     
                     <div class="flex flex-col gap-3">
                         
-                        <a class="text-2xl font-medium" href="../../about/features/">
+                        <a class="text-2xl font-medium" href="../about/features/">
                             
                             Features Overview
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../../about/how-it-works/">
+                        <a class="text-2xl font-medium" href="../about/how-it-works/">
                             
                             How Reitti Works
-                            
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-                
-                <div class="flex flex-col gap-4">
-                    <div class="text-muted-foreground text-sm font-medium">Configurations</div>
-                    
-                    <div class="flex flex-col gap-3">
-                        
-                        <a class="text-2xl font-medium" href="../reverse-geocoding/">
-                            
-                            Reverse Geocoding
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="./">
-                            
-                            OpenID Connect
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="../visit-detection/">
-                            
-                            Visit Detection
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="../transportation-modes/">
-                            
-                            Transportation Mode Detection
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="../photo-integration/">
-                            
-                            Photo Integration
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="../docker-secrets/">
-                            
-                            Using Docker Swarm / Compose Secrets
-                            
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-                
-                <div class="flex flex-col gap-4">
-                    <div class="text-muted-foreground text-sm font-medium">Infrastrcture</div>
-                    
-                    <div class="flex flex-col gap-3">
-                        
-                        <a class="text-2xl font-medium" href="../../infrastrcture/reverse-proxy/">
-                            
-                            Reverse Proxy Configuration
-                            
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-                
-                <div class="flex flex-col gap-4">
-                    <div class="text-muted-foreground text-sm font-medium">Integrations</div>
-                    
-                    <div class="flex flex-col gap-3">
-                        
-                        <a class="text-2xl font-medium" href="../../integrations/mobile-apps/">
-                            
-                            Mobile App Integration
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="../../integrations/reitti/">
-                            
-                            Shared Instances: Federated Connections
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="../../integrations/home-assistant/">
-                            
-                            Home-Assistant
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="../../integrations/owntracks-recorder/">
-                            
-                            OwnTracks Recorder Integration
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="../../integrations/custom-file-upload/">
-                            
-                            Custom File Upload
                             
                         </a>
                         
@@ -1542,25 +1295,31 @@ spring.security.oauth2.client.registration.oauth.scope=openid,profile,email
                     
                     <div class="flex flex-col gap-3">
                         
-                        <a class="text-2xl font-medium" href="../../usage/main-view/">
+                        <a class="text-2xl font-medium" href="../usage/main-view/">
                             
                             Main View
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../../usage/import-data/">
+                        <a class="text-2xl font-medium" href="../usage/import-data/">
                             
                             Import Data
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../../usage/place-edit/">
+                        <a class="text-2xl font-medium" href="../usage/logging/">
+                            
+                            Logging
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../usage/place-edit/">
                             
                             Edit Places
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../../usage/share-access/">
+                        <a class="text-2xl font-medium" href="../usage/share-access/">
                             
                             Share Access
                             
@@ -1575,27 +1334,132 @@ spring.security.oauth2.client.registration.oauth.scope=openid,profile,email
                     
                     <div class="flex flex-col gap-3">
                         
-                        <a class="text-2xl font-medium" href="../../memories/">
-                            
-                            Overview
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="../../memories/new/">
-                            
-                            Create a new memory
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="../../memories/editing/">
+                        <a class="text-2xl font-medium" href="../memories/editing/">
                             
                             Edit a memory
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../../memories/sharing/">
+                        <a class="text-2xl font-medium" href="../memories/">
+                            
+                            Overview
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../memories/new/">
+                            
+                            Create a new memory
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../memories/sharing/">
                             
                             Sharing a memory
+                            
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="flex flex-col gap-4">
+                    <div class="text-muted-foreground text-sm font-medium">Configuration</div>
+                    
+                    <div class="flex flex-col gap-3">
+                        
+                        <a class="text-2xl font-medium" href="../configurations/photo-integration/">
+                            
+                            Photo Integration
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../configurations/reverse-geocoding/">
+                            
+                            Reverse Geocoding
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../configurations/transportation-modes/">
+                            
+                            Transportation Mode Detection
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../configurations/visit-detection/">
+                            
+                            Visit Detection
+                            
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="flex flex-col gap-4">
+                    <div class="text-muted-foreground text-sm font-medium">Integrations</div>
+                    
+                    <div class="flex flex-col gap-3">
+                        
+                        <a class="text-2xl font-medium" href="../integrations/mobile-apps/">
+                            
+                            Mobile App Integration
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../integrations/custom-file-upload/">
+                            
+                            Custom File Upload
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../integrations/home-assistant/">
+                            
+                            Home-Assistant
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../integrations/owntracks-recorder/">
+                            
+                            OwnTracks Recorder Integration
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../integrations/reitti/">
+                            
+                            Shared Instances: Federated Connections
+                            
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="flex flex-col gap-4">
+                    <div class="text-muted-foreground text-sm font-medium">Infrastructure</div>
+                    
+                    <div class="flex flex-col gap-3">
+                        
+                        <a class="text-2xl font-medium" href="../backup/">
+                            
+                            Backup
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../infrastructure/docker-secrets/">
+                            
+                            Using Docker Swarm / Compose Secrets
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../infrastructure/oidc/">
+                            
+                            OpenID Connect
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../infrastructure/reverse-proxy/">
+                            
+                            Reverse Proxy Configuration
                             
                         </a>
                         
@@ -1608,39 +1472,39 @@ spring.security.oauth2.client.registration.oauth.scope=openid,profile,email
                     
                     <div class="flex flex-col gap-3">
                         
-                        <a class="text-2xl font-medium" href="../../api/">
+                        <a class="text-2xl font-medium" href="../api/">
                             
                             API Documentation
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../../api/visits/">
+                        <a class="text-2xl font-medium" href="../api/gpx-export/">
                             
-                            Visits API
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="../../api/ingest/">
-                            
-                            Ingest Data
+                            GPX Export API
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../../api/latest-location/">
-                            
-                            Latest Location API
-                            
-                        </a>
-                        
-                        <a class="text-2xl font-medium" href="../../api/gpx-import/">
+                        <a class="text-2xl font-medium" href="../api/gpx-import/">
                             
                             GPX Import API
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../../api/gpx-export/">
+                        <a class="text-2xl font-medium" href="../api/ingest/">
                             
-                            GPX Export API
+                            Ingest Data
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../api/latest-location/">
+                            
+                            Latest Location API
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../api/visits/">
+                            
+                            Visits API
                             
                         </a>
                         
@@ -1666,99 +1530,59 @@ spring.security.oauth2.client.registration.oauth.scope=openid,profile,email
         
         
         
-        <a href="#configuration"
+        <a href="#1-rabbitmq-removal"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#configuration');">
-            Configuration
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#1-rabbitmq-removal');">
+            1. RabbitMQ Removal
         </a>
-        
-        
-        <a href="#docker"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#docker');">
-            Docker
-        </a>
-        
-        <a href="#running-from-source"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#running-from-source');">
-            Running from source
-        </a>
-        
         
 
         
-        <a href="#additional-configuration"
+        <a href="#2-photon-geocoder-configuration-changes"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#additional-configuration');">
-            Additional Configuration
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#2-photon-geocoder-configuration-changes');">
+            2. Photon Geocoder Configuration Changes
         </a>
-        
-        
-        <a href="#user-registration-control"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#user-registration-control');">
-            User Registration Control
-        </a>
-        
-        <a href="#local-authentication-control"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#local-authentication-control');">
-            Local Authentication Control
-        </a>
-        
-        <a href="#user-matching-and-account-linking"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#user-matching-and-account-linking');">
-            User Matching and Account Linking
-        </a>
-        
-        <a href="#user-data-synchronization"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#user-data-synchronization');">
-            User Data Synchronization
-        </a>
-        
-        <a href="#required-oidc-claims"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#required-oidc-claims');">
-            Required OIDC Claims
-        </a>
-        
-        <a href="#security-notes"
-            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#security-notes');">
-            Security Notes
-        </a>
-        
         
 
         
-        <a href="#provider-examples"
+        <a href="#3-new-default-geocoder-paikka"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#provider-examples');">
-            Provider Examples
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#3-new-default-geocoder-paikka');">
+            3. New Default Geocoder: Paikka
         </a>
         
+
         
-        <a href="#pocketid"
+        <a href="#4-tile-service-configuration-changes"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#pocketid');">
-            PocketId
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#4-tile-service-configuration-changes');">
+            4. Tile Service Configuration Changes
         </a>
         
-        <a href="#authelia"
+
+        
+        <a href="#5-tile-cache-replacement"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#authelia');">
-            Authelia
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#5-tile-cache-replacement');">
+            5. Tile Cache Replacement
         </a>
         
-        <a href="#google"
+
+        
+        <a href="#6-verification-steps"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#google');">
-            Google
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#6-verification-steps');">
+            6. Verification Steps
         </a>
         
+
+        
+        <a href="#7-troubleshooting"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#7-troubleshooting');">
+            7. Troubleshooting
+        </a>
         
 
         
@@ -1787,7 +1611,7 @@ spring.security.oauth2.client.registration.oauth.scope=openid,profile,email
                 <a href="https://github.com/asiffer/mkdocs-shadcn">shadcn theme</a> provided by
                 <a href="https://github.com/asiffer">@asiffer</a>
                 &mdash;
-                <a href="https://github.com/dedicatedcode/reitti-documentation/edit/main/docs//configurations/oidc.md">edit this page on github</a>
+                <a href="https://github.com/dedicatedcode/reitti-documentation/edit/main/docs//upgrade.md">edit this page on github</a>
             </div>
         </div>
     </div>
@@ -1795,18 +1619,18 @@ spring.security.oauth2.client.registration.oauth.scope=openid,profile,email
     </div>
      
 
-<script src="../../assets/js/scripts.js"></script>
+<script src="../assets/js/scripts.js"></script>
 
      
-<script src="../../assets/javascripts/badge.js" async></script>
+<script src="../assets/javascripts/badge.js" async></script>
      
 
-<script src="../../search/main.js"></script>
+<script src="../search/main.js"></script>
 
 
     
 
-    <script src="../../js/copy-button.js"></script>
+    <script src="../js/copy-button.js"></script>
     <script>updatePygmentsStylesheet();</script>
     
     <script>fetchStargazers("https://github.com/dedicatedcode/reitti");</script>

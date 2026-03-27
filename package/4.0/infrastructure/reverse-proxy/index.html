@@ -39,11 +39,11 @@
     
 
 
-<title>OwnTracks Recorder Integration</title>
+<title>Reverse Proxy Configuration</title>
 
 
 
-<meta name="description" content="Alternative data collection method with backup storage capabilities">
+<meta name="description" content="Guide for running Reitti behind reverse proxies like nginx, Apache, or Caddy">
 
 
 
@@ -53,20 +53,20 @@
 
 
 
-<link rel="canonical" href="https://www.dedicatedcode.com/projects/reitti/4.0/integrations/owntracks-recorder/">
+<link rel="canonical" href="https://www.dedicatedcode.com/projects/reitti/4.0/infrastructure/reverse-proxy/">
 
 
 <!-- Open Graph (Facebook, LinkedIn) -->
 
-<meta property="og:title" content="OwnTracks Recorder Integration">
+<meta property="og:title" content="Reverse Proxy Configuration">
 
 
 
-<meta property="og:description" content="Alternative data collection method with backup storage capabilities">
+<meta property="og:description" content="Guide for running Reitti behind reverse proxies like nginx, Apache, or Caddy">
 
 
 
-<meta property="og:url" content="https://www.dedicatedcode.com/projects/reitti/4.0/integrations/owntracks-recorder/">
+<meta property="og:url" content="https://www.dedicatedcode.com/projects/reitti/4.0/infrastructure/reverse-proxy/">
 
 
 
@@ -75,11 +75,11 @@
 
 <!-- Twitter Card -->
 
-<meta name="twitter:title" content="OwnTracks Recorder Integration">
+<meta name="twitter:title" content="Reverse Proxy Configuration">
 
 
 
-<meta name="twitter:description" content="Alternative data collection method with backup storage capabilities">
+<meta name="twitter:description" content="Guide for running Reitti behind reverse proxies like nginx, Apache, or Caddy">
 
 
 
@@ -90,16 +90,16 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "OwnTracks Recorder Integration",
-    "url": "https://www.dedicatedcode.com/projects/reitti/4.0/integrations/owntracks-recorder/",
-    "description": "Alternative data collection method with backup storage capabilities",
+    "headline": "Reverse Proxy Configuration",
+    "url": "https://www.dedicatedcode.com/projects/reitti/4.0/infrastructure/reverse-proxy/",
+    "description": "Guide for running Reitti behind reverse proxies like nginx, Apache, or Caddy",
     
     
     
     
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://www.dedicatedcode.com/projects/reitti/4.0/integrations/owntracks-recorder/"
+      "@id": "https://www.dedicatedcode.com/projects/reitti/4.0/infrastructure/reverse-proxy/"
     },
     
     
@@ -780,7 +780,7 @@
 </li>
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="true" data-sidebar="menu-button"
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
         data-size="default" href="/projects/reitti/4.0/integrations/owntracks-recorder/"
         class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
@@ -878,7 +878,7 @@
 </li>
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+    <a data-slot="sidebar-menu-button" data-active="true" data-sidebar="menu-button"
         data-size="default" href="/projects/reitti/4.0/infrastructure/reverse-proxy/"
         class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
@@ -1029,7 +1029,7 @@
     <div class="flex flex-col gap-2">
       <div id="page-header" class="flex items-start justify-between">
         <h1 class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
-          OwnTracks Recorder Integration
+          Reverse Proxy Configuration
         </h1>
 
         <div class="flex items-center gap-2 pt-1.5">
@@ -1037,7 +1037,7 @@
           
           <a data-slot="button" id="previous-button"
             class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 extend-touch-target size-8 shadow-none md:size-7"
-            href="/projects/reitti/4.0/integrations/home-assistant/">
+            href="/projects/reitti/4.0/infrastructure/oidc/">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="tabler-icon tabler-icon-arrow-left">
@@ -1051,7 +1051,7 @@
           
           <a data-slot="button" id="next-button"
             class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 extend-touch-target size-8 shadow-none md:size-7"
-            href="/projects/reitti/4.0/integrations/reitti/">
+            href="/projects/reitti/4.0/upgrade/">
             <span class="sr-only">Next</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -1083,39 +1083,260 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <p>The OwnTracks Recorder integration provides an alternative method for collecting location data from OwnTracks mobile apps through an intermediate storage system.</p>
-<h3 id="benefits-of-using-owntracks-recorder">Benefits of Using OwnTracks Recorder</h3>
+    <p>Running Reitti behind a reverse proxy is a common deployment pattern that provides additional security, SSL termination, and load balancing capabilities. This guide covers the essential configuration requirements and provides examples for popular reverse proxy servers.</p>
+<h2 id="general-requirements">General Requirements</h2>
+<p>When deploying Reitti behind a reverse proxy, ensure the following:</p>
+<h3 id="required-headers">Required Headers</h3>
+<p>The reverse proxy must set these headers for proper operation:</p>
 <ul>
-<li><strong>No App Reconfiguration</strong>: If you already have OwnTracks configured to send data to a Recorder instance, there's no need to reconfigure your mobile app</li>
-<li><strong>Backup Storage</strong>: The Recorder acts as a reliable backup storage system for your location data</li>
-<li><strong>Automatic Data Sync</strong>: Reitti automatically pulls new location data from the Recorder every 5 minutes</li>
-<li><strong>Resilient Data Collection</strong>: Even if Reitti is temporarily offline, the Recorder continues collecting data which can be synchronized later</li>
+<li><strong><code>X-Forwarded-For</code></strong>: Contains the original client IP address</li>
+<li><strong><code>X-Forwarded-Proto</code></strong>: Indicates the original protocol (http/https)</li>
+<li><strong><code>Host</code></strong>: Preserves the original host header</li>
 </ul>
-<h3 id="how-it-works">How It Works</h3>
-<ol>
-<li>Your OwnTracks mobile app sends location data to the OwnTracks Recorder</li>
-<li>The Recorder stores this data in its own database</li>
-<li>Reitti periodically connects to the Recorder and pulls new location data</li>
-<li>The imported data is then processed through Reitti's normal pipeline</li>
-</ol>
-<h3 id="configuration">Configuration</h3>
-<p>To set up OwnTracks Recorder integration:</p>
-<ol>
-<li>Navigate to <strong>Settings &gt; Integrations</strong></li>
-<li>Locate the <strong>OwnTracks Recorder Integration</strong> section</li>
-<li>Configure the connection details for your existing OwnTracks Recorder instance:</li>
-<li><strong>Recorder URL</strong>: The base URL of your OwnTracks Recorder</li>
-<li><strong>Authentication</strong>: Username and password if required</li>
-<li><strong>Sync Interval</strong>: How often to check for new data (default: 5 minutes)</li>
-<li>Enable the integration to start automatic data synchronization</li>
-</ol>
-<h3 id="prerequisites">Prerequisites</h3>
+<p>These headers are used by Reitti to:</p>
 <ul>
-<li>An existing OwnTracks Recorder instance</li>
-<li>OwnTracks mobile app configured to send data to the Recorder</li>
-<li>Network connectivity between Reitti and the Recorder</li>
+<li>Generate correct redirect URLs</li>
+<li>Construct proper base URLs for API responses</li>
+<li>Determine the correct protocol for OAuth and other external callbacks</li>
 </ul>
-<p>Once configured, your mobile device will automatically send location updates to Reitti via the Recorder, where they'll be processed into visits, trips, and significant places in real-time.</p>
+<h3 id="upload-size-limits">Upload Size Limits</h3>
+<p>If you plan to use large file uploads (GPX files, Google Timeline exports, etc.), configure appropriate limits:</p>
+<ul>
+<li><strong>Cloudflare Free Tier</strong>: 100MB maximum upload size</li>
+<li><strong>nginx</strong>: Configure <code>client_max_body_size</code></li>
+<li><strong>Apache</strong>: Configure <code>LimitRequestBody</code></li>
+<li><strong>Caddy</strong>: Configure <code>max_request_body</code></li>
+</ul>
+<p>See <a href="../../usage/import-data/">Import Data</a> for information about supported file formats.</p>
+<h2 id="nginx-configuration">nginx Configuration</h2>
+<p>Here's a complete nginx configuration example for Reitti:</p>
+<pre class="codehilite"><code class="language-nginx">server {
+    server_name reitti.example.com;
+
+    # Increase upload size limit (adjust as needed)
+    client_max_body_size 200m;
+
+    # Timeout settings for large uploads
+    client_body_timeout 10m;
+    send_timeout 10m;
+
+    location / {
+        proxy_pass http://127.0.0.1:8080;  # Change port to match Reitti
+
+        # Essential headers
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+
+        # Timeout settings
+        proxy_connect_timeout 60s;
+        proxy_send_timeout 10m;
+        proxy_read_timeout 10m;
+
+        # Buffer settings
+        proxy_request_buffering on;
+        proxy_buffering on;
+        proxy_buffer_size 4k;
+        proxy_buffers 8 4k;
+
+    }
+
+    # SSL configuration (recommended)
+    listen 443 ssl http2;
+    ssl_certificate /path/to/fullchain.pem;
+    ssl_certificate_key /path/to/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384;
+    ssl_prefer_server_ciphers off;
+}
+</code></pre>
+
+<h3 id="key-configuration-directives">Key Configuration Directives</h3>
+<ul>
+<li><strong><code>client_max_body_size 200m</code></strong>: Allows uploads up to 200MB</li>
+<li><strong><code>client_body_timeout 10m</code></strong>: Extended timeout for large uploads</li>
+<li><strong><code>proxy_set_header</code> directives</strong>: Essential for proper Reitti operation</li>
+<li><strong><code>proxy_read_timeout 10m</code></strong>: Long timeout for processing large imports</li>
+</ul>
+<h2 id="apache-configuration">Apache Configuration</h2>
+<p>For Apache HTTP Server, use the following configuration:</p>
+<pre class="codehilite"><code class="language-apache"># HTTP to HTTPS redirect
+&lt;VirtualHost *:80&gt;
+    ServerName reitti.example.com
+    Redirect permanent / https://reitti.example.com/
+&lt;/VirtualHost&gt;
+
+# HTTPS configuration
+&lt;VirtualHost *:443&gt;
+    ServerName reitti.example.com
+
+    # SSL configuration
+    SSLEngine on
+    SSLCertificateFile /etc/letsencrypt/live/example.com/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem
+
+    # Increase upload size limit (200MB)
+    LimitRequestBody 209715200
+
+    # Proxy configuration
+    ProxyPreserveHost On
+    ProxyPass / http://127.0.0.1:8080/
+    ProxyPassReverse / http://127.0.0.1:8080/
+
+    # Required headers for Reitti
+    RequestHeader set X-Forwarded-Proto expr=%{REQUEST_SCHEME}
+    RequestHeader set X-Forwarded-Port &quot;443&quot;
+    RequestHeader set X-Forwarded-For expr=%{REMOTE_ADDR}
+
+    # Timeout settings for large uploads
+    ProxyTimeout 600
+
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<h3 id="configuration-notes">Configuration Notes:</h3>
+<ol>
+<li><strong>Port Configuration</strong>: Change <code>127.0.0.1:8080</code> to match your Reitti instance port</li>
+<li><strong>SSL Certificates</strong>: Update paths to your actual certificate files</li>
+<li><strong>Upload Limit</strong>: <code>LimitRequestBody 209715200</code> sets a 200MB limit (adjust as needed)</li>
+<li><strong>Headers</strong>: The <code>X-Forwarded-Proto</code> header is essential for Reitti to detect HTTPS</li>
+</ol>
+<h2 id="caddy-configuration">Caddy Configuration</h2>
+<p>Caddy provides automatic SSL with a simple configuration:</p>
+<pre class="codehilite"><code class="language-caddy">reitti.example.com {
+    # Increase upload size limit
+    max_request_body 200MB
+
+    # Reverse proxy
+    reverse_proxy 127.0.0.1:8080 {
+        # Headers
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+
+        # Timeouts
+        transport http {
+            read_timeout 10m
+            write_timeout 10m
+            dial_timeout 60s
+        }
+    }
+}
+</code></pre>
+
+<h2 id="traefik-configuration">Traefik Configuration</h2>
+<p>For Traefik v2+, use this configuration:</p>
+<pre class="codehilite"><code class="language-yaml">http:
+  routers:
+    reitti:
+      rule: &quot;Host(`reitti.example.com`)&quot;
+      service: reitti-service
+      middlewares:
+        - compress
+        - headers
+      tls: {}
+
+  services:
+    reitti-service:
+      loadBalancer:
+        servers:
+          - url: &quot;http://127.0.0.1:8080&quot;
+
+  middlewares:
+    compress:
+      compress: {}
+    headers:
+      headers:
+        customRequestHeaders:
+          X-Forwarded-Proto: &quot;https&quot;
+        customFrameOptionsValue: &quot;SAMEORIGIN&quot;
+</code></pre>
+
+<h3 id="docker-compose-labels-configuration">Docker Compose Labels Configuration</h3>
+<p>When running Reitti in Docker with Traefik as the reverse proxy, you can configure routing directly via Docker Compose labels. This method is often simpler if Traefik is set up to automatically discover services.</p>
+<p>Add the following labels to your Reitti service in <code>docker-compose.yml</code>:</p>
+<pre class="codehilite"><code class="language-yaml">services:
+  reitti:
+    image: your-reitti-image
+    # ... other configuration
+    labels:
+      - &quot;traefik.enable=true&quot;
+      - &quot;traefik.http.routers.reitti.entrypoints=websecure&quot;
+      - &quot;traefik.http.routers.reitti.rule=Host(`reitti.example.com`)&quot;
+      - &quot;traefik.http.routers.reitti.tls.certresolver=myresolver&quot;
+    networks:
+      - traefik_default  # Ensure this network exists and Traefik is attached to it
+</code></pre>
+
+<p><strong>Key points:</strong>
+- Replace <code>reitti.example.com</code> with your actual domain.
+- Ensure the <code>myresolver</code> certificate resolver is configured in your Traefik static configuration.
+- The service must be connected to the same Docker network as Traefik (here <code>traefik_default</code>).
+- Traefik must be running with the Docker provider enabled and watching for labels.</p>
+<p>This label-based approach automatically configures HTTPS, routing, and TLS certificates without needing separate Traefik dynamic configuration files.</p>
+<h2 id="cloudflare-considerations">Cloudflare Considerations</h2>
+<p>When using Cloudflare as a CDN in front of your reverse proxy:</p>
+<h3 id="free-tier-limitations">Free Tier Limitations</h3>
+<ul>
+<li><strong>100MB maximum upload size</strong> (cannot be increased in the free tier)</li>
+<li>Consider direct uploads bypassing Cloudflare for large files</li>
+<li>Or upgrade to a paid plan for larger upload limits</li>
+</ul>
+<h3 id="recommended-settings">Recommended Settings</h3>
+<ol>
+<li><strong>SSL/TLS</strong>: Full (strict) mode</li>
+<li><strong>Web Application Firewall</strong>: Adjust rules as needed</li>
+<li><strong>Caching</strong>: Configure appropriate cache rules for static assets</li>
+<li><strong>Page Rules</strong>: Consider rules for API endpoints to bypass cache</li>
+</ol>
+<h3 id="header-management">Header Management</h3>
+<p>Ensure Cloudflare passes through the necessary headers:</p>
+<ul>
+<li><code>X-Forwarded-For</code></li>
+<li><code>X-Forwarded-Proto</code></li>
+<li><code>CF-Connecting-IP</code> (alternative for client IP)</li>
+</ul>
+<h2 id="testing-your-configuration">Testing Your Configuration</h2>
+<p>After configuring your reverse proxy, verify the setup:</p>
+<h3 id="1-test-upload-limits">1. Test Upload Limits</h3>
+<p>Try uploading a test file to verify size limits work correctly.</p>
+<h3 id="2-verify-ssl">2. Verify SSL</h3>
+<p>Ensure all traffic redirects to HTTPS and certificates are valid. If you go to <strong>Settings &gt; Integrations</strong>, you should see your host in the Mobile App Integrations section.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<ol>
+<li>
+<p><strong>Incorrect Redirects</strong></p>
+<ul>
+<li>Symptom: Reitti redirects to internal IP or wrong port</li>
+<li>Solution: Ensure <code>X-Forwarded-Proto</code> and <code>X-Forwarded-Host</code> headers are set</li>
+</ul>
+</li>
+<li>
+<p><strong>Upload Failures</strong></p>
+<ul>
+<li>Symptom: Large file uploads fail with 413 error</li>
+<li>Solution: Increase <code>client_max_body_size</code> (nginx) or <code>LimitRequestBody</code> (Apache)</li>
+</ul>
+</li>
+<li>
+<p><strong>Timeout Errors</strong></p>
+<ul>
+<li>Symptom: Long-running imports fail</li>
+<li>Solution: Increase timeout settings (<code>proxy_read_timeout</code>, <code>ProxyTimeout</code>, etc.)</li>
+</ul>
+</li>
+</ol>
+<h3 id="debugging-steps">Debugging Steps</h3>
+<ol>
+<li>Check reverse proxy logs for errors</li>
+<li>Examine Reitti application logs for header issues</li>
+<li>Use curl with verbose output to test headers:
+   <code>bash
+   curl -v -H "X-Forwarded-Proto: https" https://reitti.example.com/actuator/health</code></li>
+<li>Test with smaller files first, then increase size gradually</li>
+</ol>
   </div>
   
   <script>
@@ -1128,7 +1349,7 @@
     
     <a data-slot="button"
         class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 shadow-none"
-        href="/projects/reitti/4.0/integrations/home-assistant/">
+        href="/projects/reitti/4.0/infrastructure/oidc/">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="tabler-icon tabler-icon-arrow-left ">
@@ -1136,14 +1357,14 @@
             <path d="M5 12l6 6"></path>
             <path d="M5 12l6 -6"></path>
         </svg>
-        <span class="max-[500px]:hidden">Home-Assistant</span>
+        <span class="max-[500px]:hidden">OpenID Connect</span>
     </a>
     
     
     <a data-slot="button"
         class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 ml-auto shadow-none"
-        href="/projects/reitti/4.0/integrations/reitti/">
-        <span class="max-[500px]:hidden">Shared Instances: Federated Connections</span>
+        href="/projects/reitti/4.0/upgrade/">
+        <span class="max-[500px]:hidden">Upgrading Reitti</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="tabler-icon tabler-icon-arrow-right ">
@@ -1332,31 +1553,31 @@
                     
                     <div class="flex flex-col gap-3">
                         
-                        <a class="text-2xl font-medium" href="../mobile-apps/">
+                        <a class="text-2xl font-medium" href="../../integrations/mobile-apps/">
                             
                             Mobile App Integration
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../custom-file-upload/">
+                        <a class="text-2xl font-medium" href="../../integrations/custom-file-upload/">
                             
                             Custom File Upload
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../home-assistant/">
+                        <a class="text-2xl font-medium" href="../../integrations/home-assistant/">
                             
                             Home-Assistant
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="./">
+                        <a class="text-2xl font-medium" href="../../integrations/owntracks-recorder/">
                             
                             OwnTracks Recorder Integration
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../reitti/">
+                        <a class="text-2xl font-medium" href="../../integrations/reitti/">
                             
                             Shared Instances: Federated Connections
                             
@@ -1377,19 +1598,19 @@
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../../infrastructure/docker-secrets/">
+                        <a class="text-2xl font-medium" href="../docker-secrets/">
                             
                             Using Docker Swarm / Compose Secrets
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../../infrastructure/oidc/">
+                        <a class="text-2xl font-medium" href="../oidc/">
                             
                             OpenID Connect
                             
                         </a>
                         
-                        <a class="text-2xl font-medium" href="../../infrastructure/reverse-proxy/">
+                        <a class="text-2xl font-medium" href="./">
                             
                             Reverse Proxy Configuration
                             
@@ -1462,35 +1683,153 @@
         
         
         
-        <a href="#benefits-of-using-owntracks-recorder"
+        <a href="#general-requirements"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#benefits-of-using-owntracks-recorder');">
-            Benefits of Using OwnTracks Recorder
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#general-requirements');">
+            General Requirements
+        </a>
+        
+        
+        <a href="#required-headers"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#required-headers');">
+            Required Headers
+        </a>
+        
+        <a href="#upload-size-limits"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#upload-size-limits');">
+            Upload Size Limits
+        </a>
+        
+        
+
+        
+        <a href="#nginx-configuration"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#nginx-configuration');">
+            nginx Configuration
+        </a>
+        
+        
+        <a href="#key-configuration-directives"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#key-configuration-directives');">
+            Key Configuration Directives
+        </a>
+        
+        
+
+        
+        <a href="#apache-configuration"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#apache-configuration');">
+            Apache Configuration
+        </a>
+        
+        
+        <a href="#configuration-notes"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#configuration-notes');">
+            Configuration Notes:
+        </a>
+        
+        
+
+        
+        <a href="#caddy-configuration"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#caddy-configuration');">
+            Caddy Configuration
         </a>
         
 
         
-        <a href="#how-it-works"
+        <a href="#traefik-configuration"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#how-it-works');">
-            How It Works
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#traefik-configuration');">
+            Traefik Configuration
         </a>
+        
+        
+        <a href="#docker-compose-labels-configuration"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#docker-compose-labels-configuration');">
+            Docker Compose Labels Configuration
+        </a>
+        
         
 
         
-        <a href="#configuration"
+        <a href="#cloudflare-considerations"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#configuration');">
-            Configuration
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#cloudflare-considerations');">
+            Cloudflare Considerations
         </a>
+        
+        
+        <a href="#free-tier-limitations"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#free-tier-limitations');">
+            Free Tier Limitations
+        </a>
+        
+        <a href="#recommended-settings"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#recommended-settings');">
+            Recommended Settings
+        </a>
+        
+        <a href="#header-management"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#header-management');">
+            Header Management
+        </a>
+        
         
 
         
-        <a href="#prerequisites"
+        <a href="#testing-your-configuration"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#prerequisites');">
-            Prerequisites
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#testing-your-configuration');">
+            Testing Your Configuration
         </a>
+        
+        
+        <a href="#1-test-upload-limits"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#1-test-upload-limits');">
+            1. Test Upload Limits
+        </a>
+        
+        <a href="#2-verify-ssl"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#2-verify-ssl');">
+            2. Verify SSL
+        </a>
+        
+        
+
+        
+        <a href="#troubleshooting"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#troubleshooting');">
+            Troubleshooting
+        </a>
+        
+        
+        <a href="#common-issues"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#common-issues');">
+            Common Issues
+        </a>
+        
+        <a href="#debugging-steps"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#debugging-steps');">
+            Debugging Steps
+        </a>
+        
         
 
         
@@ -1519,7 +1858,7 @@
                 <a href="https://github.com/asiffer/mkdocs-shadcn">shadcn theme</a> provided by
                 <a href="https://github.com/asiffer">@asiffer</a>
                 &mdash;
-                <a href="https://github.com/dedicatedcode/reitti-documentation/edit/main/docs//integrations/owntracks-recorder.md">edit this page on github</a>
+                <a href="https://github.com/dedicatedcode/reitti-documentation/edit/main/docs//infrastructure/reverse-proxy.md">edit this page on github</a>
             </div>
         </div>
     </div>

@@ -1,7 +1,6 @@
 ---
 title: "Custom File Upload"
 description: "Integrate custom scripts to upload GPX files to Reitti for automated location data import"
-weight: 15
 tags: ["integrations"]
 ---
 
