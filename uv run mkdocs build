@@ -1,0 +1,27 @@
+
+## Contribution Guidelines
+
+If you are submitting documentation for the **current stable release**, submit it to the corresponding branch. For example, documentation for version 3.x would be submitted to the `v3` branch. Documentation intended for the next release should be submitted to the `main` branch.
+
+Every documentation page includes an "edit this page on github" link at the bottom for easy contributions.
+
+## Deployment
+
+Documentation is automatically built and deployed via GitHub Actions when changes are pushed to `main` or version branches (e.g., `v3`). The deployment process:
+
+1. Builds the documentation using MkDocs
+2. Deploys versioned documentation using mike
+3. Syncs the built documentation to the server
+4. Invalidates the CDN cache
+
+See [`.github/workflows/build-deploy.yml`](.github/workflows/build-deploy.yml) for the complete build and deployment configuration.
+
+## About
+
+Reitti is a comprehensive personal location tracking and analysis application. The name "Reitti" comes from Finnish, meaning "route" or "path".
+
+[View the documentation](https://www.dedicatedcode.com/projects/reitti/latest/)
+
+## License
+
+See the [LICENSE](LICENSE) file for details.

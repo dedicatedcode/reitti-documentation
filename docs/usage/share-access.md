@@ -1,9 +1,9 @@
 ---
 title: "Share Access"
 description: "Share your location data with others"
-weight: 2
+weight: 30
 since: "v1.5.0"
-tags: ["configuration"]
+tags: ["usage"]
 ---
 
 ## Share Access with Magic Links
@@ -32,12 +32,14 @@ To create a magic link:
 You can choose between two access levels when creating a magic link:
 
 #### Full Access
+
 - Complete access to all your location data and history
 - Recipients can view the full map interface
 - Date picker functionality is available
 - Access to historical location data
 
 #### Live Data Only
+
 - Access only to current and recent location data
 - Recipients can only view live/real-time location information
 - No access to historical data
@@ -66,6 +68,7 @@ Setting expiration dates is recommended for temporary sharing to limit access du
 
 #### Viewing Active Links
 You can view all your active magic links in the sharing dashboard, which shows:
+
 - Link creation date
 - Access level (Full Access or Live Data Only)
 - Expiration date (if set)
@@ -73,6 +76,7 @@ You can view all your active magic links in the sharing dashboard, which shows:
 
 #### Deleting Links
 To revoke access:
+
 1. Navigate to your magic links list
 2. Find the link you want to delete
 3. Click the delete/revoke button
@@ -130,6 +134,7 @@ The Share Access page also displays accounts that are currently sharing their da
 
 #### Viewing Shared Accounts
 You can see a list of all users who have shared their location data with you, including:
+
 - Username or display name
 - Sharing permissions level
 - Current color assignment for map display
@@ -139,22 +144,20 @@ You can see a list of all users who have shared their location data with you, in
 To optimize the multi-user map experience:
 
 **Change User Colors:**
+
 - Each shared user is assigned a color for their location markers and tracks
 - Click on a user's color indicator to change it
 - Choose colors that provide good contrast and visual distinction
 - This helps differentiate between multiple users when viewing the map
 
 **Dismiss Shared Accounts:**
+
 - If you no longer want to see a particular user's data
 - Click the "dismiss" button next to their entry
 - This will hide their data from your map view
 - Note: This only affects your view, it doesn't revoke their sharing permissions
 
 ![Shares Access](../img/shared-access.png)
-
-### Access Levels for User Sharing
-
-When sharing with other users, you can typically choose between:
 
 ### Best Practices for User Sharing
 

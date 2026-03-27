@@ -50,7 +50,9 @@ Reitti does not download or store any images from Immich. Instead, it proxies im
 - Images are served directly from your Immich instance to your browser
 - No additional storage is used in Reitti
 - No CORS configuration is needed in Immich
-- Your photos remain securely in your Immich instance
+- Your photos remain secure in your Immich instance 
+
+The exception is when you use the "Memories" feature, and you add photos from Immich to your Memories.
 
 ### Prerequisites
 
