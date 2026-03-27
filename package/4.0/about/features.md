@@ -26,7 +26,7 @@ Reitti provides a comprehensive set of features for personal location tracking a
 - **Multi-user Support**: Multiple user accounts with individual data isolation
 - **API Token Management**: Secure API access with token-based authentication
 - **User Profile Management**: Customizable display names and secure password management
-- **Magic Link Sharing**: Share location data without requiring account creation ([Learn more](../configurations/share-access.md))
+- **Magic Link Sharing**: Share location data without requiring account creation ([Learn more](../usage/share-access.md))
 - **OpenID Connect Integration**: Enterprise authentication with automatic user provisioning ([Setup guide](../configurations/oidc.md))
 
 #### Geocoding & Address Resolution

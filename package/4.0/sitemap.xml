@@ -2,122 +2,134 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/backup/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/getting-started/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/installation/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/logging/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/about/features/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/about/how-it-works/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/api/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/api/gpx-export/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/api/gpx-import/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/api/ingest/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/api/latest-location/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/api/visits/</loc>
-         <lastmod>2026-03-26</lastmod>
-    </url>
-    <url>
-         <loc>https://www.dedicatedcode.com/projects/reitti/4.0/configurations/custom-tiles/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/configurations/docker-secrets/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/configurations/oidc/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/configurations/photo-integration/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
-         <loc>https://www.dedicatedcode.com/projects/reitti/4.0/configurations/share-access/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <loc>https://www.dedicatedcode.com/projects/reitti/4.0/configurations/reverse-geocoding/</loc>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/configurations/transportation-modes/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/configurations/visit-detection/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
+    </url>
+    <url>
+         <loc>https://www.dedicatedcode.com/projects/reitti/4.0/infrastrcture/reverse-proxy/</loc>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/integrations/custom-file-upload/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/integrations/home-assistant/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/integrations/mobile-apps/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/integrations/owntracks-recorder/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/integrations/reitti/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/memories/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/memories/editing/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/memories/new/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/memories/sharing/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
+    </url>
+    <url>
+         <loc>https://www.dedicatedcode.com/projects/reitti/4.0/usage/import-data/</loc>
+         <lastmod>2026-03-27</lastmod>
+    </url>
+    <url>
+         <loc>https://www.dedicatedcode.com/projects/reitti/4.0/usage/main-view/</loc>
+         <lastmod>2026-03-27</lastmod>
     </url>
     <url>
          <loc>https://www.dedicatedcode.com/projects/reitti/4.0/usage/place-edit/</loc>
-         <lastmod>2026-03-26</lastmod>
+         <lastmod>2026-03-27</lastmod>
+    </url>
+    <url>
+         <loc>https://www.dedicatedcode.com/projects/reitti/4.0/usage/share-access/</loc>
+         <lastmod>2026-03-27</lastmod>
     </url>
 </urlset>

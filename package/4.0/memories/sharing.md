@@ -30,7 +30,7 @@ To share a Memory, follow these steps:
 6. **Generate the Link**: Click the confirmation button to create the share link. A success dialog will appear with the following details:
    - **Title**: "Share Link Created Successfully!"
    - **Memory Name**: The name of the shared Memory (e.g., "Visit to Spain 2025").
-   - **Access Level**: Indicates whether it's "View Only" or "Edit Access".
+   - **Access Level**: Indicates whether it's "View Only" or "Edit Access."
    - **Share Link**: The generated link (e.g., a unique URL).
    - **How to Share**:
      - Copy the link above and send it to anyone you want to share with.
@@ -42,7 +42,7 @@ To share a Memory, follow these steps:
 
 ### Managing Shared Links
 To view, revoke, or manage the links you've created for a Memory:
-- Navigate to the [Sharing configuration page](../configurations/share-access.md).
+- Navigate to the [Sharing configuration page](../usage/share-access.md).
 - Here, you can see a list of active shares and revoke access.
 
 Sharing Memories is a great way to make your travels more interactive and memorable. If you have questions or encounter issues, feel free to reach out on [GitHub](https://github.com/dedicatedcode/reitti).
