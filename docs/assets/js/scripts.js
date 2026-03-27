@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // 2. Create the select element
             const select = document.createElement("select");
             select.id = "version-selector";
-            select.style.padding = "4px 8px";
+            select.style.padding = "4px 24px 4px 8px";
             select.style.border = "1px solid #444";
             select.style.borderRadius = "6px";
             select.style.fontSize = "12px";
