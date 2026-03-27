@@ -14,6 +14,48 @@ docker-compose up -d
 
 This will start all services and make Reitti available at http://localhost:8080. When you first open Reitti, it will prompt you to set the admin password.
 
+### Docker Tag Strategy and Best Practices
+
+Reitti is published to Docker Hub with multiple tags for each release:
+
+- **`latest`**: Always points to the most recent release
+- **`4`**: Points to the latest v4.x.x release (e.g., 4.1.2)
+- **`4.1`**: Points to the latest v4.1.x release (e.g., 4.1.2)
+- **`4.1.0`**: Specific patch version (immutable)
+
+**Why use major version tags instead of `latest`?**
+
+1. **Controlled Updates**: Using `reitti:4` ensures you only receive updates within the v4.x series, preventing unexpected major version upgrades that could break your setup.
+2. **Stability**: Major version tags give you time to review release notes and prepare for upgrades, while still receiving important bug fixes and security patches.
+3. **Reproducibility**: If you need to roll back, you can easily revert to a known working version within the same major version.
+4. **Scheduled Maintenance**: You can plan upgrades on your own schedule rather than being forced to upgrade immediately when a new major version is released.
+
+**Recommended approach:**
+```yaml
+services:
+  reitti:
+    # Good: Updates within v4.x series only
+    image: dedicatedcode/reitti:4
+    
+    # Better for production: Specific minor version
+    # image: dedicatedcode/reitti:4.1
+    
+    # Best for critical stability: Exact patch version
+    # image: dedicatedcode/reitti:4.1.0
+```
+
+**When to use `latest`:**
+- Development environments where you want to test the newest features
+- When you actively monitor the project and can handle breaking changes
+- In automated testing pipelines
+
+**When to avoid `latest`:**
+- Production deployments
+- When you value stability over new features
+- When you have limited time for maintenance and troubleshooting
+
+By using major version tags, you maintain control over your upgrade schedule while still benefiting from security patches and bug fixes within your chosen version series.
+
 ### Using Pre-built JAR
 
 If you prefer to run Reitti without Docker but don't want to build from source, you can download the pre-built JAR file from the releases page.
