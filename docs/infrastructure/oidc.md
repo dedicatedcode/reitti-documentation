@@ -93,6 +93,7 @@ When a user logs in via OIDC for the first time, Reitti follows this priority to
 6. **OIDC subject** (`sub` claim) as final fallback
 
 This means Reitti will try multiple OIDC claims before falling back to the subject identifier. For example:
+
 - If your OIDC provider supplies `preferred_username: "jane.doe"`, that becomes the username
 - If not, but `email: "jane@example.com"` is available, that becomes the username
 - If only `given_name: "Jane"` and `family_name: "Doe"` are available, the username becomes `"jane.doe"`
