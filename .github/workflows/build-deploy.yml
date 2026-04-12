@@ -42,7 +42,8 @@ jobs:
 
           if [ "$BRANCH_NAME" == "main" ]; then
             echo "Deploying MAIN as Version ${{ env.CURRENT_MAJOR_VERSION }} (Latest)"
-            uv run mike deploy --deploy-prefix package -b deploy ${{ env.CURRENT_MAJOR_VERSION }} --push
+            uv run mike deploy --deploy-prefix package -b deploy ${{ env.CURRENT_MAJOR_VERSION }} latest --update-aliases --push
+            uv run mike set-default latest --push --deploy-prefix package -b deploy
           else
             # Extracts version from branch name (e.g., v3.0 -> 3.0)
             VERSION=$(echo $BRANCH_NAME | sed 's/^v//')
