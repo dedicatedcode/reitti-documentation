@@ -30,7 +30,7 @@ If you plan to use large file uploads (GPX files, Google Timeline exports, etc.)
 - **Cloudflare Free Tier**: 100MB maximum upload size
 - **nginx**: Configure `client_max_body_size`
 - **Apache**: Configure `LimitRequestBody`
-- **Caddy**: Configure `max_request_body`
+- **Caddy**: Configure `request_body.max_size`
 
 See [Import Data](../usage/import-data.md) for information about supported file formats.
 
@@ -142,7 +142,9 @@ Caddy provides automatic SSL with a simple configuration:
 ```caddy
 reitti.example.com {
     # Increase upload size limit
-    max_request_body 200MB
+    request_body {
+		max_size 200MB
+	}
     
     # Reverse proxy
     reverse_proxy 127.0.0.1:8080 {
