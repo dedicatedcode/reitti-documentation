@@ -78,7 +78,7 @@ Nominatim is a widely used open-source geocoding service based on OpenStreetMap 
 
 **Self-hosting Considerations:**
 
-- Requires significant storage (100GB+ for planet data)
+- Requires significant storage (800GB - 1000GB for planet data)
 - Needs regular updates to stay current
 - Can be resource-intensive for large datasets
 
