@@ -1075,7 +1075,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-03-27T12:09:12+01:00');
+        const date = new Date('2026-05-04T21:32:56+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1105,7 +1105,7 @@
 <li><strong>Cloudflare Free Tier</strong>: 100MB maximum upload size</li>
 <li><strong>nginx</strong>: Configure <code>client_max_body_size</code></li>
 <li><strong>Apache</strong>: Configure <code>LimitRequestBody</code></li>
-<li><strong>Caddy</strong>: Configure <code>max_request_body</code></li>
+<li><strong>Caddy</strong>: Configure <code>request_body.max_size</code></li>
 </ul>
 <p>See <a href="../../usage/import-data/">Import Data</a> for information about supported file formats.</p>
 <h2 id="nginx-configuration">nginx Configuration</h2>
@@ -1207,7 +1207,9 @@
 <p>Caddy provides automatic SSL with a simple configuration:</p>
 <pre class="codehilite"><code class="language-caddy">reitti.example.com {
     # Increase upload size limit
-    max_request_body 200MB
+    request_body {
+        max_size 200MB
+    }
 
     # Reverse proxy
     reverse_proxy 127.0.0.1:8080 {
