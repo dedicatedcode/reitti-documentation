@@ -1075,7 +1075,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-03-27T12:09:12+01:00');
+        const date = new Date('2026-05-28T10:43:40+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1088,6 +1088,7 @@
 <p><strong>OwnTracks</strong> - A privacy-focused location tracking app available for iOS and Android that publishes your location to your own server. <a href="https://play.google.com/store/apps/details?id=org.owntracks.android">Download from Play Store</a> | <a href="https://itunes.apple.com/us/app/mqttitude/id692424691?mt=8">Download from App Store</a></p>
 <p><strong>GPSLogger</strong> - A lightweight GPS logging application that can send location data to various endpoints including HTTP servers. <a href="https://f-droid.org/de/packages/com.mendhak.gpslogger/">Download from F-Droid</a> | <a href="https://github.com/mendhak/gpslogger">Download from GitHub</a> | Install via <a href="https://obtainium.imranr.dev/">Obtainium</a> and add the link to the <a href="https://github.com/mendhak/gpslogger/releases">GitHub release</a> page.</p>
 <p><strong>Overland</strong> - A GPS logger specifically designed for iOS devices that sends location data in GeoJSON format. <a href="https://overland.p3k.app/">Visit Homepage</a> | <a href="https://apps.apple.com/app/overland-gps-tracker/id1292426766">Download from App Store</a></p>
+<p><strong>Colota</strong> - A modern GPS logger for Android that stores locations locally and can upload to various services including Reitti. <a href="https://f-droid.org/de/packages/com.Colota">Download from F-Droid</a> | <a href="https://play.google.com/store/apps/details?id=com.Colota&amp;hl=en-US">Download from Play Store</a> | <a href="https://github.com/dietrichmax/colota/releases">Download from GitHub</a></p>
 <h3 id="recommendation">Recommendation</h3>
 <p>We recommend using <strong>GPSLogger</strong> for the following reasons:</p>
 <ul>
@@ -1148,6 +1149,21 @@
 <li>Go to the <strong>Tracker</strong> tab and turn tracking <strong>On</strong></li>
 <li>Adjust the sending interval slider (1 second to 30 minutes)</li>
 <li>The app will start sending location data automatically</li>
+</ol>
+<h3 id="colota-setup">Colota Setup</h3>
+<ol>
+<li>Install Colota on your mobile device</li>
+<li>Open Colata and go to <strong>Settings</strong></li>
+<li>Navigate to <strong>Connection</strong></li>
+<li>Set <strong>Server Endpoint</strong> to the <code>/api/v1/ingest/gpslogger</code> URL visible in the <strong>GPSLogger Setup</strong> integration settings on Reitti</li>
+<li>Expand <strong>Authentication &amp; Headers</strong> and set:</li>
+<li><strong>Authentication</strong>: None</li>
+<li><strong>Custom Headers</strong>:<ul>
+<li><strong>X-API-TOKEN</strong> to the token from the Reitti integration settings</li>
+<li><strong>Content-Type</strong> to <strong>application/json</strong></li>
+</ul>
+</li>
+<li>Additional settings, like uploading only in a specific WiFi network and others, can be found under <strong>Tracking &amp; Sync</strong></li>
 </ol>
 <h3 id="data-quality-dashboard">Data Quality Dashboard</h3>
 <p><span class="badge badge-normal version-badge"><span class=sep> [</span><span class=title>since</span><span class=sep> : </span><span class=value>v1.6.0</span><span class=sep>] </span></span></p>
@@ -1571,6 +1587,14 @@
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#overland-setup');">
             Overland Setup
+        </a>
+        
+
+        
+        <a href="#colota-setup"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#colota-setup');">
+            Colota Setup
         </a>
         
 
