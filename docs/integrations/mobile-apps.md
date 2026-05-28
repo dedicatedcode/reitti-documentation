@@ -14,6 +14,8 @@ Reitti supports real-time location tracking through popular mobile applications,
 
 **Overland** - A GPS logger specifically designed for iOS devices that sends location data in GeoJSON format. [Visit Homepage](https://overland.p3k.app/) | [Download from App Store](https://apps.apple.com/app/overland-gps-tracker/id1292426766)
 
+**Colota** - A modern GPS logger for Android that stores locations locally and can upload to various services including Reitti. [Download from F-Droid](https://f-droid.org/de/packages/com.Colota) | [Download from Play Store](https://play.google.com/store/apps/details?id=com.Colota&hl=en-US) | [Download from GitHub](https://github.com/dietrichmax/colota/releases)
+
 ### Recommendation
 
 We recommend using **GPSLogger** for the following reasons:
@@ -80,6 +82,19 @@ For each supported app, a **Remote Configuration** button is provided on this pa
 9. Go to the **Tracker** tab and turn tracking **On**
 10. Adjust the sending interval slider (1 second to 30 minutes)
 11. The app will start sending location data automatically
+
+### Colota Setup
+
+1. Install Colota on your mobile device
+2. Open Colata and go to **Settings**
+3. Navigate to **Connection**
+4. Set **Server Endpoint** to the `/api/v1/ingest/gpslogger` URL visible in the **GPSLogger Setup** integration settings on Reitti
+5. Expand **Authentication & Headers** and set:
+   - **Authentication**: None
+   - **Custom Headers**:
+      - **X-API-TOKEN** to the token from the Reitti integration settings
+      - **Content-Type** to **application/json**
+6. Additional settings, like uploading only in a specific WiFi network and others, can be found under **Tracking & Sync**
 
 ### Data Quality Dashboard
 
