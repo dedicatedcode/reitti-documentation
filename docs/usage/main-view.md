@@ -15,6 +15,7 @@ Located in the top navigation bar, the main menu provides access to all major se
 
 - **Timeline** – The main view showing your location data on a map (this page)
 - **Memories** – Create and manage location-based memories (see [Memories](../memories/index.md))
+- **Workbench** – Merge different timelines from multiple devices. Edit single or multiple location points. (see [Workbench](../workbench/index.md)
 - **Statistics** – View detailed analytics of your movement patterns
 - **Settings** – Configure application preferences and integrations
 - **Enter Live-Mode** - Switch to real-time location tracking
@@ -26,10 +27,12 @@ Located in the top navigation bar, the main menu provides access to all major se
 The timeline component is located on the left side of the interface and displays your location history chronologically:
 
 ### User Switcher
-If you have access to other users' data (via [Share Access](share-access.md) or [Reitti Integration](../integrations/reitti.md)), a user switcher appears at the top of the timeline. This allows you to:
+If you have access to other users' data (via [Share Access](share-access.md) or [Reitti Integration](../integrations/reitti.md)) or more than one device configure (via [Devices](../configurations/devices.md)), a user switcher appears at the top of the timeline. This allows you to:
 - Switch between different users' timelines
 - View location data for multiple users
 - Compare movement patterns across users
+- Clicking on a user or device avatar focuses the map on that user's or device location
+- Enable follow user mode for a single user. This instructs reitti to focus only on this user during a page refresh.
 
 ### Chronological List
 Below the user switcher, the timeline shows a chronological list of all visits and trips during the selected time range:
@@ -80,7 +83,7 @@ The View Control component sits above the date picker and provides tools for con
 
 ### Replay Controls
 - **Start Replay** – Begins a replay of all your movements during the selected time range, animating your path on the map
-- **Speed Control** – Adjusts the playback speed of the replay (slow, normal, fast)
+- **Speed Control** – Adjusts the playback speed of the replay (slow, normal, fast, automatic, adaptive)
 - **Time Control Slider** – When opened, displays a slider above the View Control that allows you to scrub through the replay time to show specific ranges of interest
 
 ### Today Button
@@ -98,7 +101,6 @@ The map view control allows you to customize the map display with various settin
 
 ### Settings Menu
 - **Open Settings** – Access the main view settings menu for additional customization options
-
 
 ## Settings
 

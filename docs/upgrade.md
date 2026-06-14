@@ -16,6 +16,13 @@ Reitti follows (https://semver.org/), which means:
 For most upgrades, simply pulling the latest Docker image or updating the source code is enough. 
 Only upgrades between major versions require special attention.
 
+## Upgrading from v4 to v5
+
+### 1. Device management
+
+
+
+
 ## Upgrading from v3 to v4
 
 This guide covers the changes when upgrading from Reitti v3 to v4. These are breaking changes that require manual updates to your configuration.
