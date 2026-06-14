@@ -15,11 +15,11 @@ and visualize data independently before merging it into your personal timeline.
 
 Devices give you the flexibility to:
 
-- **Track Multiple Sources** – Ingest location data from different apps, devices, or integrations simultaneously
-- **Organize Your Data** – Keep sources separate until you are ready to combine them
-- **Color-Code Paths** – Each device can have its own color, making it easy to distinguish sources on the map
-- **Control Visibility** – Show or hide a device on the map with a single toggle
-- **Disable Inactive Sources** – Prevent further data ingestion and hide the device from other parts of Reitti
+- **Track Multiple Sources**: Ingest location data from different apps, devices, or integrations simultaneously
+- **Organize Your Data**: Keep sources separate until you are ready to combine them
+- **Color-Code Paths**: Each device can have its own color, making it easy to distinguish sources on the map
+- **Control Visibility**: Show or hide a device on the map with a single toggle
+- **Disable Inactive Sources**: Prevent further data ingestion and hide the device from other parts of Reitti
 
 ### How It Works
 
@@ -42,11 +42,11 @@ To configure devices:
 
 Each device has the following configurable properties:
 
-- **Name** – A friendly name to identify the device (e.g., "Phone," "GPS Tracker," "Home Assistant," "Car Tracker")
-- **Color** – The color used to draw the device's path on the map. Helps visually distinguish multiple sources
-- **Show on Map** – A checkbox that enables or disables the device's visibility on the main map. Unchecked devices still
+- **Name**: A friendly name to identify the device (e.g., "Phone," "GPS Tracker," "Home Assistant," "Car Tracker")
+- **Color**: The color used to draw the device's path on the map. Helps visually distinguish multiple sources
+- **Show on Map**: A checkbox that enables or disables the device's visibility on the main map. Unchecked devices still
   ingest data, but their paths are hidden
-- **Disabled** – Completely disables the device. When disabled:
+- **Disabled**: Completely disables the device. When disabled:
     - Data cannot be ingested into the device
     - The device is hidden from other places in Reitti (e.g., **Settings > Integrations**)
     - The device's path is not shown on the map
@@ -65,14 +65,14 @@ Each device has the following configurable properties:
 
 ### Best Practices
 
-- **Use the default device for your primary tracking source** – This ensures automatic timeline updates without manual
+- **Use the default device for your primary tracking source**: This ensures automatic timeline updates without manual
   intervention
-- **Create additional devices for secondary sources** – For example, a work phone, a shared family device, or a
+- **Create additional devices for secondary sources**: For example, a work phone, a shared family device, or a
   temporary tracker
-- **Stitch data regularly** – If you use multiple devices, periodically merge their data in
+- **Stitch data regularly**: If you use multiple devices, periodically merge their data in
   the [Workbench](../workbench/index.md) to keep your timeline complete
-- **Name devices clearly** – Use descriptive names to easily identify each source
-- **Disable unused devices** – Prevents accidental data ingestion and keeps your settings clean
+- **Name devices clearly**: Use descriptive names to easily identify each source
+- **Disable unused devices**: Prevents accidental data ingestion and keeps your settings clean
 
 ### Data Merging
 

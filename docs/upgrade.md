@@ -28,10 +28,10 @@ On the first startup after the upgrade, Reitti will automatically create a **def
 
 **What you need to do:**
 
-1. **Verify your API tokens** – After the migration, log into the web interface and go to **Settings > API Tokens**. You will see your existing tokens now associated with the default device.
-2. **Check connected apps** – If you are using API tokens in external applications (mobile apps, Home Assistant, custom scripts) to **ingest** data, confirm that the token is still linked to a device. If a token was detached or left without a device, it will only allow read
+1. **Verify your API tokens**: After the migration, log into the web interface and go to **Settings > API Tokens**. You will see your existing tokens now associated with the default device.
+2. **Check connected apps**: If you are using API tokens in external applications (mobile apps, Home Assistant, custom scripts) to **ingest** data, confirm that the token is still linked to a device. If a token was detached or left without a device, it will only allow read
    operations.
-3. **(Optional) Reorganize tokens and devices** – You can:
+3. **(Optional) Reorganize tokens and devices**: You can:
    - Detach a token from its device if you want it to become read-only.
    - Attach a token to a different existing device.
    - Create a new device — Reitti will automatically generate a new API token for that device.
@@ -56,8 +56,8 @@ Reitti v5.0.0 introduces **custom map styles** with a unified way to manage both
 
 **What you need to do:**
 
-1. **If you were using the colored Reitti style** – After the upgrade, go to **Settings > Map Styles** and activate the *Colored Reitti* style from the list.
-2. **Update the `reitti-tile-cache` container** – The way Reitti proxies map style URLs has changed in v5. It is **mandatory** to update your `reitti-tile-cache` container to the latest version. If you do not, style URLs cannot be loaded, and the map will remain dark.
+1. **If you were using the colored Reitti style**: After the upgrade, go to **Settings > Map Styles** and activate the *Colored Reitti* style from the list.
+2. **Update the `reitti-tile-cache` container**: The way Reitti proxies map style URLs has changed in v5. It is **mandatory** to update your `reitti-tile-cache` container to the latest version. If you do not, style URLs cannot be loaded, and the map will remain dark.
 
    **Update your `docker-compose.yml`:**
    ```yaml
@@ -73,7 +73,7 @@ Reitti v5.0.0 introduces **custom map styles** with a unified way to manage both
    docker compose up -d tile-cache
    ```
 
-3. **Optional: Import your own map styles** – If you have custom map styles, you can add them via **Settings > Map Styles**. For more details, see the [Map Styles documentation](./configurations/map-styles.md).
+3. **Optional: Import your own map styles**: If you have custom map styles, you can add them via **Settings > Map Styles**. For more details, see the [Map Styles documentation](./configurations/map-styles.md).
 
 **Important:**
 
