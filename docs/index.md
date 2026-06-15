@@ -11,7 +11,7 @@ Reitti is a comprehensive personal location tracking and analysis application th
 ### Screenshots
 
 #### Main View
-![Main View](./img/main.png)
+![Main View](img/main.png)
 
 #### Multiple Users View
 ![Multiple Users View](./img/multiple-users.png)
