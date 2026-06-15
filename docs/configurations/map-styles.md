@@ -114,4 +114,4 @@ When 3D building layers are found, the 3D buildings toggle becomes available in 
 - **Start with built-in styles**: Use the default or colored Reitti style before creating custom ones
 - **Use Maputnik for JSON styling**: The [Maputnik editor](https://maplibre.org/maputnik/) is the recommended tool for visually designing Style JSON
 - **Enable proxy for external tile services**: This reduces load times and respects rate limits
-- **Share styles if you manage multiple users**: Create a consistent map experience across your organization
+- **Share styles if you manage multiple users**: Create a consistent map experience across your instance
