@@ -15,7 +15,7 @@ Located in the top navigation bar, the main menu provides access to all major se
 
 - **Timeline** – The main view showing your location data on a map (this page)
 - **Memories** – Create and manage location-based memories (see [Memories](../memories/index.md))
-- **Workbench** – Merge different timelines from multiple devices. Edit single or multiple location points. (see [Workbench](../workbench/index.md)
+- **Workbench** – Merge different timelines from multiple devices. Edit single or multiple location points. (see [Workbench](workbench.md)
 - **Statistics** – View detailed analytics of your movement patterns
 - **Settings** – Configure application preferences and integrations
 - **Enter Live-Mode** - Switch to real-time location tracking
