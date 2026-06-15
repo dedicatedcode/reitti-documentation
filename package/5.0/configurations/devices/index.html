@@ -553,6 +553,23 @@
     </a>
 </li>
             
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="/projects/reitti/5.0/usage/workbench/"
+        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Workbench
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
         </ul>
     </div>
 </div>
@@ -1049,36 +1066,6 @@
 
 
 
-<div data-slot="sidebar-group" data-sidebar="group" class="relative flex w-full min-w-0 flex-col p-2">
-    <div data-slot="sidebar-group-label" data-sidebar="group-label"
-        class="flex h-8 shrink-0 items-center rounded-md px-2 text-xs ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0 group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 font-medium text-muted-foreground">
-        Workbench</div>
-    <div data-slot="sidebar-group-content" data-sidebar="group-content" class="w-full text-sm">
-        <ul data-slot="sidebar-menu" data-sidebar="menu" class="flex w-full min-w-0 flex-col gap-0.5">
-            
-            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
-    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
-        data-size="default" href="/projects/reitti/5.0/workbench/"
-        class="hpeer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
-
-        
-        Workbench
-        
-
-        
-
-        
-
-        
-    </a>
-</li>
-            
-        </ul>
-    </div>
-</div>
-
-
-
 
 
 <div class="sticky -bottom-1 z-10 h-16 shrink-0 bg-gradient-to-t from-background via-background/80 to-background/50 blur-xs"></div>
@@ -1139,7 +1126,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-06-14T19:54:27+02:00');
+        const date = new Date('2026-06-15T11:16:31+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1164,7 +1151,7 @@ and visualize data independently before merging it into your personal timeline.<
 <ol>
 <li>When data is ingested into the <strong>default device</strong>, your personal timeline is automatically updated and recalculated.</li>
 <li>For any <strong>additional devices</strong> you create, you need to <strong>manually stitch</strong> together slices of GPS data to merge them
-   into your timeline. This is done in the <a href="../../workbench/">Workbench</a>.</li>
+   into your timeline. This is done in the <a href="../../usage/workbench/">Workbench</a>.</li>
 <li>The stitching process lets you select specific time ranges from a device and combine them with the default device's
    data, giving you full control over your final timeline.</li>
 </ol>
@@ -1235,14 +1222,14 @@ and visualize data independently before merging it into your personal timeline.<
 <li><strong>Create additional devices for secondary sources</strong>: For example, a work phone, a shared family device, or a
   temporary tracker</li>
 <li><strong>Stitch data regularly</strong>: If you use multiple devices, periodically merge their data in
-  the <a href="../../workbench/">Workbench</a> to keep your timeline complete</li>
+  the <a href="../../usage/workbench/">Workbench</a> to keep your timeline complete</li>
 <li><strong>Name devices clearly</strong>: Use descriptive names to easily identify each source</li>
 <li><strong>Disable unused devices</strong>: Prevents accidental data ingestion and keeps your settings clean</li>
 </ul>
 <h3 id="data-merging">Data Merging</h3>
 <p>To stitch data from an additional device into your timeline:</p>
 <ol>
-<li>Go to the <a href="../../workbench/">Workbench</a></li>
+<li>Go to the <a href="../../usage/workbench/">Workbench</a></li>
 <li>Select the device you want to merge from</li>
 <li>Choose the time slices of GPS data you want to include</li>
 <li>Confirm the merge — the selected time slice will replace the data from your default device's timeline</li>
@@ -1387,6 +1374,12 @@ device data.</p>
                         <a class="text-2xl font-medium" href="../../usage/share-access/">
                             
                             Share Access
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../../usage/workbench/">
+                            
+                            Workbench
                             
                         </a>
                         
@@ -1582,21 +1575,6 @@ device data.</p>
                         <a class="text-2xl font-medium" href="../../api/visits/">
                             
                             Visits API
-                            
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-                
-                <div class="flex flex-col gap-4">
-                    <div class="text-muted-foreground text-sm font-medium">Workbench</div>
-                    
-                    <div class="flex flex-col gap-3">
-                        
-                        <a class="text-2xl font-medium" href="../../workbench/">
-                            
-                            Workbench
                             
                         </a>
                         

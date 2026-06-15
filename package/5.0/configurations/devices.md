@@ -25,7 +25,7 @@ Devices give you the flexibility to:
 
 1. When data is ingested into the **default device**, your personal timeline is automatically updated and recalculated.
 2. For any **additional devices** you create, you need to **manually stitch** together slices of GPS data to merge them
-   into your timeline. This is done in the [Workbench](../workbench/index.md).
+   into your timeline. This is done in the [Workbench](../usage/workbench.md).
 3. The stitching process lets you select specific time ranges from a device and combine them with the default device's
    data, giving you full control over your final timeline.
 
@@ -70,7 +70,7 @@ Each device has the following configurable properties:
 - **Create additional devices for secondary sources**: For example, a work phone, a shared family device, or a
   temporary tracker
 - **Stitch data regularly**: If you use multiple devices, periodically merge their data in
-  the [Workbench](../workbench/index.md) to keep your timeline complete
+  the [Workbench](../usage/workbench.md) to keep your timeline complete
 - **Name devices clearly**: Use descriptive names to easily identify each source
 - **Disable unused devices**: Prevents accidental data ingestion and keeps your settings clean
 
@@ -78,7 +78,7 @@ Each device has the following configurable properties:
 
 To stitch data from an additional device into your timeline:
 
-1. Go to the [Workbench](../workbench/index.md)
+1. Go to the [Workbench](../usage/workbench.md)
 2. Select the device you want to merge from
 3. Choose the time slices of GPS data you want to include
 4. Confirm the merge — the selected time slice will replace the data from your default device's timeline

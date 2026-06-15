@@ -9,7 +9,7 @@ tags: ["usage", "workbench", "data-merge"]
 
 The **Workbench** is Reitti's tool for merging and editing location data from multiple devices. It allows you to combine GPS data from different sources into your personal timeline, giving you full control over which data points are included.
 
-![Workbench Interface](workbench.png)
+![Workbench Interface](../img/workbench.png)
 
 ## Overview
 
@@ -18,7 +18,7 @@ The Workbench consists of two main areas:
 - **Map Area** – Displays the path of the selected day ± 24 hours
 - **Stitching Area** – A synced area with two timelines for merging data
 
-![Stitching Area](workbench-stitching.png)
+![Stitching Area](../img/workbench-stitching.png)
 
 ### Map Area
 
@@ -48,7 +48,7 @@ Both timelines show the same time range, allowing you to compare and merge data.
 
 The lower timeline area includes the following controls:
 
-![Actions Bar](workbench-actions.png)
+![Actions Bar](../img/workbench-actions.png)
 
 ### Date Picker
 
