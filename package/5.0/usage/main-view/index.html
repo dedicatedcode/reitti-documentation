@@ -1126,7 +1126,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-06-15T11:16:31+02:00');
+        const date = new Date('2026-06-15T11:55:54+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1139,57 +1139,69 @@
 <h2 id="main-menu">Main Menu</h2>
 <p>Located in the top navigation bar, the main menu provides access to all major sections of Reitti:</p>
 <ul>
-<li><strong>Timeline</strong> – The main view showing your location data on a map (this page)</li>
-<li><strong>Memories</strong> – Create and manage location-based memories (see <a href="../../memories/">Memories</a>)</li>
-<li><strong>Workbench</strong> – Merge different timelines from multiple devices. Edit single or multiple location points. (see <a href="../workbench/">Workbench</a></li>
-<li><strong>Statistics</strong> – View detailed analytics of your movement patterns</li>
-<li><strong>Settings</strong> – Configure application preferences and integrations</li>
-<li><strong>Enter Live-Mode</strong> - Switch to real-time location tracking</li>
-<li><strong>Enter Fullscreen</strong> – Expand the interface to fullscreen view</li>
-<li><strong>Logout</strong> – Sign out of your Reitti account</li>
+<li><strong>Timeline</strong>: The main view showing your location data on a map (this page)</li>
+<li><strong>Memories</strong>: Create and manage location-based memories (see <a href="../../memories/">Memories</a>)</li>
+<li><strong>Workbench</strong>: Merge different timelines from multiple devices. Edit single or multiple location points. (see <a href="../workbench/">Workbench</a></li>
+<li><strong>Statistics</strong>: View detailed analytics of your movement patterns</li>
+<li><strong>Settings</strong>: Configure application preferences and integrations</li>
+<li><strong>Enter Live-Mode</strong>: Switch to real-time location tracking</li>
+<li><strong>Enter Fullscreen</strong>: Expand the interface to fullscreen view</li>
+<li><strong>Logout</strong>: Sign out of your Reitti account</li>
 </ul>
 <h2 id="timeline-component">Timeline Component</h2>
 <p>The timeline component is located on the left side of the interface and displays your location history chronologically:</p>
 <h3 id="user-switcher">User Switcher</h3>
-<p>If you have access to other users' data (via <a href="../share-access/">Share Access</a> or <a href="../../integrations/reitti/">Reitti Integration</a>) or more than one device configure (via <a href="../../configurations/devices/">Devices</a>), a user switcher appears at the top of the timeline. This allows you to:
-- Switch between different users' timelines
-- View location data for multiple users
-- Compare movement patterns across users
-- Clicking on a user or device avatar focuses the map on that user's or device location
-- Enable follow user mode for a single user. This instructs reitti to focus only on this user during a page refresh.</p>
+<p>If you have access to other users' data (via <a href="../share-access/">Share Access</a> or <a href="../../integrations/reitti/">Reitti Integration</a>) or more than one device configure (via <a href="../../configurations/devices/">Devices</a>), a user switcher appears at the top of the timeline. This allows
+you to:</p>
+<ul>
+<li>Switch between different users' timelines</li>
+<li>View location data for multiple users</li>
+<li>Compare movement patterns across users</li>
+<li>Clicking on a user or device avatar focuses the map on that user's or device location</li>
+<li>Enable follow user mode for a single user. This instructs reitti to focus only on this user during a page refresh.</li>
+</ul>
 <h3 id="chronological-list">Chronological List</h3>
 <p>Below the user switcher, the timeline shows a chronological list of all visits and trips during the selected time range:
-- <strong>Visits</strong> – Periods where you stayed at a specific location
-- <strong>Trips</strong> – Movement between locations with transportation mode information</p>
+- <strong>Visits</strong>: Periods where you stayed at a specific location
+- <strong>Trips</strong>: Movement between locations with transportation mode information</p>
 <h3 id="interactive-features">Interactive Features</h3>
 <ul>
-<li><strong>Click to Zoom</strong> - Clicking on a timeline entry zooms the map to that element<ul>
+<li><strong>Click to Zoom</strong>: Clicking on a timeline entry zooms the map to that element</li>
 <li>For trips: Highlights the route on the map</li>
 <li>For visits: Centers the map on the location</li>
+<li><strong>Click Again to Restore</strong>: Clicking the same entry again restores the previous map view</li>
+<li><strong>Edit Visits</strong>: When a visit is selected, hover over it to reveal an edit icon (pencil) that takes you to <a href="../place-edit/">Edit Place</a></li>
+<li><strong>Edit Trips</strong>: When a trip is selected, hover over it and click the edit icon to change the transportation mode</li>
 </ul>
-</li>
-<li><strong>Click Again to Restore</strong> – Clicking the same entry again restores the previous map view</li>
-<li><strong>Edit Visits</strong> – When a visit is selected, hover over it to reveal an edit icon (pencil) that takes you to <a href="../place-edit/">Edit Place</a></li>
-<li><strong>Edit Trips</strong> – When a trip is selected, hover over it and click the edit icon to change the transportation mode</li>
+<h3 id="metadata">Metadata</h3>
+<p>You can enrich your visits and trips with metadata such as mood, tags, and notes. When a visit or trip is selected, hover over it to reveal a metadata icon (e.g., a smiley or note icon). Clicking the icon opens a dialog where you can:</p>
+<ul>
+<li><strong>Mood</strong>: Select a mood from the following options:</li>
+<li>😊 Happy</li>
+<li>😌 Relaxed</li>
+<li>🧗 Adventurous</li>
+<li>😴 Tired</li>
+<li>😰 Stressed</li>
+<li><strong>Tags</strong>: Add custom tags (e.g., "work", "commute", "weekend") to categorize the element.</li>
+<li><strong>Notes</strong>: Attach free-form text notes for personal context.</li>
 </ul>
+<p><img alt="Metadata Dialog" src="../../img/metadata-dialog.png" /> </p>
 <h2 id="date-picker">Date Picker</h2>
 <p>The date picker is a horizontal interface that allows flexible navigation through your location history. It displays dates as interactive elements with multiple modes and selection options:</p>
 <h3 id="date-selection">Date Selection</h3>
 <ul>
-<li><strong>Single Date Selection</strong> – Click on a date to select it, loading data and updating the timeline</li>
-<li><strong>Range Selection Mode</strong> – Click a selected date again to enter range selection mode, then click another date to select a range</li>
-<li><strong>Range Modification</strong> – In range selection mode, click any other date to change the range boundaries</li>
-<li><strong>Range Clearing</strong> – In range selection mode, click the start or end date to clear the selection and exit range mode</li>
+<li><strong>Single Date Selection</strong>: Click on a date to select it, loading data and updating the timeline</li>
+<li><strong>Range Selection Mode</strong>: Click a selected date again to enter range selection mode, then click another date to select a range</li>
+<li><strong>Range Modification</strong>: In range selection mode, click any other date to change the range boundaries</li>
+<li><strong>Range Clearing</strong>: In range selection mode, click the start or end date to clear the selection and exit range mode</li>
 </ul>
 <h3 id="navigation-methods">Navigation Methods</h3>
 <ul>
-<li><strong>Horizontal Scrolling</strong> – Drag the date slider left/right or use horizontal scroll to navigate through time</li>
-<li><strong>Mode Switching</strong> – Scroll up/down to switch between different time granularity modes:<ul>
-<li><strong>Day Mode</strong> – View individual days</li>
-<li><strong>Month Mode</strong> – View months</li>
-<li><strong>Year Mode</strong> – View years</li>
-</ul>
-</li>
+<li><strong>Horizontal Scrolling</strong>: Drag the date slider left/right or use horizontal scroll to navigate through time</li>
+<li><strong>Mode Switching</strong>: Scroll up/down to switch between different time granularity modes:</li>
+<li><strong>Day Mode</strong>: View individual days</li>
+<li><strong>Month Mode</strong>: View months</li>
+<li><strong>Year Mode</strong>: View years</li>
 </ul>
 <h3 id="drill-down-navigation">Drill-Down Navigation</h3>
 <p>When drilling into time periods:
@@ -1198,41 +1210,41 @@
 - The date picker positions the selected period under the mouse cursor for intuitive navigation</p>
 <h3 id="advanced-range-selection">Advanced Range Selection</h3>
 <ul>
-<li><strong>Year Ranges</strong> – Select a year, click it again, then select another year to create a range from January 1 of the first year to December 31 of the second year</li>
-<li><strong>Month Ranges</strong> – Similarly, select months to create ranges spanning from the first day of the first month to the last day of the second month</li>
-<li><strong>Arbitrary Ranges</strong> – Combine different modes to create custom date ranges spanning days, months, or years</li>
+<li><strong>Year Ranges</strong>: Select a year, click it again, then select another year to create a range from January 1 of the first year to December 31 of the second year</li>
+<li><strong>Month Ranges</strong>: Similarly, select months to create ranges spanning from the first day of the first month to the last day of the second month</li>
+<li><strong>Arbitrary Ranges</strong>: Combine different modes to create custom date ranges spanning days, months, or years</li>
 </ul>
 <h2 id="view-control">View Control</h2>
 <p>The View Control component sits above the date picker and provides tools for controlling how your location data is visualized:</p>
 <h3 id="replay-controls">Replay Controls</h3>
 <ul>
-<li><strong>Start Replay</strong> – Begins a replay of all your movements during the selected time range, animating your path on the map</li>
-<li><strong>Speed Control</strong> – Adjusts the playback speed of the replay (slow, normal, fast, automatic, adaptive)</li>
-<li><strong>Time Control Slider</strong> – When opened, displays a slider above the View Control that allows you to scrub through the replay time to show specific ranges of interest</li>
+<li><strong>Start Replay</strong>: Begins a replay of all your movements during the selected time range, animating your path on the map</li>
+<li><strong>Speed Control</strong>: Adjusts the playback speed of the replay (slow, normal, fast, automatic, adaptive)</li>
+<li><strong>Time Control Slider</strong>: When opened, displays a slider above the View Control that allows you to scrub through the replay time to show specific ranges of interest</li>
 </ul>
 <h3 id="today-button">Today Button</h3>
 <ul>
-<li><strong>Today</strong> – Jumps to the current date and time, if not currently selected</li>
+<li><strong>Today</strong>: Jumps to the current date and time, if not currently selected</li>
 </ul>
 <h3 id="map-view-settings">Map View Settings</h3>
 <p>The map view control allows you to customize the map display with various settings:
-- <strong>3D View</strong> - Enable/disable the 3D perspective view of the map
-- <strong>Render Buildings</strong> - Toggle building rendering for more detailed urban environments
-- <strong>Globe Projection</strong> – Switch between flat map and globe projection views
-- <strong>Terrain Layer</strong> - Enable/disable terrain elevation visualization
-- <strong>Satellite View</strong> - Toggle between map and satellite imagery
-- <strong>North Alignment</strong> – Align the map with true north (disables automatic rotation)</p>
+- <strong>3D View</strong>: Enable/disable the 3D perspective view of the map
+- <strong>Render Buildings</strong>: Toggle building rendering for more detailed urban environments
+- <strong>Globe Projection</strong>: Switch between flat map and globe projection views
+- <strong>Terrain Layer</strong>: Enable/disable terrain elevation visualization
+- <strong>Satellite View</strong>: Toggle between map and satellite imagery
+- <strong>North Alignment</strong>: Align the map with true north (disables automatic rotation)</p>
 <h3 id="settings-menu">Settings Menu</h3>
 <ul>
-<li><strong>Open Settings</strong> – Access the main view settings menu for additional customization options</li>
+<li><strong>Open Settings</strong>: Access the main view settings menu for additional customization options</li>
 </ul>
 <h2 id="settings">Settings</h2>
 <p>The Settings menu provides comprehensive control over how your location data is displayed and analyzed:</p>
 <h3 id="path-display-modes">Path Display Modes</h3>
 <ul>
-<li><strong>Standard</strong> – Displays optimized paths that balance detail with performance by not overwhelming the browser with all points in the time range</li>
-<li><strong>Raw Path</strong> – Displays all location data points without any optimizations, showing the complete raw data</li>
-<li><strong>Edge Bundling</strong> – Bundles paths based on proximity, making it easy to visualize your most frequently used routes within the selected time range</li>
+<li><strong>Standard</strong>: Displays optimized paths that balance detail with performance by not overwhelming the browser with all points in the time range</li>
+<li><strong>Raw Path</strong>: Displays all location data points without any optimizations, showing the complete raw data</li>
+<li><strong>Edge Bundling</strong>: Bundles paths based on proximity, making it easy to visualize your most frequently used routes within the selected time range</li>
 </ul>
 <h3 id="24-hour-aggregate-mode">24-Hour Aggregate Mode</h3>
 <p>When enabled, this feature aligns all times to the day, allowing you to:
@@ -1241,54 +1253,54 @@
 - When combined with the replay feature, all days in the selected time range are played simultaneously, showing aggregated daily patterns</p>
 <h3 id="interface-controls">Interface Controls</h3>
 <ul>
-<li><strong>Hide Timeline</strong> – Toggle visibility of the timeline component on the left side</li>
-<li><strong>Hide Date Picker</strong> – Toggle visibility of the date picker component</li>
+<li><strong>Hide Timeline</strong>: Toggle visibility of the timeline component on the left side</li>
+<li><strong>Hide Date Picker</strong>: Toggle visibility of the date picker component</li>
 </ul>
 <h2 id="live-mode">Live Mode</h2>
 <p>Live mode provides real-time tracking functionality with a kiosk-style display:</p>
 <h3 id="real-time-tracking">Real-time Tracking</h3>
 <ul>
-<li><strong>Automatic Updates</strong> – The display automatically updates as soon as new location data arrives</li>
-<li><strong>Latest Locations</strong> – Shows the most recent known location of you and all connected users</li>
-<li><strong>User Avatars</strong> – Each user is represented by their avatar on the map</li>
-<li><strong>Hover Information</strong> – Hover over an avatar to display additional information including when the data was last updated</li>
+<li><strong>Automatic Updates</strong>: The display automatically updates as soon as new location data arrives</li>
+<li><strong>Latest Locations</strong>: Shows the most recent known location of you and all connected users</li>
+<li><strong>User Avatars</strong>: Each user is represented by their avatar on the map</li>
+<li><strong>Hover Information</strong>: Hover over an avatar to display additional information including when the data was last updated</li>
 </ul>
 <h3 id="multi-user-display">Multi-User Display</h3>
 <ul>
-<li><strong>Connected Users</strong> – View all users you have access to via <a href="../share-access/">Share Access</a> or <a href="../../integrations/reitti/">Reitti Integration</a></li>
-<li><strong>Real-time Movement</strong> – Watch as user locations update in real-time as they move</li>
+<li><strong>Connected Users</strong>: View all users you have access to via <a href="../share-access/">Share Access</a> or <a href="../../integrations/reitti/">Reitti Integration</a></li>
+<li><strong>Real-time Movement</strong>: Watch as user locations update in real-time as they move</li>
 </ul>
 <h3 id="kiosk-mode">Kiosk Mode</h3>
 <ul>
-<li><strong>Continuous Display</strong> – Ideal for wall-mounted displays or shared screens</li>
-<li><strong>Minimal Interface</strong> – Clean, focused display optimized for at-a-glance viewing</li>
-<li><strong>Automatic Refresh</strong> – No user interaction required to see updated locations</li>
+<li><strong>Continuous Display</strong>: Ideal for wall-mounted displays or shared screens</li>
+<li><strong>Minimal Interface</strong>: Clean, focused display optimized for at-a-glance viewing</li>
+<li><strong>Automatic Refresh</strong>: No user interaction required to see updated locations</li>
 </ul>
 <h2 id="navigation-tips">Navigation Tips</h2>
 <ul>
-<li><strong>Zoom Controls</strong> – Use mouse wheel, +/- buttons, or double-click to zoom</li>
-<li><strong>Pan Navigation</strong> – Click and drag to move around the map</li>
-<li><strong>Search Locations</strong> – Use the search bar to find specific places</li>
-<li><strong>Fullscreen Mode</strong> – Expand the map to fullscreen for better visibility</li>
-<li><strong>Quick Date Navigation</strong> – Use the date picker's horizontal scroll and mode switching for efficient time travel</li>
-<li><strong>Interactive Timeline</strong> – Click timeline entries to zoom to specific locations or trips</li>
-<li><strong>Multi-User Switching</strong> – Use the user switcher in the timeline to view different users' data</li>
+<li><strong>Zoom Controls</strong>: Use mouse wheel, +/- buttons, or double-click to zoom</li>
+<li><strong>Pan Navigation</strong>: Click and drag to move around the map</li>
+<li><strong>Search Locations</strong>: Use the search bar to find specific places</li>
+<li><strong>Fullscreen Mode</strong>: Expand the map to fullscreen for better visibility</li>
+<li><strong>Quick Date Navigation</strong>: Use the date picker's horizontal scroll and mode switching for efficient time travel</li>
+<li><strong>Interactive Timeline</strong>: Click timeline entries to zoom to specific locations or trips</li>
+<li><strong>Multi-User Switching</strong>: Use the user switcher in the timeline to view different users' data</li>
 </ul>
 <h2 id="getting-the-most-from-the-main-view">Getting the Most from the Main View</h2>
 <ol>
-<li><strong>Analyze Daily Patterns</strong> – Use <strong>24-Hour Aggregate Mode</strong> to identify your regular routines and commute patterns</li>
-<li><strong>Explore Movement History</strong> – Switch between <strong>Standard</strong>, <strong>Raw Path</strong>, and <strong>Edge Bundling</strong> modes to analyze your movement data at different levels of detail</li>
-<li><strong>Customize Your View</strong> – Adjust map settings like <strong>3D View</strong>, <strong>Terrain Layer</strong>, and <strong>Satellite View</strong> to match your analysis needs</li>
-<li><strong>Use Live Mode for Real-time Tracking</strong> – Enable live tracking for current movement monitoring or set up a <strong>Kiosk Mode</strong> display for shared viewing</li>
-<li><strong>Leverage Replay Features</strong> – Use the <strong>Replay Controls</strong> with different speeds to review your movements over selected time ranges</li>
-<li><strong>Compare Multi-User Data</strong> – If you have access to other users' data, use the <strong>User Switcher</strong> to compare movement patterns and coordinate activities</li>
+<li><strong>Analyze Daily Patterns</strong>: Use <strong>24-Hour Aggregate Mode</strong> to identify your regular routines and commute patterns</li>
+<li><strong>Explore Movement History</strong>: Switch between <strong>Standard</strong>, <strong>Raw Path</strong>, and <strong>Edge Bundling</strong> modes to analyze your movement data at different levels of detail</li>
+<li><strong>Customize Your View</strong>: Adjust map settings like <strong>3D View</strong>, <strong>Terrain Layer</strong>, and <strong>Satellite View</strong> to match your analysis needs</li>
+<li><strong>Use Live Mode for Real-time Tracking</strong>: Enable live tracking for current movement monitoring or set up a <strong>Kiosk Mode</strong> display for shared viewing</li>
+<li><strong>Leverage Replay Features</strong>: Use the <strong>Replay Controls</strong> with different speeds to review your movements over selected time ranges</li>
+<li><strong>Compare Multi-User Data</strong>: If you have access to other users' data, use the <strong>User Switcher</strong> to compare movement patterns and coordinate activities</li>
 </ol>
 <h2 id="view-mode-use-cases">View Mode Use Cases</h2>
 <ul>
-<li><strong>Route Planning</strong> – Use <strong>Edge Bundling</strong> mode to identify your most frequently traveled routes</li>
-<li><strong>Pattern Recognition</strong> – Enable <strong>24-Hour Aggregate Mode</strong> to discover daily routines and habitual locations</li>
-<li><strong>Presentation Mode</strong> – Use <strong>Fullscreen</strong> with a simplified interface for sharing your location history with others</li>
-<li><strong>Real-time Monitoring</strong> - <strong>Live Mode</strong> is ideal for tracking current movements or monitoring multiple users simultaneously</li>
+<li><strong>Route Planning</strong>: Use <strong>Edge Bundling</strong> mode to identify your most frequently traveled routes</li>
+<li><strong>Pattern Recognition</strong>: Enable <strong>24-Hour Aggregate Mode</strong> to discover daily routines and habitual locations</li>
+<li><strong>Presentation Mode</strong>: Use <strong>Fullscreen</strong> with a simplified interface for sharing your location history with others</li>
+<li><strong>Real-time Monitoring</strong>: <strong>Live Mode</strong> is ideal for tracking current movements or monitoring multiple users simultaneously</li>
 </ul>
   </div>
   
@@ -1685,6 +1697,12 @@
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#interactive-features');">
             Interactive Features
+        </a>
+        
+        <a href="#metadata"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#metadata');">
+            Metadata
         </a>
         
         
