@@ -46,7 +46,7 @@ curl https://your-reitti-instance/api/v1/latest-location?token=your-api-token
 
 The endpoint returns a JSON response with information about the latest location data:
 
-```json
+```
 {
   "point": {
     "latitude": 53.86329752,
@@ -77,21 +77,29 @@ You can monitor your location tracking reliability using [Uptime Kuma](https://g
 
 1. Add a new monitor in Uptime Kuma, select **JSON Query** as the monitor type.
 2. Set the URL to your Reitti instance endpoint, including the API token:
+
    ```
    https://your-reitti-instance/api/v1/latest-location
    ```
+   
 3. Set the **Headers** field to:
-   ```json
+
+   ```
    { "X-API-TOKEN": "your-api-token" }
    ``` 
+   
 4. In the **JSON Query Expression** field, enter the expression that calculates the age of the latest point in seconds:
+   
    ```
    $floor(($toMillis($now()) - $toMillis(point.timestamp))/1000
    ```
+   
 5. Set the **Condition** to **less than** and enter a value that defines your acceptable freshness window. For example, to alert if no fresh location data has arrived in the last 10 minutes:
-   ```
+   
+  ```
    < 600
-   ```
+  ```
+
 6. Set your expected check interval (e.g. every 5 minutes) and alerting preferences.
 
 ![Uptime Kuma JSON Query configuration](../img/uptime-kuma-check.png)

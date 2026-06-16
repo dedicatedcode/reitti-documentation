@@ -1049,7 +1049,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-06-16T20:43:13+02:00');
+        const date = new Date('2026-06-16T20:46:58+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1101,7 +1101,7 @@ curl https://your-reitti-instance/api/v1/latest-location?token=your-api-token
 </table></div>
 <h3 id="response">Response</h3>
 <p>The endpoint returns a JSON response with information about the latest location data:</p>
-<pre class="codehilite"><code class="language-json">{
+<pre class="codehilite"><code>{
   &quot;point&quot;: {
     &quot;latitude&quot;: 53.86329752,
     &quot;longitude&quot;: 10.70105392,
@@ -1127,15 +1127,22 @@ curl https://your-reitti-instance/api/v1/latest-location?token=your-api-token
 <p><strong>Configuration steps:</strong></p>
 <ol>
 <li>Add a new monitor in Uptime Kuma, select <strong>JSON Query</strong> as the monitor type.</li>
-<li>Set the URL to your Reitti instance endpoint, including the API token:
-   <code>https://your-reitti-instance/api/v1/latest-location</code></li>
-<li>Set the <strong>Headers</strong> field to:
-   <code>json
-   { "X-API-TOKEN": "your-api-token" }</code> </li>
-<li>In the <strong>JSON Query Expression</strong> field, enter the expression that calculates the age of the latest point in seconds:
-   <code>$floor(($toMillis($now()) - $toMillis(point.timestamp))/1000</code></li>
-<li>Set the <strong>Condition</strong> to <strong>less than</strong> and enter a value that defines your acceptable freshness window. For example, to alert if no fresh location data has arrived in the last 10 minutes:
-   <code>&lt; 600</code></li>
+<li>Set the URL to your Reitti instance endpoint, including the API token:</li>
+</ol>
+<p><code>https://your-reitti-instance/api/v1/latest-location</code></p>
+<ol>
+<li>Set the <strong>Headers</strong> field to:</li>
+</ol>
+<p><code>{ "X-API-TOKEN": "your-api-token" }</code> </p>
+<ol>
+<li>In the <strong>JSON Query Expression</strong> field, enter the expression that calculates the age of the latest point in seconds:</li>
+</ol>
+<p><code>$floor(($toMillis($now()) - $toMillis(point.timestamp))/1000</code></p>
+<ol>
+<li>Set the <strong>Condition</strong> to <strong>less than</strong> and enter a value that defines your acceptable freshness window. For example, to alert if no fresh location data has arrived in the last 10 minutes:</li>
+</ol>
+<p><code>&lt; 600</code></p>
+<ol>
 <li>Set your expected check interval (e.g. every 5 minutes) and alerting preferences.</li>
 </ol>
 <p><img alt="Uptime Kuma JSON Query configuration" src="../../img/uptime-kuma-check.png" /></p>
