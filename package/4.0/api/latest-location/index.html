@@ -1049,7 +1049,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-03-26T06:41:55+01:00');
+        const date = new Date('2026-06-16T20:43:13+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1080,6 +1080,25 @@ curl -H &quot;X-API-TOKEN: your-api-token&quot; https://your-reitti-instance/api
 curl https://your-reitti-instance/api/v1/latest-location?token=your-api-token
 </code></pre>
 
+<h3 id="query-parameters">Query Parameters</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>since</code></td>
+<td>string</td>
+<td>No</td>
+<td>ISO 8601 datetime. When set, only points tracked at or after this time are considered.</td>
+</tr>
+</tbody>
+</table></div>
 <h3 id="response">Response</h3>
 <p>The endpoint returns a JSON response with information about the latest location data:</p>
 <pre class="codehilite"><code class="language-json">{
@@ -1097,17 +1116,36 @@ curl https://your-reitti-instance/api/v1/latest-location?token=your-api-token
 
 <h4 id="response-fields">Response Fields</h4>
 <ul>
-<li><strong>pointsScheduled</strong>: Number of location points that have been processed</li>
-<li><strong>success</strong>: Boolean indicating if the operation was successful</li>
-<li><strong>message</strong>: Descriptive message about the current status</li>
+<li><strong>point</strong> (object, optional): The latest location point. Present only when <code>hasLocation</code> is <code>true</code>. Contains
+  <code>latitude</code>, <code>longitude</code>, <code>timestamp</code>, <code>accuracyMeters</code>, <code>elevationMeters</code>, and <code>valid</code>.</li>
+<li><strong>hasLocation</strong> (boolean): Indicates whether any location data exists for the user. If <code>false</code>, the <code>point</code> field will
+  be absent.</li>
 </ul>
+<h3 id="examples">Examples</h3>
+<h4 id="uptime-kuma">Uptime Kuma</h4>
+<p>You can monitor your location tracking reliability using <a href="https://github.com/louislam/uptime-kuma">Uptime Kuma</a> with a <strong>JSON Query</strong> monitor type. This monitor periodically calls the Latest Location API and checks that fresh data is being received.</p>
+<p><strong>Configuration steps:</strong></p>
+<ol>
+<li>Add a new monitor in Uptime Kuma, select <strong>JSON Query</strong> as the monitor type.</li>
+<li>Set the URL to your Reitti instance endpoint, including the API token:
+   <code>https://your-reitti-instance/api/v1/latest-location</code></li>
+<li>Set the <strong>Headers</strong> field to:
+   <code>json
+   { "X-API-TOKEN": "your-api-token" }</code> </li>
+<li>In the <strong>JSON Query Expression</strong> field, enter the expression that calculates the age of the latest point in seconds:
+   <code>$floor(($toMillis($now()) - $toMillis(point.timestamp))/1000</code></li>
+<li>Set the <strong>Condition</strong> to <strong>less than</strong> and enter a value that defines your acceptable freshness window. For example, to alert if no fresh location data has arrived in the last 10 minutes:
+   <code>&lt; 600</code></li>
+<li>Set your expected check interval (e.g. every 5 minutes) and alerting preferences.</li>
+</ol>
+<p><img alt="Uptime Kuma JSON Query configuration" src="../../img/uptime-kuma-check.png" /></p>
+<p>If no recent location data is available, the calculated age will exceed your threshold and Uptime Kuma will trigger an alert.</p>
 <h3 id="what-can-be-achieved">What Can Be Achieved</h3>
 <ul>
 <li><strong>Automated Monitoring</strong>: Set up scripts that regularly check if your phone is sending location data</li>
 <li><strong>Smart Home Integration</strong>: Use the response in Home Assistant to trigger automations when you're actively moving</li>
 <li><strong>Data Quality Assurance</strong>: Ensure your location tracking is working consistently</li>
-<li><strong>Troubleshooting</strong>: Quickly identify if there are issues with your mobile app or data flow
-S</li>
+<li><strong>Troubleshooting</strong>: Quickly identify if there are issues with your mobile app or data flow</li>
 </ul>
   </div>
   
@@ -1479,6 +1517,14 @@ S</li>
         
 
         
+        <a href="#query-parameters"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#query-parameters');">
+            Query Parameters
+        </a>
+        
+
+        
         <a href="#response"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#response');">
@@ -1490,6 +1536,22 @@ S</li>
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#response-fields');">
             Response Fields
+        </a>
+        
+        
+
+        
+        <a href="#examples"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#examples');">
+            Examples
+        </a>
+        
+        
+        <a href="#uptime-kuma"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#uptime-kuma');">
+            Uptime Kuma
         </a>
         
         
