@@ -1126,7 +1126,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-03-27T06:37:41+01:00');
+        const date = new Date('2026-06-22T08:51:35+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1266,6 +1266,43 @@
 <li>Note: This only affects your view, it doesn't revoke their sharing permissions</li>
 </ul>
 <p><img alt="Shares Access" src="../../img/shared-access.png" /></p>
+<h2 id="owntracks-integration-for-user-visibility">Owntracks Integration for User Visibility</h2>
+<p><span class="badge badge-normal version-badge"><span class=sep> [</span><span class=title>since</span><span class=sep> : </span><span class=value>v3.1.0</span><span class=sep>] </span></span></p>
+<p>When using the <a href="https://owntracks.org/">Owntracks mobile app</a> to report your location data into Reitti, you can also see other connected users directly within the Owntracks app. This is possible because Reitti responds to Owntracks ingestion requests with <strong>cards</strong> containing
+user information, including:</p>
+<ul>
+<li><strong>Profile image</strong> (if available)</li>
+<li><strong>Display name</strong></li>
+<li><strong>Latest known location</strong></li>
+</ul>
+<p>This allows the Owntracks app to show a visual overview of all users you have access to, making it easy to see who is where at a glance.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>For this feature to work:</p>
+<ol>
+<li><strong>Use the Owntracks App</strong>: You must be using the Owntracks mobile app to report your location data into Reitti</li>
+<li><strong>Configure the Owntracks Integration</strong>: Your location data must be sent to Reitti via the (docs/integrations/mobile-apps.md)</li>
+<li><strong>Have Other Users in Reitti</strong>: You need to have other registered users in your Reitti instance whose location data you can view (either via magic links or direct user sharing)</li>
+</ol>
+<h3 id="how-it-works">How It Works</h3>
+<p>When you open the Owntracks app, it will display a list of all users you have access to, showing:</p>
+<ul>
+<li><strong>Profile Image</strong>: Each user's profile picture (if set)</li>
+<li><strong>Display Name</strong>: The user's name as configured in Reitti</li>
+<li><strong>Latest Known Location</strong>: The most recent location data reported by that user</li>
+</ul>
+<p>This provides a quick, at-a-glance view of who is currently active and where they are, without needing to open the full Reitti dashboard.</p>
+<h3 id="configuration">Configuration</h3>
+<p>No additional configuration is required beyond:</p>
+<ul>
+<li>Setting up the <a href="../../integrations/mobile-apps/">Owntracks integration</a> to report your data</li>
+<li>Having other users share their location data with you (via (#share-access-with-magic-links) or (#share-access-to-other-users))</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>Only users who have shared their location data with you will appear in the Owntracks app</li>
+<li>The feature requires the Owntracks app to be actively connected to your Reitti instance</li>
+<li>Location data is updated in real-time as users report their positions</li>
+</ul>
 <h3 id="best-practices-for-user-sharing">Best Practices for User Sharing</h3>
 <ul>
 <li><strong>Regular review</strong>: Periodically check who has access to your data</li>
@@ -1718,6 +1755,40 @@
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#managing-shared-accounts');">
             Managing Shared Accounts
+        </a>
+        
+        
+
+        
+        <a href="#owntracks-integration-for-user-visibility"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#owntracks-integration-for-user-visibility');">
+            Owntracks Integration for User Visibility
+        </a>
+        
+        
+        <a href="#prerequisites"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#prerequisites');">
+            Prerequisites
+        </a>
+        
+        <a href="#how-it-works"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#how-it-works');">
+            How It Works
+        </a>
+        
+        <a href="#configuration"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#configuration');">
+            Configuration
+        </a>
+        
+        <a href="#limitations"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#limitations');">
+            Limitations
         </a>
         
         <a href="#best-practices-for-user-sharing"
