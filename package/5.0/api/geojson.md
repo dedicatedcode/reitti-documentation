@@ -3,7 +3,6 @@ title: "GeoJSON API"
 type: "projects"
 parent: "API Documentation"
 weight: 25
-since: "v1.6.0"
 ---
 
 The GeoJSON API endpoints allow you to export and import location data in GeoJSON format, enabling interoperability with other mapping and GIS tools.
@@ -71,14 +70,31 @@ curl -H "X-API-TOKEN: your-api-token" \
 POST /api/v1/geojson/import
 ```
 
+
 #### Request Format
 
 Send the GeoJSON file as a multipart form upload with the field name `file`. Only files with `.geojson` or `.json` extensions are accepted.
 
+#### Parameters
+
+| Parameter | Type | Required | Description                                             |
+|-----------|------|----------|---------------------------------------------------------|
+| `file`    | file | Yes      | The GeoJSON file to upload                              |
+| `device`  | long | No       | Optional device ID to override where the data is stored |
+
+By default, imported data is associated with the device linked to your API token. If you specify a `device` parameter,
+it overrides this and stores the data under the specified device instead.
+
 ```bash
-# Import a GeoJSON file
+# Import a GeoJSON file (data stored under device linked to token)
 curl -X POST -H "X-API-TOKEN: your-api-token" \
      -F "file=@locations.geojson" \
+     https://your-reitti-instance/api/v1/geojson/import
+
+# Import a GeoJSON file with explicit device override
+curl -X POST -H "X-API-TOKEN: your-api-token" \
+     -F "file=@locations.geojson" \
+     -F "device=42" \
      https://your-reitti-instance/api/v1/geojson/import
 ```
 

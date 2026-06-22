@@ -1193,7 +1193,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-06-22T15:36:50+02:00');
+        const date = new Date('2026-06-22T15:47:45+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1277,9 +1277,42 @@ curl -H &quot;X-API-TOKEN: your-api-token&quot; \
 
 <h4 id="request-format">Request Format</h4>
 <p>Send the GeoJSON file as a multipart form upload with the field name <code>file</code>. Only files with <code>.geojson</code> or <code>.json</code> extensions are accepted.</p>
-<pre class="codehilite"><code class="language-bash"># Import a GeoJSON file
+<h4 id="parameters_1">Parameters</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>file</td>
+<td>Yes</td>
+<td>The GeoJSON file to upload</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>long</td>
+<td>No</td>
+<td>Optional device ID to override where the data is stored</td>
+</tr>
+</tbody>
+</table></div>
+<p>By default, imported data is associated with the device linked to your API token. If you specify a <code>device</code> parameter,
+it overrides this and stores the data under the specified device instead.</p>
+<pre class="codehilite"><code class="language-bash"># Import a GeoJSON file (data stored under device linked to token)
 curl -X POST -H &quot;X-API-TOKEN: your-api-token&quot; \
      -F &quot;file=@locations.geojson&quot; \
+     https://your-reitti-instance/api/v1/geojson/import
+
+# Import a GeoJSON file with explicit device override
+curl -X POST -H &quot;X-API-TOKEN: your-api-token&quot; \
+     -F &quot;file=@locations.geojson&quot; \
+     -F &quot;device=42&quot; \
      https://your-reitti-instance/api/v1/geojson/import
 </code></pre>
 
@@ -1737,6 +1770,12 @@ curl -X POST -H &quot;X-API-TOKEN: your-api-token&quot; \
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#request-format');">
             Request Format
+        </a>
+        
+        <a href="#parameters_1"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#parameters_1');">
+            Parameters
         </a>
         
         <a href="#response_1"
