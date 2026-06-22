@@ -55,7 +55,7 @@ The easiest way to get started is with Docker:
 
 ```bash
 # Download the docker-compose.yml file
-wget https://github.com/dedicatedcode/reitti/blob/main/docker-compose.yml
+wget https://raw.githubusercontent.com/dedicatedcode/reitti/refs/heads/main/docker-compose.yml
 
 # Start all services
 docker-compose up -d
