@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 opt.textContent = isLatest ? `${v.title} (latest)` : v.title;
 
-                if (currentPath.includes(`/${v.version}/`) || (isLatest && currentPath.includes('/latest/'))) {
+                if (currentPath.includes(`${v.version}/`) || (isLatest && currentPath.includes('/latest/'))) {
                     opt.selected = true;
                 }
                 select.appendChild(opt);
