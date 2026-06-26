@@ -95,11 +95,6 @@ services:
   tile-cache:
     image: dedicatedcode/reitti-tile-cache:next
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1/osm/0/0/0.png"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
     volumes:
       - tile-cache-data:/var/cache/nginx
 ```
