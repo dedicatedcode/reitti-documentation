@@ -49,7 +49,7 @@ The request body must be a JSON object containing location data. At minimum, it 
   "acc": 10,
   "lat": 37.7749,
   "lon": -122.4194,
-  "tst": "2023-01-01T12:00:00Z"
+  "tst": 1640995200
 }
 ```
 
@@ -61,7 +61,7 @@ Reitti will drop duplicate data points on import. A duplicate is defined as havi
 - **acc**: Number representing the accuracy of the location in meters. Lower values indicate higher precision.
 - **lat**: Number representing the latitude coordinate in decimal degrees (e.g., 37.7749 for San Francisco).
 - **lon**: Number representing the longitude coordinate in decimal degrees (e.g., -122.4194 for San Francisco).
-- **tst**: String representing the timestamp in ISO 8601 format (e.g., "2023-01-01T12:00:00Z"). Unix epoch seconds (as a number) are also supported.
+- **tst**: Number representing Unix epoch seconds (as a number) in UTC. This is the time when the location data was recorded.
 
 ### What Can Be Achieved
 

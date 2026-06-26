@@ -1219,7 +1219,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-06-14T19:54:27+02:00');
+        const date = new Date('2026-06-26T08:21:45+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1402,11 +1402,6 @@ rabbitmq:
   tile-cache:
     image: dedicatedcode/reitti-tile-cache:next
     restart: unless-stopped
-    healthcheck:
-      test: [&quot;CMD&quot;, &quot;wget&quot;, &quot;--quiet&quot;, &quot;--tries=1&quot;, &quot;--spider&quot;, &quot;http://127.0.0.1/osm/0/0/0.png&quot;]
-      interval: 10s
-      timeout: 5s
-      retries: 5
     volumes:
       - tile-cache-data:/var/cache/nginx
 </code></pre>
