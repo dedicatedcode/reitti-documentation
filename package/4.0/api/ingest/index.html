@@ -1049,7 +1049,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-03-26T06:41:55+01:00');
+        const date = new Date('2026-06-26T08:20:28+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1084,7 +1084,7 @@
   &quot;acc&quot;: 10,
   &quot;lat&quot;: 37.7749,
   &quot;lon&quot;: -122.4194,
-  &quot;tst&quot;: &quot;2023-01-01T12:00:00Z&quot;
+  &quot;tst&quot;: 1640995200
 }
 </code></pre>
 
@@ -1095,7 +1095,7 @@
 <li><strong>acc</strong>: Number representing the accuracy of the location in meters. Lower values indicate higher precision.</li>
 <li><strong>lat</strong>: Number representing the latitude coordinate in decimal degrees (e.g., 37.7749 for San Francisco).</li>
 <li><strong>lon</strong>: Number representing the longitude coordinate in decimal degrees (e.g., -122.4194 for San Francisco).</li>
-<li><strong>tst</strong>: String representing the timestamp in ISO 8601 format (e.g., "2023-01-01T12:00:00Z"). Unix epoch seconds (as a number) are also supported.</li>
+<li><strong>tst</strong>: Number representing Unix epoch seconds (as a number) in UTC. This is the time when the location data was recorded.</li>
 </ul>
 <h3 id="what-can-be-achieved">What Can Be Achieved</h3>
 <ul>
