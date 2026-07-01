@@ -27,6 +27,17 @@ documents every supported variable, its default value, and a brief description o
 
 ---
 
+### Application Runtime
+
+| Variable      | Description                                                                                                                          | Default Value | Example Value                 |
+|:--------------|:-------------------------------------------------------------------------------------------------------------------------------------|:--------------|:------------------------------|
+| `SERVER_PORT` | Port on which the application server listens.                                                                                        | `8080`        | `8080`                        |
+| `APP_UID`     | User ID under which the application process runs inside the container.                                                               | `1000`        | `1000`                        |
+| `APP_GID`     | Group ID under which the application process runs inside the container.                                                              | `1000`        | `1000`                        |
+| `JAVA_OPTS`   | Additional JVM options passed to the Java process.                                                                                   | *(empty)*     | `-Xmx512m -Xms256m`           |
+
+---
+
 ### PostgreSQL / PostGIS Database
 
 | Variable           | Description                                  | Default Value | Example Value    |
@@ -109,6 +120,12 @@ services:
       - BASE_PATH=/
       - LOGGING_LEVEL=INFO
       - ADVERTISE_URI=https://reitti.example.com
+
+      # Application runtime
+      - SERVER_PORT=8080
+      - APP_UID=1000
+      - APP_GID=1000
+      - JAVA_OPTS=-Xmx512m
 
       # Database
       - POSTGIS_HOST=postgis
