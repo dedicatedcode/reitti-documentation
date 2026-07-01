@@ -2,7 +2,7 @@
 title: "Docker Compose Configuration"
 description: "Reference of all environment variables available when deploying Reitti with Docker Compose"
 weight: 2
-tags: ["configuration"]
+tags: [ "configuration" ]
 ---
 
 ## Overview
@@ -18,90 +18,74 @@ documents every supported variable, its default value, and a brief description o
 
 ### Server and Context Path
 
-| Variable    | Description                                                                                                                                                            | Default Value | Example Value       |
-| :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------ | :------------------ |
-| `BASE_PATH` | Base path used by the embedded servlet container. If you want to serve Reitti behind a reverse proxy under a sub‑path, set this to that sub‑path (e.g., `/reitti`). | `/`           | `/reitti`           |
-| `LOGGING_LEVEL` | Logging level for application classes (`com.dedicatedcode.reitti`). Choices: `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR`.                                           | `INFO`        | `DEBUG`             |
-| `ADVERTISE_URI` | Public URI of the Reitti instance. Used for external references such as links in emails.                                                                         | *(empty)*     | `https://reitti.example.com` |
-| `DANGEROUS_LIFE` | When set to `true`, enables the background data‑management endpoints (data import/export, purge, etc.). **Use with caution.**                                   | `false`       | `true`              |
+| Variable         | Description                                                                                                                                                         | Default Value | Example Value                |
+|:-----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:-----------------------------|
+| `BASE_PATH`      | Base path used by the embedded servlet container. If you want to serve Reitti behind a reverse proxy under a sub‑path, set this to that sub‑path (e.g., `/reitti`). | `/`           | `/reitti`                    |
+| `LOGGING_LEVEL`  | Logging level for application classes (`com.dedicatedcode.reitti`). Choices: `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR`.                                             | `INFO`        | `DEBUG`                      |
+| `ADVERTISE_URI`  | Public URI of the Reitti instance. Used for external references such as links in emails.                                                                            | *(empty)*     | `https://reitti.example.com` |
+| `DANGEROUS_LIFE` | When set to `true`, enables the background data‑management endpoints (clean data, purge, etc.). **Use with caution.**                                               | `false`       | `true`                       |
 
 ---
 
 ### PostgreSQL / PostGIS Database
 
-| Variable          | Description                                                                                     | Default Value | Example Value                    |
-| :---------------- | :---------------------------------------------------------------------------------------------- | :------------ | :------------------------------- |
-| `POSTGIS_HOST`    | Hostname of the PostgreSQL / PostGIS server.                                                    | `postgis`     | `db.example.com`                |
-| `POSTGIS_PORT`    | Database port.                                                                                  | `5432`        | `5432`                          |
-| `POSTGIS_DB`      | Database name.                                                                                  | `reittidb`    | `reittidb`                      |
-| `POSTGIS_USER`    | Database username.                                                                              | `reitti`      | `reitti`                        |
-| `POSTGIS_PASSWORD` | Database password.                                                                             | `reitti`      | `s3cret!`                       |
+| Variable           | Description                                  | Default Value | Example Value    |
+|:-------------------|:---------------------------------------------|:--------------|:-----------------|
+| `POSTGIS_HOST`     | Hostname of the PostgreSQL / PostGIS server. | `postgis`     | `db.example.com` |
+| `POSTGIS_PORT`     | Database port.                               | `5432`        | `5432`           |
+| `POSTGIS_DB`       | Database name.                               | `reittidb`    | `reittidb`       |
+| `POSTGIS_USER`     | Database username.                           | `reitti`      | `reitti`         |
+| `POSTGIS_PASSWORD` | Database password.                           | `reitti`      | `s3cret!`        |
 
 ---
 
 ### Redis Cache
 
-| Variable              | Description                                                                        | Default Value | Example Value            |
-| :-------------------- | :--------------------------------------------------------------------------------- | :------------ | :----------------------- |
-| `REDIS_HOST`          | Hostname of the Redis server.                                                      | `redis`       | `redis.example.com`      |
-| `REDIS_PORT`          | Redis port.                                                                        | `6379`        | `6379`                   |
-| `REDIS_USERNAME`      | Username for Redis authentication (leave empty if not needed).                     | *(empty)*     | `default`                |
-| `REDIS_PASSWORD`      | Password for Redis authentication.                                                 | *(empty)*     | `r3d!s$3cr3t`            |
-| `REDIS_DATABASE`      | Redis database index.                                                              | `0`           | `1`                      |
-| `REDIS_CACHE_PREFIX`  | Prefix added to all cache keys in Redis.                                           | *(empty)*     | `reitti:`                |
-| `TILES_CACHE`         | URL of an external tile cache (e.g. a tile‑proxy service). Used to cache map tiles. | `http://tile-cache` | `http://tiles.local:8080` |
+| Variable             | Description                                                                         | Default Value       | Example Value             |
+|:---------------------|:------------------------------------------------------------------------------------|:--------------------|:--------------------------|
+| `REDIS_HOST`         | Hostname of the Redis server.                                                       | `redis`             | `redis.example.com`       |
+| `REDIS_PORT`         | Redis port.                                                                         | `6379`              | `6379`                    |
+| `REDIS_USERNAME`     | Username for Redis authentication (leave empty if not needed).                      | *(empty)*           | `default`                 |
+| `REDIS_PASSWORD`     | Password for Redis authentication.                                                  | *(empty)*           | `r3d!s$3cr3t`             |
+| `REDIS_DATABASE`     | Redis database index.                                                               | `0`                 | `1`                       |
+| `REDIS_CACHE_PREFIX` | Prefix added to all cache keys in Redis.                                            | *(empty)*           | `reitti:`                 |
+| `TILES_CACHE`        | URL of an external tile cache (e.g. a tile‑proxy service). Used to cache map tiles. | `http://tile-cache` | `http://tiles.local:8080` |
 
 ---
 
 ### Local Authentication
 
-| Variable               | Description                                                                                                                | Default Value | Example Value |
-| :--------------------- | :------------------------------------------------------------------------------------------------------------------------- | :------------ | :------------ |
-| `DISABLE_LOCAL_LOGIN`  | When `true`, disables login with username / password and clears existing stored passwords. Use alongside OIDC to enforce SSO-only access. | `false`       | `true`        |
+| Variable              | Description                                                                                                                               | Default Value | Example Value |
+|:----------------------|:------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:--------------|
+| `DISABLE_LOCAL_LOGIN` | When `true`, disables login with username / password and clears existing stored passwords. Use alongside OIDC to enforce SSO-only access. | `false`       | `true`        |
 
 ---
 
 ### OpenID Connect (OIDC)
 
-Full configuration details are covered on the [OpenID Connect](./oidc.md) page. The table below lists all OIDC environment
+Full configuration details are covered on the [OpenID Connect](./oidc.md) page. The table below lists all OIDC
+environment
 variables for quick reference.
 
-| Variable                     | Description                                                                                                     | Default Value          | Example Value                                     |
-| :--------------------------- | :-------------------------------------------------------------------------------------------------------------- | :--------------------- | :------------------------------------------------ |
-| `OIDC_ENABLED`               | Whether to enable OIDC authentication.                                                                          | `false`                | `true`                                            |
-| `OIDC_SIGN_UP_ENABLED`       | Whether new users can self‑register via OIDC. When `false`, only existing users can log in.                     | `true`                 | `false`                                           |
-| `OIDC_CLIENT_ID`             | Client ID issued by the OIDC provider.                                                                          | *(empty)*              | `reitti`                                          |
-| `OIDC_CLIENT_SECRET`         | Client secret issued by the OIDC provider.                                                                      | *(empty)*              | `F0oxfg8b2rp5X97YPS92C2ERxof1oike`                |
-| `OIDC_ISSUER_URI`            | Issuer URI of the OIDC provider (e.g. `https://accounts.google.com`).                                           | *(empty)*              | `https://auth.example.com`                        |
-| `OIDC_SCOPE`                 | Comma‑separated list of OIDC scopes requested during authentication.                                            | `openid,profile`       | `openid,profile,email`                            |
-| `OIDC_AUTHENTICATION_METHOD` | Authentication method used by the OIDC client. Supported: `client_secret_basic`, `client_secret_post`, `none`. | `client_secret_basic` | `client_secret_basic`                             |
-
----
-
-### Geocoding (Photon)
-
-| Variable          | Description                                                                       | Default Value | Example Value                         |
-| :---------------- | :-------------------------------------------------------------------------------- | :------------ | :------------------------------------ |
-| `PHOTON_BASE_URL` | Base URL for the Photon geocoding API. If left empty, the built‑in (public) Photon service is used. | *(empty)*     | `https://photon.example.com`          |
-
----
-
-### Custom Map Tiles
-
-| Variable                 | Description                                                                 | Default Value | Example Value                                    |
-| :----------------------- | :-------------------------------------------------------------------------- | :------------ | :----------------------------------------------- |
-| `CUSTOM_TILES_SERVICE`   | URL of a custom tile server. If set, replaces the default tile layer.       | *(empty)*     | `https://tiles.example.com/{z}/{x}/{y}.png`       |
-| `CUSTOM_TILES_ATTRIBUTION` | Attribution text for the custom tile server (shown on the map).          | *(empty)*     | `© Example Tiles`                                |
+| Variable                     | Description                                                                                                    | Default Value         | Example Value                      |
+|:-----------------------------|:---------------------------------------------------------------------------------------------------------------|:----------------------|:-----------------------------------|
+| `OIDC_ENABLED`               | Whether to enable OIDC authentication.                                                                         | `false`               | `true`                             |
+| `OIDC_SIGN_UP_ENABLED`       | Whether new users can self‑register via OIDC. When `false`, only existing users can log in.                    | `true`                | `false`                            |
+| `OIDC_CLIENT_ID`             | Client ID issued by the OIDC provider.                                                                         | *(empty)*             | `reitti`                           |
+| `OIDC_CLIENT_SECRET`         | Client secret issued by the OIDC provider.                                                                     | *(empty)*             | `F0oxfg8b2rp5X97YPS92C2ERxof1oike` |
+| `OIDC_ISSUER_URI`            | Issuer URI of the OIDC provider (e.g. `https://accounts.google.com`).                                          | *(empty)*             | `https://auth.example.com`         |
+| `OIDC_SCOPE`                 | Comma‑separated list of OIDC scopes requested during authentication.                                           | `openid,profile`      | `openid,profile,email`             |
+| `OIDC_AUTHENTICATION_METHOD` | Authentication method used by the OIDC client. Supported: `client_secret_basic`, `client_secret_post`, `none`. | `client_secret_basic` | `client_secret_basic`              |
 
 ---
 
 ### Data Import / Processing
 
-| Variable                       | Description                                                                                                                                                         | Default Value | Example Value |
-| :----------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :------------ | :------------ |
-| `PROCESSING_BATCH_SIZE`        | Number of location points processed in a single batch during import. Larger values use more memory and speed up processing.                                        | `10000`       | `50000`       |
-| `INGESTION_MAX_BATCH_SIZE`     | Maximum number of raw location points that can be sent in a single API request to the ingestion endpoint.                                                            | `100`         | `500`         |
-| `INGESTION_MAX_IDLE_TIME`      | Maximum time (in seconds) the server will wait before flushing a partially filled batch to the database when receiving data via the live mode / batch ingestion API. | `5`           | `10`          |
+| Variable                   | Description                                                                                                                                                          | Default Value | Example Value |
+|:---------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:--------------|
+| `PROCESSING_BATCH_SIZE`    | Number of location points processed in a single batch during import. Larger values use more memory and speed up processing.                                          | `10000`       | `50000`       |
+| `INGESTION_MAX_BATCH_SIZE` | Maximum number of raw location points that can be sent in a single API request to the ingestion endpoint.                                                            | `100`         | `500`         |
+| `INGESTION_MAX_IDLE_TIME`  | Maximum time (in seconds) the server will wait before flushing a partially filled batch to the database when receiving data via the live mode / batch ingestion API. | `5`           | `10`          |
 
 ---
 
@@ -131,13 +115,6 @@ services:
       - REDIS_PORT=6379
       - REDIS_DATABASE=0
       - TILES_CACHE=http://tile-cache
-
-      # Geocoding
-      - PHOTON_BASE_URL=
-
-      # Custom tiles
-      - CUSTOM_TILES_SERVICE=
-      - CUSTOM_TILES_ATTRIBUTION=
 
       # Data management (import/export)
       - DANGEROUS_LIFE=false
