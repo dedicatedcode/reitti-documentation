@@ -153,5 +153,5 @@ services:
 
 OIDC variables are omitted in the snippet above; see the [OpenID Connect](./oidc.md) page for how to add them.
 
-For a complete working setup, refer to the [quick‑start guide](../getting-started.md) and the provided
+For a complete working setup, refer to the [quick‑start guide](../index.md) and the provided
 `docker-compose.yml` in the repository.
