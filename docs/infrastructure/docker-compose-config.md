@@ -84,7 +84,7 @@ variables for quick reference.
 | Variable                   | Description                                                                                                                                                          | Default Value | Example Value |
 |:---------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:--------------|
 | `PROCESSING_BATCH_SIZE`    | Number of location points processed in a single batch during import. Larger values use more memory and speed up processing.                                          | `10000`       | `50000`       |
-| `INGESTION_MAX_BATCH_SIZE` | Maximum number of raw location points that can be sent in a single API request to the ingestion endpoint.                                                            | `100`         | `500`         |
+| `INGESTION_MAX_BATCH_SIZE` | Maximum number of raw location points the server will wait before flushing API request to the ingestion endpoint.                                                    | `100`         | `500`         |
 | `INGESTION_MAX_IDLE_TIME`  | Maximum time (in seconds) the server will wait before flushing a partially filled batch to the database when receiving data via the live mode / batch ingestion API. | `5`           | `10`          |
 
 ---
