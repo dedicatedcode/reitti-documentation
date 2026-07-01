@@ -56,7 +56,7 @@ documents every supported variable, its default value, and a brief description o
 
 | Variable       | Description                                                                                         | Default               | Example Value               |
 |:---------------|:----------------------------------------------------------------------------------------------------|:----------------------|:----------------------------|
-| `TILES_CACHE`  | URL of an external tile cache (e.g. a tile‑proxy service). Map tiles are fetched through this URL.  | `http://tile-cache`   | `http://tiles.local:8080`   |
+| `TILES_CACHE`  | URL of our external tile cache (e.g. a tile‑proxy service). Map tiles are fetched through this URL. | `http://tile-cache`   | `http://tiles.local:8080`   |
 
 ---
 
