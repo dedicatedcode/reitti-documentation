@@ -63,7 +63,7 @@ Reitti v5.0.0 introduces **custom map styles** with a unified way to manage both
    ```yaml
    services:
      tile-cache:
-       image: dedicatedcode/reitti-tile-cache:latest
+       image: dedicatedcode/reitti-tile-cache:5
        # ... rest of your configuration
    ```
 
@@ -119,9 +119,9 @@ services:
 
 #### Change image tags from `:next` to `:latest`
 
-During a period in the v5 development cycle, the default `docker-compose.yml` used the `:next` tag for both the `reitti` and `reitti-tile-cache` images. If you picked up that configuration, you may still be using `:next`.
+During a period in the v4 development cycle, the default `docker-compose.yml` used the `:next` tag for both the `reitti` and `reitti-tile-cache` images. If you picked up that configuration, you may still be using `:next`.
 
-**Important:** Using the `:next` tag means you are participating in the latest development branch, which may contain bugs or unforeseen breaking changes. For a stable production setup, switch to `:latest`.
+**Important:** Using the `:next` tag means you are participating in the latest development branch, which may contain bugs or unforeseen breaking changes. For a stable production setup, switch to `:latest` or `5`.
 
 **Update these image references:**
 ```yaml

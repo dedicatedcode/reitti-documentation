@@ -945,6 +945,25 @@
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../infrastructure/docker-config/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Docker Compose Configuration
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
         data-size="default" href="../infrastructure/docker-secrets/"
         class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
@@ -1219,7 +1238,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-06-26T08:21:45+02:00');
+        const date = new Date('2026-07-01T19:05:44+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1275,7 +1294,7 @@ Only upgrades between major versions require special attention.</p>
    <code>yaml
    services:
      tile-cache:
-       image: dedicatedcode/reitti-tile-cache:latest
+       image: dedicatedcode/reitti-tile-cache:5
        # ... rest of your configuration</code></p>
 <p>Then run:
    <code>bash
@@ -1320,8 +1339,8 @@ Only upgrades between major versions require special attention.</p>
 </code></pre>
 
 <h4 id="change-image-tags-from-next-to-latest">Change image tags from <code>:next</code> to <code>:latest</code></h4>
-<p>During a period in the v5 development cycle, the default <code>docker-compose.yml</code> used the <code>:next</code> tag for both the <code>reitti</code> and <code>reitti-tile-cache</code> images. If you picked up that configuration, you may still be using <code>:next</code>.</p>
-<p><strong>Important:</strong> Using the <code>:next</code> tag means you are participating in the latest development branch, which may contain bugs or unforeseen breaking changes. For a stable production setup, switch to <code>:latest</code>.</p>
+<p>During a period in the v4 development cycle, the default <code>docker-compose.yml</code> used the <code>:next</code> tag for both the <code>reitti</code> and <code>reitti-tile-cache</code> images. If you picked up that configuration, you may still be using <code>:next</code>.</p>
+<p><strong>Important:</strong> Using the <code>:next</code> tag means you are participating in the latest development branch, which may contain bugs or unforeseen breaking changes. For a stable production setup, switch to <code>:latest</code> or <code>5</code>.</p>
 <p><strong>Update these image references:</strong></p>
 <pre class="codehilite"><code class="language-yaml">services:
   reitti:
@@ -1710,6 +1729,12 @@ rabbitmq:
                         <a class="text-2xl font-medium" href="../backup/">
                             
                             Backup
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../infrastructure/docker-config/">
+                            
+                            Docker Compose Configuration
                             
                         </a>
                         
