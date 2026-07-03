@@ -1238,7 +1238,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-07-01T19:05:44+02:00');
+        const date = new Date('2026-07-03T20:14:18+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1247,122 +1247,158 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <p>Reitti follows (https://semver.org/), which means:</p>
+    <p>Reitti follows <a href="https://semver.org/">Semantic Versioning</a>, which means:</p>
 <ul>
 <li><strong>Major versions</strong> (v1.x → v2.x): Contain breaking changes that may require manual intervention</li>
 <li><strong>Minor versions</strong> (v2.1 → v2.2): Add new features in a backward-compatible manner</li>
 <li><strong>Patch versions</strong> (v2.1.0 → v2.1.1): Include bug fixes and minor improvements</li>
 </ul>
-<p>For most upgrades, simply pulling the latest Docker image or updating the source code is enough. 
+<p>For most upgrades, simply pulling the latest versioned Docker image or updating the source code is enough.
 Only upgrades between major versions require special attention.</p>
+<hr />
 <h2 id="upgrading-from-v4-to-v5">Upgrading from v4 to v5</h2>
-<h3 id="1-device-management">1. Device Management</h3>
-<p>Reitti v5.0.0 introduces <strong>Devices</strong> as a core concept. Each API token can now be linked to a device, and tokens without an associated device can <strong>only</strong> be used for reading data. They can no longer ingest location data (OwnTracks, HTTP ingest, etc.).</p>
-<p><strong>Automatic migration:</strong></p>
-<p>On the first startup after the upgrade, Reitti will automatically create a <strong>default device</strong> and link all existing API tokens to it. This happens transparently and should not cause any disruption.</p>
-<p><strong>What you need to do:</strong></p>
-<ol>
-<li><strong>Verify your API tokens</strong>: After the migration, log into the web interface and go to <strong>Settings &gt; API Tokens</strong>. You will see your existing tokens now associated with the default device.</li>
-<li><strong>Check connected apps</strong>: If you are using API tokens in external applications (mobile apps, Home Assistant, custom scripts) to <strong>ingest</strong> data, confirm that the token is still linked to a device. If a token was detached or left without a device, it will only allow read
-   operations.</li>
-<li><strong>(Optional) Reorganize tokens and devices</strong>: You can:</li>
-<li>Detach a token from its device if you want it to become read-only.</li>
-<li>Attach a token to a different existing device.</li>
-<li>Create a new device — Reitti will automatically generate a new API token for that device.</li>
-</ol>
-<p><strong>Important:</strong></p>
+<blockquote>
+<p>⚠️ <strong>This is a Major Upgrade</strong>
+Reitti v5 introduces <strong>Devices</strong> and changes how map tiles are handled.
+If you skip the configuration steps below, your map may appear dark or your location data may stop syncing.</p>
+</blockquote>
+<h3 id="pre-upgrade-checklist">Pre-Upgrade Checklist</h3>
+<p>Before starting, ensure you have:</p>
 <ul>
-<li>Tokens can be created on their own, without a device. Such tokens may be used for <strong>reading data only</strong>.</li>
-<li>When a device is created, Reitti automatically sets up a new token for that device.</li>
-<li>Only tokens with an attached device can ingest location data.</li>
-<li>The automatic migration handles existing tokens, so no manual reassignment is needed unless you want to customise the setup.</li>
+<li>[ ] <strong>Backed up your database</strong> (Always recommended before major version changes).</li>
+<li>[ ] <strong>Saved your current <code>docker-compose.yml</code></strong> (For reference if you need to rollback).</li>
 </ul>
-<p><strong>Troubleshooting:</strong></p>
-<p>If an app starts failing to push location data after the upgrade, check:</p>
+<hr />
+<h3 id="performance-warning">⚠️ Performance Warning</h3>
+<p><strong>This upgrade may take a significant amount of time depending on your database size.</strong></p>
+<p>During the upgrade process, Reitti performs two time-consuming operations:</p>
 <ol>
-<li>That the token is linked to a device (<strong>Settings &gt; API Tokens</strong>).</li>
-<li>That the device itself is enabled.</li>
+<li><strong>GPS Data Migration:</strong> All GPS points are copied from the legacy table to the new table associated with the default
+   device.</li>
+<li><strong>Index Creation:</strong> An index is created on the <code>api_token_usages</code> table to support the new architecture.</li>
 </ol>
-<h3 id="2-custom-map-styles">2. Custom Map Styles</h3>
-<p>Reitti v5.0.0 introduces <strong>custom map styles</strong> with a unified way to manage both the built-in Reitti styles and any user-defined styles. During the migration, all users are automatically switched to the <strong>default Reitti style</strong> (dark theme).</p>
-<p><strong>What you need to do:</strong></p>
-<ol>
-<li><strong>If you were using the colored Reitti style</strong>: After the upgrade, go to <strong>Settings &gt; Map Styles</strong> and activate the <em>Colored Reitti</em> style from the list.</li>
-<li><strong>Update the <code>reitti-tile-cache</code> container</strong>: The way Reitti proxies map style URLs has changed in v5. It is <strong>mandatory</strong> to update your <code>reitti-tile-cache</code> container to the latest version. If you do not, style URLs cannot be loaded, and the map will remain dark.</li>
-</ol>
-<p><strong>Update your <code>docker-compose.yml</code>:</strong>
-   <code>yaml
-   services:
-     tile-cache:
-       image: dedicatedcode/reitti-tile-cache:5
-       # ... rest of your configuration</code></p>
-<p>Then run:
-   <code>bash
-   docker compose pull tile-cache
-   docker compose up -d tile-cache</code></p>
-<ol>
-<li><strong>Optional: Import your own map styles</strong>: If you have custom map styles, you can add them via <strong>Settings &gt; Map Styles</strong>. For more details, see the <a href="../configurations/map-styles/">Map Styles documentation</a>.</li>
-</ol>
-<p><strong>Important:</strong></p>
+<p><strong>Optimization Tip:</strong>
+If you have a large database and want to speed up the upgrade, you can clear the <code>api_token_usages</code> table before running
+the update. This removes the usage history but significantly reduces the time required for index creation.</p>
+<p><strong>Run this command before starting the upgrade:</strong></p>
+<pre class="codehilite"><code class="language-bash">sudo docker compose exec postgis psql -U reitti -d reittidb --command &quot;DELETE FROM api_token_usages&quot;
+</code></pre>
+
+<hr />
+<h3 id="step-1-update-docker-configuration">Step 1: Update Docker Configuration</h3>
+<p>You must update your <code>docker-compose.yml</code> to match the new architecture.</p>
+<h4 id="11-update-image-tags">1.1 Update Image Tags</h4>
+<p><strong>Action:</strong> Change image tags from <code>:next</code> to <code>:5</code> (explicit version).</p>
+<pre class="codehilite"><code class="language-yaml">services:
+   reitti:
+      image: dedicatedcode/reitti:5        # Was :next
+  tile-cache:
+     image: dedicatedcode/reitti-tile-cache:5  # Was :next
+</code></pre>
+
+<p><strong>Why this is required:</strong></p>
 <ul>
-<li>All users are reset to the default (dark) Reitti style on upgrade. You must manually re-enable the colored variant if desired.</li>
-<li>The <code>reitti-tile-cache</code> container <strong>must</strong> be updated to the latest version — otherwise, the proxy will not resolve style URLs and the map will stop working.</li>
+<li><strong>Explicit Versioning:</strong> Using <code>:5</code> ensures you are upgrading to the exact major version intended, avoiding unexpected
+  changes if <code>:latest</code> shifts to a newer major version (e.g., 6.0) before you are ready.</li>
+<li><strong>Stability:</strong> The <code>:next</code> tag points to the next branch, which is unstable for production.</li>
+<li><strong>Note:</strong> The <code>:next</code> tag was included in the official docker-compose examples for a short period during development.
+  If your configuration uses <code>:next</code>, it likely means you copied it during that window.</li>
 </ul>
-<p><strong>Troubleshooting:</strong></p>
-<p>If the map stays dark or shows no tiles after the upgrade:</p>
-<ol>
-<li>Verify that your <code>reitti-tile-cache</code> container is running the latest image: <code>docker compose ps tile-cache</code></li>
-<li>Check the logs for URL-related errors: <code>docker compose logs tile-cache</code></li>
-<li>Go to <strong>Settings &gt; Map Styles</strong> and ensure a valid style is selected.</li>
-</ol>
-<h3 id="3-docker-compose-configuration-updates">3. Docker Compose Configuration Updates</h3>
-<p>After upgrading to v5, please review your <code>docker-compose.yml</code> and apply the following changes:</p>
-<h4 id="drop-the-healthcheck-from-the-tile-cache-service">Drop the healthcheck from the tile-cache service</h4>
-<p>The healthcheck is now included in the Docker image itself. You can safely remove it from your configuration.</p>
-<p><strong>Before:</strong></p>
+<h4 id="12-update-tile-cache-service">1.2 Update Tile Cache Service</h4>
+<p><strong>Action:</strong> Ensure the <code>tile-cache</code> service is using the new image version (see 1.1) and <strong>remove the <code>healthcheck</code>
+block</strong>.</p>
 <pre class="codehilite"><code class="language-yaml">services:
   tile-cache:
-    image: dedicatedcode/reitti-tile-cache:latest
-    healthcheck:
-      test: [&quot;CMD&quot;, &quot;curl&quot;, &quot;-s&quot;, &quot;http://127.0.0.1/osm/0/0/0.png&quot;]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    # ...
+     image: dedicatedcode/reitti-tile-cache:5
+     # Remove this block entirely:
+     # healthcheck:
+     #   test: [&quot;CMD&quot;, &quot;curl&quot;, &quot;-s&quot;, &quot;http://127.0.0.1/osm/0/0/0.png&quot;]
 </code></pre>
 
-<p><strong>After:</strong></p>
-<pre class="codehilite"><code class="language-yaml">services:
-  tile-cache:
-    image: dedicatedcode/reitti-tile-cache:latest
-    # ...
-</code></pre>
-
-<h4 id="change-image-tags-from-next-to-latest">Change image tags from <code>:next</code> to <code>:latest</code></h4>
-<p>During a period in the v4 development cycle, the default <code>docker-compose.yml</code> used the <code>:next</code> tag for both the <code>reitti</code> and <code>reitti-tile-cache</code> images. If you picked up that configuration, you may still be using <code>:next</code>.</p>
-<p><strong>Important:</strong> Using the <code>:next</code> tag means you are participating in the latest development branch, which may contain bugs or unforeseen breaking changes. For a stable production setup, switch to <code>:latest</code> or <code>5</code>.</p>
-<p><strong>Update these image references:</strong></p>
-<pre class="codehilite"><code class="language-yaml">services:
-  reitti:
-    image: dedicatedcode/reitti:latest   # was :next
-    # ...
-
-  tile-cache:
-    image: dedicatedcode/reitti-tile-cache:latest   # was :next
-    # ...
-</code></pre>
-
-<p>Then restart the services:</p>
+<p><strong>Why this is required:</strong></p>
+<ul>
+<li><strong>Image Update:</strong> The tile cache service in v5 handles URL proxying differently. The old image cannot resolve the new
+  map style URLs, causing the map to break.</li>
+<li><strong>Healthcheck Removal:</strong> The healthcheck logic is now built directly into the Docker image. Having both the
+  user-defined block and the built-in one can cause startup conflicts or resource contention.</li>
+</ul>
+<h4 id="13-apply-changes">1.3 Apply Changes</h4>
+<p>Run the following commands to pull and restart:</p>
 <pre class="codehilite"><code class="language-bash">docker compose pull
 docker compose up -d
 </code></pre>
 
-<p><strong>Troubleshooting:</strong></p>
-<p>If the map stays dark or tiles fail to load after the upgrade, double-check that:
-- The <code>tile-cache</code> service is using the <code>:latest</code> tag (or an explicit version tag).
-- No stale <code>healthcheck</code> block is present, as it may conflict with the built-in one.</p>
+<hr />
+<h3 id="step-2-verify-critical-functionality">Step 2: Verify Critical Functionality</h3>
+<p>After the containers restart, perform these checks to ensure the upgrade was successful.</p>
+<h4 id="21-map-tiles">2.1 Map Tiles</h4>
+<p><strong>Action:</strong> Open Reitti in your browser.</p>
+<ul>
+<li><strong>If the map is displayed in dark mode:</strong> Go to <strong>Settings &gt; Map Styles</strong> and select "Colored Reitti".</li>
+<li><strong>If the map is broken:</strong> Check logs with <code>docker compose logs tile-cache</code>.</li>
+</ul>
+<p><strong>Why this is required:</strong>
+For consistency and security, all users are reset to the <strong>default (dark) Reitti style</strong> on upgrade. If you were using
+the "Colored Reitti" style, you must manually re-enable it.</p>
+<h4 id="22-api-tokens-devices">2.2 API Tokens &amp; Devices</h4>
+<p><strong>Action:</strong> Go to <strong>Settings &gt; API Tokens</strong> and verify your tokens have a <strong>Device</strong> attached.</p>
+<p><strong>Why this is required:</strong>
+v5 introduces <strong>Devices</strong> as a core concept.</p>
+<ul>
+<li><strong>Tokens without a device</strong> can only <strong>read data</strong> (they cannot ingest location data).</li>
+<li><strong>Tokens with a device</strong> can ingest data (OwnTracks, HTTP, etc.).</li>
+<li>While Reitti automatically links existing tokens to a default device, you must verify this to ensure your mobile apps
+  or Home Assistant integrations can still push location data.</li>
+</ul>
+<hr />
+<h3 id="step-3-optional-cleanup">Step 3: Optional Cleanup</h3>
+<ul>
+<li>[ ] <strong>Reorganize Devices:</strong> If you have multiple users or devices, create specific devices and assign tokens
+  accordingly.</li>
+<li>[ ] <strong>Import Map Styles:</strong> If you have custom map styles, import them via <strong>Settings &gt; Map Styles</strong>.</li>
+<li>[ ] <strong>Remove Old Config:</strong> Clean up any remaining <code>:next</code> tags or custom environment variables from previous versions.</li>
+</ul>
+<hr />
+<h3 id="troubleshooting">Troubleshooting</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Problem</th>
+<th style="text-align: left;">Likely Cause</th>
+<th style="text-align: left;">Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Map is not displayed</strong></td>
+<td style="text-align: left;">Tile Cache image outdated</td>
+<td style="text-align: left;">Update <code>tile-cache</code> to <code>:5</code> or <code>:latest</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Map is in dark mode</strong></td>
+<td style="text-align: left;">Map style not selected</td>
+<td style="text-align: left;">Manually select "Colored Reitti" in Settings</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Data ingestion fails</strong></td>
+<td style="text-align: left;">Token has no Device</td>
+<td style="text-align: left;">Go to <strong>Settings &gt; API Tokens</strong> and link to a Device</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Service won't start</strong></td>
+<td style="text-align: left;">Conflicting Healthcheck</td>
+<td style="text-align: left;">Remove <code>healthcheck</code> block from <code>docker-compose.yml</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tiles not loading</strong></td>
+<td style="text-align: left;">URL Proxy Error</td>
+<td style="text-align: left;">Check <code>docker compose logs tile-cache</code></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
 <h2 id="upgrading-from-v3-to-v4">Upgrading from v3 to v4</h2>
-<p>This guide covers the changes when upgrading from Reitti v3 to v4. These are breaking changes that require manual updates to your configuration.</p>
+<p><em>Note: This section is for users still on v3. If you are upgrading from v4 to v5, skip this section.</em></p>
 <h3 id="1-rabbitmq-removal">1. RabbitMQ Removal</h3>
 <p>RabbitMQ is no longer required. Remove all RabbitMQ-related configuration from your <code>docker-compose.yml</code>:</p>
 <p><strong>Remove these services:</strong></p>
@@ -1432,13 +1468,11 @@ rabbitmq:
 <li><strong>Backup your data:</strong> Always back up your database before major upgrades.</li>
 <li><strong>Start the services:</strong> Start the updated containers with <code>docker-compose up -d</code>.</li>
 <li><strong>Check logs:</strong> Monitor the logs for any errors during startup: <code>docker-compose logs -f reitti</code>.</li>
-<li><strong>Verify functionality:</strong><ul>
+<li><strong>Verify functionality:</strong></li>
 <li>Log in to the web interface</li>
 <li>Check <strong>Settings &gt; Geocoding</strong> for configured services</li>
 <li>Verify map tiles are loading correctly</li>
 <li>Test location tracking and geocoding</li>
-</ul>
-</li>
 </ol>
 <h3 id="7-troubleshooting">7. Troubleshooting</h3>
 <p>If you encounter issues after upgrading:</p>
@@ -1837,22 +1871,40 @@ rabbitmq:
         </a>
         
         
-        <a href="#1-device-management"
+        <a href="#pre-upgrade-checklist"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#1-device-management');">
-            1. Device Management
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#pre-upgrade-checklist');">
+            Pre-Upgrade Checklist
         </a>
         
-        <a href="#2-custom-map-styles"
+        <a href="#performance-warning"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#2-custom-map-styles');">
-            2. Custom Map Styles
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#performance-warning');">
+            ⚠️ Performance Warning
         </a>
         
-        <a href="#3-docker-compose-configuration-updates"
+        <a href="#step-1-update-docker-configuration"
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
-            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#3-docker-compose-configuration-updates');">
-            3. Docker Compose Configuration Updates
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#step-1-update-docker-configuration');">
+            Step 1: Update Docker Configuration
+        </a>
+        
+        <a href="#step-2-verify-critical-functionality"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#step-2-verify-critical-functionality');">
+            Step 2: Verify Critical Functionality
+        </a>
+        
+        <a href="#step-3-optional-cleanup"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#step-3-optional-cleanup');">
+            Step 3: Optional Cleanup
+        </a>
+        
+        <a href="#troubleshooting"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#troubleshooting');">
+            Troubleshooting
         </a>
         
         
