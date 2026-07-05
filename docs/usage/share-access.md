@@ -159,6 +159,52 @@ To optimize the multi-user map experience:
 
 ![Shares Access](../img/shared-access.png)
 
+
+## Owntracks Integration for User Visibility
+
+|since|v3.1.0|.version-badge|
+
+When using the [Owntracks mobile app](https://owntracks.org/) to report your location data into Reitti, you can also see other connected users directly within the Owntracks app. This is possible because Reitti responds to Owntracks ingestion requests with **cards** containing
+user information, including:
+
+- **Profile image** (if available)
+- **Display name**
+- **Latest known location**
+
+This allows the Owntracks app to show a visual overview of all users you have access to, making it easy to see who is where at a glance.
+
+### Prerequisites
+
+For this feature to work:
+
+1. **Use the Owntracks App**: You must be using the Owntracks mobile app to report your location data into Reitti
+2. **Configure the Owntracks Integration**: Your location data must be sent to Reitti via the (docs/integrations/mobile-apps.md)
+3. **Have Other Users in Reitti**: You need to have other registered users in your Reitti instance whose location data you can view (either via magic links or direct user sharing)
+
+### How It Works
+
+When you open the Owntracks app, it will display a list of all users you have access to, showing:
+
+- **Profile Image**: Each user's profile picture (if set)
+- **Display Name**: The user's name as configured in Reitti
+- **Latest Known Location**: The most recent location data reported by that user
+
+This provides a quick, at-a-glance view of who is currently active and where they are, without needing to open the full Reitti dashboard.
+
+### Configuration
+
+No additional configuration is required beyond:
+
+- Setting up the [Owntracks integration](../integrations/mobile-apps.md) to report your data
+- Having other users share their location data with you (via (#share-access-with-magic-links) or (#share-access-to-other-users))
+
+### Limitations
+
+- Only users who have shared their location data with you will appear in the Owntracks app
+- The feature requires the Owntracks app to be actively connected to your Reitti instance
+- Location data is updated in real-time as users report their positions
+
+
 ### Best Practices for User Sharing
 
 - **Regular review**: Periodically check who has access to your data

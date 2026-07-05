@@ -8,6 +8,6 @@ dependencies = [
     "mkdocs-awesome-nav>=3.3.0",
     "mkdocs-badges>=0.5.2",
     "mkdocs-redirects>=1.2.2",
-    "mkdocs-shadcn>=0.10.2",
+    "mkdocs-shadcn>=0.11.0",
     "click==8.2.1"
 ]

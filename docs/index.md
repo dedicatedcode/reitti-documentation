@@ -4,14 +4,14 @@ description: "Personal location tracking and analysis application that transform
 weight: 0
 ---
 
-## Reitti - Personal Location Tracking
+## Reitti – Personal Location Tracking
 
 Reitti is a comprehensive personal location tracking and analysis application that helps you understand your movement patterns and significant places. The name "Reitti" comes from Finnish, meaning "route" or "path".
 
 ### Screenshots
 
 #### Main View
-![Main View](./img/main.png)
+![Main View](img/main.png)
 
 #### Multiple Users View
 ![Multiple Users View](./img/multiple-users.png)
@@ -65,4 +65,4 @@ This will make Reitti available at http://localhost:8080 with default credential
 
 ### License
 
-Reitti is licensed under the MIT License.
+Reitti is licensed under the GNU Affero General Public License Version 3 (AGPLv3) License.

@@ -13,6 +13,12 @@ The Ingest Data API endpoint allows you to send location data directly to Reitti
 ```
 POST /api/v1/ingest/owntracks?token=API-TOKEN
 ```
+or
+```
+POST /api/v1/ingest/gpslogger?token=API-TOKEN
+```
+
+Instead of the `token` parameter, you can also use the `X-API-Token` header for enhanced security.
 
 ### Usage
 
