@@ -71,6 +71,14 @@ documents every supported variable, its default value, and a brief description o
 
 ---
 
+### Reitti Tile Cache
+
+| Variable       | Description                                                                                         | Default               | Example Value               |
+|:---------------|:----------------------------------------------------------------------------------------------------|:----------------------|:----------------------------|
+| `RESOLVER_IP`  | Used to set the resolver directive for nginx by hand. If kept empty, the container will calculate this from `/etc/resolv.conf` on startup and will take the first one found. | *(empty)*             | `8.8.8.8`                  |
+
+---
+
 ### Local Authentication
 
 | Variable              | Description                                                                                                                               | Default Value | Example Value |
