@@ -1238,7 +1238,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-07-05T16:02:22+02:00');
+        const date = new Date('2026-07-06T09:56:56+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1557,6 +1557,26 @@ variables for quick reference.</p>
 </tbody>
 </table></div>
 <hr />
+<h3 id="reitti-tile-cache">Reitti Tile Cache</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Example Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>RESOLVER_IP</code></td>
+<td style="text-align: left;">Used to set the resolver directive for nginx by hand. If kept empty, the container will calculate this from <code>/etc/resolv.conf</code> on startup and will take the first one found.</td>
+<td style="text-align: left;"><em>(empty)</em></td>
+<td style="text-align: left;"><code>8.8.8.8</code></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
 <h2 id="example-docker-composeyml-snippet">Example <code>docker-compose.yml</code> snippet</h2>
 <p>The following snippet shows how the environment variables can be placed under the <code>reitti</code> service:</p>
 <pre class="codehilite"><code class="language-yaml">services:
@@ -1596,6 +1616,10 @@ variables for quick reference.</p>
       - PROCESSING_BATCH_SIZE=10000
       - INGESTION_MAX_BATCH_SIZE=100
       - INGESTION_MAX_IDLE_TIME=5
+  tile-cache:
+    image: dedicatedcode/reitti-tile-cache:latest
+    environment:
+      - RESOLVER_IP=8.8.8.8
 </code></pre>
 
 <p>OIDC variables are omitted in the snippet above; see the <a href="../oidc/">OpenID Connect</a> page for how to add them.</p>
@@ -2035,6 +2059,12 @@ variables for quick reference.</p>
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#data-import-processing');">
             Data Import / Processing
+        </a>
+        
+        <a href="#reitti-tile-cache"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#reitti-tile-cache');">
+            Reitti Tile Cache
         </a>
         
         

@@ -107,6 +107,14 @@ variables for quick reference.
 
 ---
 
+### Reitti Tile Cache
+
+| Variable       | Description                                                                                         | Default               | Example Value               |
+|:---------------|:----------------------------------------------------------------------------------------------------|:----------------------|:----------------------------|
+| `RESOLVER_IP`  | Used to set the resolver directive for nginx by hand. If kept empty, the container will calculate this from `/etc/resolv.conf` on startup and will take the first one found. | *(empty)*             | `8.8.8.8`                  |
+
+---
+
 ## Example `docker-compose.yml` snippet
 
 The following snippet shows how the environment variables can be placed under the `reitti` service:
@@ -149,6 +157,10 @@ services:
       - PROCESSING_BATCH_SIZE=10000
       - INGESTION_MAX_BATCH_SIZE=100
       - INGESTION_MAX_IDLE_TIME=5
+  tile-cache:
+    image: dedicatedcode/reitti-tile-cache:latest
+    environment:
+      - RESOLVER_IP=8.8.8.8
 ```
 
 OIDC variables are omitted in the snippet above; see the [OpenID Connect](./oidc.md) page for how to add them.
