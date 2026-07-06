@@ -71,14 +71,6 @@ documents every supported variable, its default value, and a brief description o
 
 ---
 
-### Reitti Tile Cache
-
-| Variable       | Description                                                                                         | Default               | Example Value               |
-|:---------------|:----------------------------------------------------------------------------------------------------|:----------------------|:----------------------------|
-| `RESOLVER_IP`  | Used to set the resolver directive for nginx by hand. If kept empty, the container will calculate this from `/etc/resolv.conf` on startup and will take the first one found. | *(empty)*             | `8.8.8.8`                  |
-
----
-
 ### Local Authentication
 
 | Variable              | Description                                                                                                                               | Default Value | Example Value |
@@ -112,6 +104,14 @@ variables for quick reference.
 | `PROCESSING_BATCH_SIZE`    | Number of location points processed in a single batch during import. Larger values use more memory and speed up processing.                                          | `10000`       | `50000`       |
 | `INGESTION_MAX_BATCH_SIZE` | Maximum number of raw location points the server will wait before flushing API request from the ingestion endpoint.                                                  | `100`         | `500`         |
 | `INGESTION_MAX_IDLE_TIME`  | Maximum time (in seconds) the server will wait before flushing a partially filled batch to the database when receiving data via the live mode / batch ingestion API. | `5`           | `10`          |
+
+---
+
+### Reitti Tile Cache
+
+| Variable       | Description                                                                                         | Default               | Example Value               |
+|:---------------|:----------------------------------------------------------------------------------------------------|:----------------------|:----------------------------|
+| `RESOLVER_IP`  | Used to set the resolver directive for nginx by hand. If kept empty, the container will calculate this from `/etc/resolv.conf` on startup and will take the first one found. | *(empty)*             | `8.8.8.8`                  |
 
 ---
 
@@ -157,6 +157,10 @@ services:
       - PROCESSING_BATCH_SIZE=10000
       - INGESTION_MAX_BATCH_SIZE=100
       - INGESTION_MAX_IDLE_TIME=5
+  tile-cache:
+    image: dedicatedcode/reitti-tile-cache:latest
+    environment:
+      - RESOLVER_IP=8.8.8.8
 ```
 
 OIDC variables are omitted in the snippet above; see the [OpenID Connect](./oidc.md) page for how to add them.
