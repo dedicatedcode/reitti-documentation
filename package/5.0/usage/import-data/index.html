@@ -1053,6 +1053,25 @@
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
+        data-size="default" href="../../api/fit-import/"
+        class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        FIT Import API
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button"
         data-size="default" href="../../api/geojson/"
         class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
@@ -1238,7 +1257,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-03-27T06:37:41+01:00');
+        const date = new Date('2026-07-13T16:24:02+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1252,6 +1271,9 @@
 <p>The import page provides several options for uploading location data from different sources:</p>
 <h3 id="gpx-files">GPX Files</h3>
 <p>Upload GPX files from your GPS devices or tracking apps. GPX files contain waypoints, tracks, and routes with timestamps that can be processed into your location history.</p>
+<h3 id="fit-files">FIT Files</h3>
+<p>Upload FIT files from your fitness devices, such as Garmin, Suunto, or Polar watches. FIT files contain activity data with timestamps that can be processed into your location history.</p>
+<p>If you want to use the API directly, see the <a href="../../api/fit-import/">FIT Import API documentation</a>.</p>
 <h3 id="geojson-files">GeoJSON Files</h3>
 <p>Upload GeoJSON files containing Point features with location data. GeoJSON files should contain Point geometries with coordinates and optional timestamp properties. Supports both single Feature and FeatureCollection formats.</p>
 <h3 id="android-timeline-timelinejson">Android Timeline (timeline.json)</h3>
@@ -1607,6 +1629,12 @@
                             
                         </a>
                         
+                        <a class="text-2xl font-medium" href="../../api/fit-import/">
+                            
+                            FIT Import API
+                            
+                        </a>
+                        
                         <a class="text-2xl font-medium" href="../../api/geojson/">
                             
                             GeoJSON API
@@ -1677,6 +1705,12 @@
             class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
             data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#gpx-files');">
             GPX Files
+        </a>
+        
+        <a href="#fit-files"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#fit-files');">
+            FIT Files
         </a>
         
         <a href="#geojson-files"
