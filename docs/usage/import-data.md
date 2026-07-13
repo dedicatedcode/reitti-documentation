@@ -15,6 +15,12 @@ The import page provides several options for uploading location data from differ
 
 Upload GPX files from your GPS devices or tracking apps. GPX files contain waypoints, tracks, and routes with timestamps that can be processed into your location history.
 
+### FIT Files
+
+Upload FIT files from your fitness devices, such as Garmin, Suunto, or Polar watches. FIT files contain activity data with timestamps that can be processed into your location history.
+
+If you want to use the API directly, see the [FIT Import API documentation](../api/fit-import.md).
+
 ### GeoJSON Files
 
 Upload GeoJSON files containing Point features with location data. GeoJSON files should contain Point geometries with coordinates and optional timestamp properties. Supports both single Feature and FeatureCollection formats.
