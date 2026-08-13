@@ -40,6 +40,9 @@ Reitti provides a comprehensive set of features for personal location tracking a
 - **Queue Monitoring**: Real-time job status and processing queue visibility
 - **Custom Tiles-Server**: Ability to use your own tiles-server
 
+#### Spatial Coverage
+- **H3-Based Coverage Analysis**: See what percentage of a city, district, or country you have explored, with the ability to travel back in time and view your coverage at any point in the past. [Learn more](../configurations/spatial-coverage.md)
+
 ### Integration Features
 
 Reitti supports various integrations to enhance your location tracking experience:
