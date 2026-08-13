@@ -99,11 +99,12 @@ variables for quick reference.
 
 ### Data Import / Processing
 
-| Variable                   | Description                                                                                                                                                          | Default Value | Example Value |
-|:---------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:--------------|
-| `PROCESSING_BATCH_SIZE`    | Number of location points processed in a single batch during import. Larger values use more memory and speed up processing.                                          | `10000`       | `50000`       |
-| `INGESTION_MAX_BATCH_SIZE` | Maximum number of raw location points the server will wait before flushing API request from the ingestion endpoint.                                                  | `100`         | `500`         |
-| `INGESTION_MAX_IDLE_TIME`  | Maximum time (in seconds) the server will wait before flushing a partially filled batch to the database when receiving data via the live mode / batch ingestion API. | `5`           | `10`          |
+| Variable                   | Description                                                                                                                                                                                                                                                   | Default Value | Example Value |
+|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:--------------|
+| `PROCESSING_BATCH_SIZE`    | Number of location points processed in a single batch during import. Larger values use more memory and speed up processing.                                                                                                                                   | `10000`       | `50000`       |
+| `INGESTION_MAX_BATCH_SIZE` | Maximum number of raw location points the server will wait before flushing API request from the ingestion endpoint.                                                                                                                                           | `100`         | `500`         |
+| `INGESTION_MAX_IDLE_TIME`  | Maximum time (in seconds) the server will wait before flushing a partially filled batch to the database when receiving data via the live mode / batch ingestion API.                                                                                          | `5`           | `10`          |
+| `SPATIAL_COVERAGE`         | Enables H3-based spatial coverage analysis. Calculates H3 hex cells for every location point and downloads a global administrative boundary database. Requires additional disk space and processing time. [Learn more](../configurations/spatial-coverage.md) | `false`       | `true`        |
 
 ---
 
@@ -157,6 +158,9 @@ services:
       - PROCESSING_BATCH_SIZE=10000
       - INGESTION_MAX_BATCH_SIZE=100
       - INGESTION_MAX_IDLE_TIME=5
+
+      # Spatial coverage
+      - SPATIAL_COVERAGE=false
   tile-cache:
     image: dedicatedcode/reitti-tile-cache:latest
     environment:
