@@ -1295,7 +1295,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-08-13T12:53:07+02:00');
+        const date = new Date('2026-08-14T07:30:09+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1326,16 +1326,27 @@
 <h3 id="configuration">Configuration</h3>
 <p>Spatial coverage is disabled by default. Enable it using one of the following methods:</p>
 <h4 id="docker">Docker</h4>
-<p>Set the environment variable to <code>true</code>:</p>
+<p>To enable spatial coverage, <code>SPATIAL_COVERAGE</code> <strong>must</strong> be set to <code>true</code>. <code>SPATIAL_COVERAGE_LOCATION</code> is optional and can be set to further tweak the download location:</p>
 <pre class="codehilite"><code class="language-yaml">environment:
   - SPATIAL_COVERAGE=true
+  - SPATIAL_COVERAGE_LOCATION=/data/h3
 </code></pre>
 
+<ul>
+<li><code>SPATIAL_COVERAGE</code> — required to enable the feature. Defaults to <code>false</code> (spatial coverage disabled).</li>
+<li><code>SPATIAL_COVERAGE_LOCATION</code> — optional. Controls the filesystem path where the boundary database and H3 cells are stored. Defaults to <code>/data/h3</code>.</li>
+</ul>
 <h4 id="jar-applicationproperties">JAR / application.properties</h4>
 <p>Add the following to your <code>application.properties</code>:</p>
 <pre class="codehilite"><code class="language-properties">reitti.h3.enabled=true
+reitti.h3.path=/data/h3
 </code></pre>
 
+<p>To enable spatial coverage, <code>reitti.h3.enabled</code> <strong>must</strong> be set to <code>true</code>. <code>reitti.h3.path</code> is optional and can be set to further tweak the download location:</p>
+<ul>
+<li><code>reitti.h3.enabled</code> — required to enable the feature. Defaults to <code>false</code> (spatial coverage disabled).</li>
+<li><code>reitti.h3.path</code> — optional. Controls the filesystem path where the boundary database and H3 cells are stored. Defaults to <code>./data</code>.</li>
+</ul>
 <h3 id="restart">Restart</h3>
 <p>A restart is required after enabling the feature. When Reitti starts back up, it will:</p>
 <ul>
