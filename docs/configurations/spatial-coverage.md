@@ -33,12 +33,16 @@ Spatial coverage is disabled by default. Enable it using one of the following me
 
 #### Docker
 
-Set the environment variable to `true`:
+To enable spatial coverage, `SPATIAL_COVERAGE` **must** be set to `true`. `SPATIAL_COVERAGE_LOCATION` is optional and can be set to further tweak the download location:
 
 ```yaml
 environment:
   - SPATIAL_COVERAGE=true
+  - SPATIAL_COVERAGE_LOCATION=/data/h3
 ```
+
+- `SPATIAL_COVERAGE` — required to enable the feature. Defaults to `false` (spatial coverage disabled).
+- `SPATIAL_COVERAGE_LOCATION` — optional. Controls the filesystem path where the boundary database and H3 cells are stored. Defaults to `/data/h3`.
 
 #### JAR / application.properties
 
@@ -46,7 +50,13 @@ Add the following to your `application.properties`:
 
 ```properties
 reitti.h3.enabled=true
+reitti.h3.path=/data/h3
 ```
+
+To enable spatial coverage, `reitti.h3.enabled` **must** be set to `true`. `reitti.h3.path` is optional and can be set to further tweak the download location:
+
+- `reitti.h3.enabled` — required to enable the feature. Defaults to `false` (spatial coverage disabled).
+- `reitti.h3.path` — optional. Controls the filesystem path where the boundary database and H3 cells are stored. Defaults to `./data`.
 
 ### Restart
 
