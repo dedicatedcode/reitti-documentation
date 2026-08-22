@@ -153,7 +153,7 @@ services:
       # Tile cache
       - TILES_CACHE=http://tile-cache
 
-      # Data management (import/export)
+      # Data management (deletion, purge)
       - DANGEROUS_LIFE=false
 
       # Ingestion tuning
