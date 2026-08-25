@@ -52,14 +52,15 @@ documents every supported variable, its default value, and a brief description o
 
 ### Redis Cache
 
-| Variable             | Description                                                              | Default Value | Example Value             |
-|:---------------------|:-------------------------------------------------------------------------|:--------------|:--------------------------|
-| `REDIS_HOST`         | Hostname of the Redis server.                                            | `redis`       | `redis.example.com`       |
-| `REDIS_PORT`         | Redis port.                                                              | `6379`        | `6379`                    |
-| `REDIS_USERNAME`     | Username for Redis authentication (leave empty if not needed).           | *(empty)*     | `default`                 |
-| `REDIS_PASSWORD`     | Password for Redis authentication.                                       | *(empty)*     | `r3d!s$3cr3t`             |
-| `REDIS_DATABASE`     | Redis database index.                                                    | `0`           | `1`                       |
-| `REDIS_CACHE_PREFIX` | Prefix added to all cache keys in Redis.                                 | *(empty)*     | `reitti:`                 |
+| Variable             | Description                                                    | Default Value | Example Value                  |
+|:---------------------|:---------------------------------------------------------------|:--------------|:-------------------------------|
+| `REDIS_HOST`         | Hostname of the Redis server.                                  | `redis`       | `redis.example.com`            |
+| `REDIS_PORT`         | Redis port.                                                    | `6379`        | `6379`                         |
+| `REDIS_USERNAME`     | Username for Redis authentication (leave empty if not needed). | *(empty)*     | `default`                      |
+| `REDIS_PASSWORD`     | Password for Redis authentication.                             | *(empty)*     | `r3d!s$3cr3t`                  |
+| `REDIS_DATABASE`     | Redis database index.                                          | `0`           | `1`                            |
+| `REDIS_CACHE_PREFIX` | Prefix added to all cache keys in Redis.                       | *(empty)*     | `reitti:`                      |
+| `REDIS_SOCKET`       | If you want to connect to Redis via socket, use this variable  | *(empty)*     | `/run/redis/redis-server.sock` |
 
 ---
 
@@ -152,7 +153,7 @@ services:
       # Tile cache
       - TILES_CACHE=http://tile-cache
 
-      # Data management (import/export)
+      # Data management (deletion, purge)
       - DANGEROUS_LIFE=false
 
       # Ingestion tuning
