@@ -1295,7 +1295,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-08-14T07:30:09+02:00');
+        const date = new Date('2026-08-22T04:52:10+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1479,6 +1479,12 @@ refer to that page for the full OIDC configuration guide.</p>
 <td style="text-align: left;">Prefix added to all cache keys in Redis.</td>
 <td style="text-align: left;"><em>(empty)</em></td>
 <td style="text-align: left;"><code>reitti:</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>REDIS_SOCKET</code></td>
+<td style="text-align: left;">If you want to connect to Redis via socket, use this variable</td>
+<td style="text-align: left;"><em>(empty)</em></td>
+<td style="text-align: left;"><code>/run/redis/redis-server.sock</code></td>
 </tr>
 </tbody>
 </table></div>
@@ -1678,7 +1684,7 @@ variables for quick reference.</p>
       # Tile cache
       - TILES_CACHE=http://tile-cache
 
-      # Data management (import/export)
+      # Data management (deletion, purge)
       - DANGEROUS_LIFE=false
 
       # Ingestion tuning
