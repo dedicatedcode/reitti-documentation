@@ -75,7 +75,7 @@ If you prefer to configure GPSLogger manually instead of using the **Remote Conf
 4. Set **HTTP Method** to **POST**
 5. Set **HTTP Body** to:
 
-    ```json
+    ```
     {
         "_type" : "location",
         "t": "u",
