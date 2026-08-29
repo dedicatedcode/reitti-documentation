@@ -1295,7 +1295,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-05-28T10:43:40+02:00');
+        const date = new Date('2026-08-29T05:42:52+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1352,6 +1352,38 @@
 <li><code>Distance filter</code> to <code>0</code></li>
 <li><code>Accuracy Filter</code> to <code>40</code></li>
 <li>Start logging to begin sending data to Reitti</li>
+</ol>
+<h4 id="manual-setup-via-log-to-custom-url">Manual setup via "Log to custom URL"</h4>
+<p>If you prefer to configure GPSLogger manually instead of using the <strong>Remote Configuration</strong> button:</p>
+<ol>
+<li>Open GPSLogger and go to <strong>Logging details → Log to custom URL</strong></li>
+<li>Enable <strong>Log to custom URL</strong></li>
+<li>Set the URL to the GPSLogger ingestion URL shown in Reitti's integration settings, e.g. <code>https://your-domain.com/api/v1/ingest/gpslogger</code></li>
+<li>Set <strong>HTTP Method</strong> to <strong>POST</strong></li>
+<li>
+<p>Set <strong>HTTP Body</strong> to:</p>
+<p><code>json
+{
+    "_type" : "location",
+    "t": "u",
+    "acc": "%ACC",
+    "alt": "%ALT",
+    "batt": "%BATT",
+    "bs": "%ISCHARGING",
+    "lat": "%LAT",
+    "lon": "%LON",
+    "tst": "%TIMESTAMP",
+    "vel": "%SPD"
+}</code></p>
+</li>
+<li>
+<p>Set <strong>HTTP Headers</strong> to:</p>
+<p><code>Content-Type: application/json
+X-API-TOKEN: &lt;your API token from the Reitti integration settings&gt;</code></p>
+</li>
+<li>
+<p>Start logging!</p>
+</li>
 </ol>
 <h3 id="overland-setup">Overland Setup</h3>
 <p><span class="badge badge-normal version-badge"><span class=sep> [</span><span class=title>since</span><span class=sep> : </span><span class=value>v2.3.0</span><span class=sep>] </span></span></p>
@@ -1854,6 +1886,14 @@
             data-active="false" data-depth="2" onClick="deferSetActiveTocLink('#gpslogger-setup');">
             GPSLogger Setup
         </a>
+        
+        
+        <a href="#manual-setup-via-log-to-custom-url"
+            class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6"
+            data-active="false" data-depth="3" onClick="deferSetActiveTocLink('#manual-setup-via-log-to-custom-url');">
+            Manual setup via "Log to custom URL"
+        </a>
+        
         
 
         
