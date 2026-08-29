@@ -65,6 +65,40 @@ For each supported app, a **Remote Configuration** button is provided on this pa
    3. `Accuracy Filter` to `40`
 5. Start logging to begin sending data to Reitti
 
+#### Manual setup via "Log to custom URL"
+
+If you prefer to configure GPSLogger manually instead of using the **Remote Configuration** button:
+
+1. Open GPSLogger and go to **Logging details → Log to custom URL**
+2. Enable **Log to custom URL**
+3. Set the URL to the GPSLogger ingestion URL shown in Reitti's integration settings, e.g. `https://your-domain.com/api/v1/ingest/gpslogger`
+4. Set **HTTP Method** to **POST**
+5. Set **HTTP Body** to:
+
+    ```json
+    {
+        "_type" : "location",
+        "t": "u",
+        "acc": "%ACC",
+        "alt": "%ALT",
+        "batt": "%BATT",
+        "bs": "%ISCHARGING",
+        "lat": "%LAT",
+        "lon": "%LON",
+        "tst": "%TIMESTAMP",
+        "vel": "%SPD"
+    }
+    ```
+
+6. Set **HTTP Headers** to:
+
+    ```
+    Content-Type: application/json
+    X-API-TOKEN: <your API token from the Reitti integration settings>
+    ```
+
+7. Start logging!
+
 ### Overland Setup 
 |since|v2.3.0|.version-badge|
 
