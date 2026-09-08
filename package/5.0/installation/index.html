@@ -905,6 +905,23 @@
             
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../infrastructure/docker-without-compose/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Running without Docker Compose
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../infrastructure/oidc/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
@@ -1149,7 +1166,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-03-27T13:48:51+01:00');
+        const date = new Date('2026-09-08T16:19:52+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1165,6 +1182,7 @@
 </code></pre>
 
 <p>This will start all services and make Reitti available at http://localhost:8080. When you first open Reitti, it will prompt you to set the admin password.</p>
+<p>If you prefer not to use Docker Compose, you can also start the containers with plain <code>docker run</code> commands, see <a href="../infrastructure/docker-without-compose/">Running without Docker Compose</a>.</p>
 <h3 id="docker-tag-strategy-and-best-practices">Docker Tag Strategy and Best Practices</h3>
 <p>Reitti is published to Docker Hub with multiple tags for each release:</p>
 <ul>
@@ -1591,6 +1609,12 @@ spring.data.redis.password=
                         <a class="text-2xl font-medium" href="../infrastructure/docker-secrets/">
                             
                             Using Docker Swarm / Compose Secrets
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../infrastructure/docker-without-compose/">
+                            
+                            Running without Docker Compose
                             
                         </a>
                         

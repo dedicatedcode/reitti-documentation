@@ -14,6 +14,8 @@ docker-compose up -d
 
 This will start all services and make Reitti available at http://localhost:8080. When you first open Reitti, it will prompt you to set the admin password.
 
+If you prefer not to use Docker Compose, you can also start the containers with plain `docker run` commands, see [Running without Docker Compose](infrastructure/docker-without-compose.md).
+
 ### Docker Tag Strategy and Best Practices
 
 Reitti is published to Docker Hub with multiple tags for each release:

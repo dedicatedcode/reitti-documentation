@@ -186,7 +186,7 @@ On the map, this translates to:
 ![Street Photos panel with the 360° viewer](../img/panoramax-panel.png)
 
 !!! hint
-    The **Street Photos** toggle only appears when a Panoramax endpoint is configured on your instance (`reitti.panoramax.base-url`, by default the public Panoramax API). The imagery is contributed by the Panoramax community and is subject to the respective licenses shown in the panel.
+    The **Street Photos** toggle only appears when a Panoramax endpoint is configured on your instance via the `PANORAMAX_BASE_URL` environment variable (see [Optional Features](../infrastructure/docker-config.md#optional-features); by default the public Panoramax API is used). The imagery is contributed by the Panoramax community and is subject to the respective licenses shown in the panel.
 
 ## Settings
 

@@ -905,6 +905,23 @@
             
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../docker-without-compose/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Running without Docker Compose
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../oidc/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
@@ -1149,7 +1166,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-08-22T04:52:10+02:00');
+        const date = new Date('2026-09-08T16:19:52+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1161,6 +1178,8 @@
     <h2 id="overview">Overview</h2>
 <p>When running Reitti using Docker Compose, all configuration is provided through environment variables. This page
 documents every supported variable, its default value, and a brief description of its purpose.</p>
+<p>If you prefer running the containers with plain <code>docker run</code> commands instead of Docker Compose, see
+<a href="../docker-without-compose/">Running without Docker Compose</a>.</p>
 <blockquote>
 <p><strong>Note:</strong> The OpenID Connect (OIDC) related variables are described in detail on the
 <a href="../oidc/">OpenID Connect</a> page. They are listed here for completeness, but
@@ -1471,6 +1490,20 @@ variables for quick reference.</p>
 <td style="text-align: left;"><code>5</code></td>
 <td style="text-align: left;"><code>10</code></td>
 </tr>
+</tbody>
+</table></div>
+<hr>
+<h3 id="optional-features">Optional Features</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Default Value</th>
+<th style="text-align: left;">Example Value</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><code>SPATIAL_COVERAGE</code></td>
 <td style="text-align: left;">Enables H3-based spatial coverage analysis. Calculates H3 hex cells for every location point and downloads a global administrative boundary database. Requires additional disk space and processing time. <a href="../../configurations/spatial-coverage/">Learn more</a></td>
@@ -1482,6 +1515,12 @@ variables for quick reference.</p>
 <td style="text-align: left;">Filesystem path where the H3 boundary database and calculated H3 cells are stored. <a href="../../configurations/spatial-coverage/">Learn more</a></td>
 <td style="text-align: left;"><code>/data/h3</code></td>
 <td style="text-align: left;"><code>/data/h3</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PANORAMAX_BASE_URL</code></td>
+<td style="text-align: left;">Base URL of the Panoramax API used for the street-level imagery on the map. Set to an empty value to disable the integration entirely. <a href="../../usage/main-view/#street-photos-layer-panoramax">Learn more</a></td>
+<td style="text-align: left;"><code>https://api.panoramax.xyz/api</code></td>
+<td style="text-align: left;"><code>https://api.panoramax.xyz/api</code></td>
 </tr>
 </tbody>
 </table></div>
@@ -1546,9 +1585,10 @@ variables for quick reference.</p>
       - INGESTION_MAX_BATCH_SIZE=100
       - INGESTION_MAX_IDLE_TIME=5
 
-      # Spatial coverage
+      # Optional features
       - SPATIAL_COVERAGE=false
       - SPATIAL_COVERAGE_LOCATION=/data/h3
+      - PANORAMAX_BASE_URL=https://api.panoramax.xyz/api
   tile-cache:
     image: dedicatedcode/reitti-tile-cache:latest
     environment:
@@ -1853,6 +1893,12 @@ variables for quick reference.</p>
                             
                         </a>
                         
+                        <a class="text-2xl font-medium" href="../docker-without-compose/">
+                            
+                            Running without Docker Compose
+                            
+                        </a>
+                        
                         <a class="text-2xl font-medium" href="../oidc/">
                             
                             OpenID Connect
@@ -1979,6 +2025,10 @@ variables for quick reference.</p>
         
         <a href="#data-import-processing" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#data-import-processing');">
             Data Import / Processing
+        </a>
+        
+        <a href="#optional-features" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#optional-features');">
+            Optional Features
         </a>
         
         <a href="#reitti-tile-cache" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#reitti-tile-cache');">
