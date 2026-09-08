@@ -29,7 +29,7 @@ To create a magic link:
 
 ### Access Levels
 
-You can choose between two access levels when creating a magic link:
+You can choose between four access levels when creating a magic link:
 
 #### Full Access
 
@@ -44,6 +44,17 @@ You can choose between two access levels when creating a magic link:
 - Recipients can only view live/real-time location information
 - No access to historical data
 - Limited to live mode interface
+
+#### Live Data Only + Photos
+
+- Access only to current/recent location data and your photos if they are shown on the map
+- Combines live location sharing with photo sharing from your Immich integration
+- No access to historical data
+
+#### Latest Location only
+
+- Access only to the latest location on the map
+- No access to historical data or the full timeline
 
 ### Expiration Settings
 
@@ -70,7 +81,7 @@ Setting expiration dates is recommended for temporary sharing to limit access du
 You can view all your active magic links in the sharing dashboard, which shows:
 
 - Link creation date
-- Access level (Full Access or Live Data Only)
+- Access level (see [Access Levels](#access-levels) above)
 - Expiration date (if set)
 - Last used timestamp
 
@@ -114,19 +125,30 @@ Once deleted, the link will immediately become invalid and anyone trying to acce
 
 In addition to magic links, you can share your location data directly with other registered users on the same Reitti instance. This feature allows for seamless collaboration and data sharing within your organization or group.
 
+!!! hint "Family Sharing"
+    This feature is perfect for **family sharing**, similar to what apps like Life360 pioneered. Share your location and photos with your partner, kids, or friends on the same instance and see everyone at a glance on the shared map.
+
 ### Sharing Your Data with Other Users
 
 To share your location data with other users:
 
 1. Navigate to **Settings > Share Access > Share with other Users**
 2. Browse or search for the users you want to share with
-3. Select the users from the list
-4. Choose the appropriate access level for each user
-5. Save your sharing preferences
+3. Select the users from the list. They will be able to view your timeline and location history
+4. Optionally enable the **Share my photos** toggle next to a selected user to also share your photos with them (see below)
+5. Changes take effect immediately
 
 ![Share Access](../img/share-access.png)
 
 Once configured, the selected users will be able to view your location data according to the permissions you've granted them.
+
+### Sharing Photos with Other Users
+
+Next to each user you share with, a **Share my photos** toggle is revealed. When enabled:
+
+- The photos from your Immich integration are shared with this user
+- They will see your photos on the map when viewing your timeline
+- Requires an enabled [Immich integration](../configurations/photo-integration.md)
 
 ### Managing Shared Accounts
 
@@ -209,6 +231,7 @@ No additional configuration is required beyond:
 
 - **Regular review**: Periodically check who has access to your data
 - **Appropriate permissions**: Only grant the minimum access level needed
+- **Photo awareness**: Photo sharing is opt-in per user, so only enable "Share my photos" for people you trust
 - **Color coordination**: Use distinct colors for each user to avoid confusion on multi-user maps
 - **Communication**: Coordinate with your team about sharing preferences and color choices
 
