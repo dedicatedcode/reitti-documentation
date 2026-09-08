@@ -22,7 +22,12 @@ plugins:
     redirect_maps:
       'configurations/mobile-app-integration.md': 'integrations/mobile-apps.md'
       'configurations/reitti-integration.md': 'integrations/reitti.md'
+- glightbox:
+    auto_caption: true
+    zoomable: true
+    touchNavigation: true
 markdown_extensions:
   - codehilite
+  - admonition
 extra_css:
   - assets/css/styles.css
