@@ -45,7 +45,8 @@ Both OwnTracks and GPSLogger can be configured to send data at any interval; GPS
    - **GPSLogger Configuration**: HTTP endpoint URLs and API tokens  
    - **Overland Configuration**: Endpoint URL and optional device identifier  
 
-For each supported app, a **Remote Configuration** button is provided on this page. Press the button on the mobile device where the app is installed to apply the settings automatically.
+!!! hint
+    For each supported app, a **Remote Configuration** button is provided on this page. Press the button on the mobile device where the app is installed to apply the settings automatically.
 
 ### OwnTracks Setup
 
@@ -59,11 +60,12 @@ For each supported app, a **Remote Configuration** button is provided on this pa
 1. Install GPSLogger on your mobile device
 2. Configure the HTTP endpoint URL provided in Reitti's integration settings
 3. Set up authentication using the API token from your Reitti user settings
-4. Configure logging intervals and accuracy preferences. Go to `Performance` and set:
+4. Go to `Auto send, email and upload` and make sure that `Send zip file` is unchecked
+5. Configure logging intervals and accuracy preferences. Go to `Performance` and set:
    1. `Logging interval` to `30`
    2. `Distance filter` to `0`
    3. `Accuracy Filter` to `40`
-5. Start logging to begin sending data to Reitti
+6Start logging to begin sending data to Reitti
 
 #### Manual setup via "Log to custom URL"
 

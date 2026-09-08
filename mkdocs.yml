@@ -24,5 +24,6 @@ plugins:
       'configurations/reitti-integration.md': 'integrations/reitti.md'
 markdown_extensions:
   - codehilite
+  - admonition
 extra_css:
   - assets/css/styles.css
