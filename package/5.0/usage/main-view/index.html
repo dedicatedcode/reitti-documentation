@@ -104,6 +104,7 @@
         }
     </style>
     <link href="../../assets/css/styles.css" rel="stylesheet">
+    <link href="../../assets/css/compare-slider.css" rel="stylesheet">
     <link href="../../assets/stylesheets/badge.css" rel="stylesheet">
 
     
@@ -1166,7 +1167,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-09-08T16:19:52+02:00');
+        const date = new Date('2026-09-12T05:10:11+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1345,12 +1346,48 @@ you to:</p>
 <h2 id="settings">Settings</h2>
 <p>The Settings menu provides comprehensive control over how your location data is displayed and analyzed:</p>
 <h3 id="path-display-modes">Path Display Modes</h3>
+<p>The settings menu offers several modes for rendering your location history on the map. The following sections explain each mode and compare it against the <strong>Raw Path</strong> view: drag the slider handle (or focus the image and use the arrow keys) to reveal more or less of the mode on the right.</p>
 <ul>
-<li><strong>Standard</strong>: Displays optimized paths that balance detail with performance by not overwhelming the browser with all points in the time range</li>
-<li><strong>Raw Path</strong>: Displays all location data points without any optimizations, showing the complete raw data</li>
+<li><strong>Raw Path</strong>: Renders the raw paths exactly as they are stored in the database — every recorded location point, without any optimization or filtering</li>
+<li><strong>Standard</strong>: Applies a little bit of simplification to the raw points, balancing visual detail with performance by not overwhelming the browser with all points in the time range</li>
+<li><strong>Smoothed</strong>: Smoothes the paths by filtering out GPS jitter when you are stationary and applying a Kalman filter when you are moving</li>
 <li><strong>Edge Bundling</strong>: Bundles paths based on proximity, making it easy to visualize your most frequently used routes within the selected time range</li>
 <li><strong>Hexagon Grid</strong>: Replaces paths and visits with the hexagon cells of the <a href="../../configurations/spatial-coverage/">H3 spatial indexing</a> (see <a href="#hexagon-grid-mode">Hexagon Grid Mode</a>)</li>
 </ul>
+<h3 id="raw-path">Raw Path</h3>
+<p>The rawest form of visualization: every location point stored in the database is rendered as-is, without simplification or filtering. This mode is ideal for checking data quality — GPS noise, drift, and gaps become directly visible. It is also the baseline used for the comparisons below.</p>
+<!-- TODO: capture the Raw Path view mode (same viewport and date range as hexagon-grid.png) and save it as docs/img/path-raw.png -->
+
+<h3 id="standard">Standard</h3>
+<p>The default mode. It applies a little bit of simplification to the raw location points, balancing detail with performance so that even large time ranges stay responsive without overwhelming the browser.</p>
+<!-- Screenshots pending: docs/img/path-raw.png (left, shared baseline) -->
+
+<div class="compare-slider" data-left-label="Raw Path" data-right-label="Standard">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/path-raw.png" data-title="Raw Path view mode" data-desc-position="bottom"><img src="../../img/path-raw.png" alt="Raw Path view mode" loading="lazy" decoding="async"></a>
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/path-standard.png" data-title="Standard view mode" data-desc-position="bottom"><img src="../../img/path-standard.png" alt="Standard view mode" loading="lazy" decoding="async"></a>
+  <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare Raw Path (left) with Standard view mode (right)">
+</div>
+
+<h3 id="smoothed">Smoothed</h3>
+<p>Smoothes the paths by filtering out GPS jitter while you are stationary and applying a Kalman filter while you are moving. The result is clean, natural-looking tracks without the noise of the raw data.</p>
+<!-- Screenshots pending: docs/img/path-raw.png (left, shared baseline) and docs/img/path-smoothed.png (right) -->
+
+<div class="compare-slider" data-left-label="Raw Path" data-right-label="Smoothed">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/path-raw.png" data-title="Raw Path view mode" data-desc-position="bottom"><img src="../../img/path-raw.png" alt="Raw Path view mode" loading="lazy" decoding="async"></a>
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/path-smoothed.png" data-title="Smoothed view mode" data-desc-position="bottom"><img src="../../img/path-smoothed.png" alt="Smoothed view mode" loading="lazy" decoding="async"></a>
+  <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare Raw Path (left) with Smoothed view mode (right)">
+</div>
+
+<h3 id="edge-bundling">Edge Bundling</h3>
+<p>Bundles nearby paths together, so overlapping tracks are highlighted — perfect for marking your most frequently taken routes at a glance. Combine it with a multi-day or year time range (see <a href="#date-picker">Date Picker</a>) for the best results.</p>
+<!-- Screenshots pending: docs/img/path-raw.png (left, shared baseline) and docs/img/path-edge-bundling.png (right) -->
+
+<div class="compare-slider" data-left-label="Raw Path" data-right-label="Edge Bundling">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/path-raw.png" data-title="Raw Path view mode" data-desc-position="bottom"><img src="../../img/path-raw.png" alt="Raw Path view mode" loading="lazy" decoding="async"></a>
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/path-edge-bundling.png" data-title="Edge Bundling view mode" data-desc-position="bottom"><img src="../../img/path-edge-bundling.png" alt="Edge Bundling view mode" loading="lazy" decoding="async"></a>
+  <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare Raw Path (left) with Edge Bundling view mode (right)">
+</div>
+
 <h3 id="hexagon-grid-mode">Hexagon Grid Mode</h3>
 <p>The <strong>Hexagon Grid</strong> view mode hides paths and visits and instead renders the H3 hexagon cells of the <a href="../../configurations/spatial-coverage/">spatial indexing</a>. This mode is only available when spatial coverage is enabled on your instance.</p>
 <ul>
@@ -1358,7 +1395,14 @@ you to:</p>
 <li><strong>Zoom-Adaptive Resolution</strong>: Cells are aggregated based on the current zoom level. Zoomed out you see large hexagons summarizing whole districts; zooming in splits them into smaller, more precise cells</li>
 <li><strong>Replay Support</strong>: During a replay, cells fill up progressively as the replay passes their timestamps, visualizing how your coverage grew over the selected time range</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/hexagon-grid.png" data-title="Hexagon Grid view mode" data-desc-position="bottom"><img alt="Hexagon Grid view mode" src="../../img/hexagon-grid.png"></a></p>
+<!-- Screenshots pending: docs/img/path-raw.png (left, shared baseline) -->
+
+<div class="compare-slider" data-left-label="Raw Path" data-right-label="Hexagon Grid">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/path-raw.png" data-title="Raw Path view mode" data-desc-position="bottom"><img src="../../img/path-raw.png" alt="Raw Path view mode" loading="lazy" decoding="async"></a>
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/hexagon-grid.png" data-title="Hexagon Grid view mode" data-desc-position="bottom"><img src="../../img/hexagon-grid.png" alt="Hexagon Grid view mode" loading="lazy" decoding="async"></a>
+  <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare Raw Path (left) with Hexagon Grid view mode (right)">
+</div>
+
 <h3 id="transportation-mode-display">Transportation Mode Display</h3>
 <p>In the settings menu under <strong>Map Appearance</strong>, enable <strong>Display Transportation Modes</strong> to visualize the different transportation modes within your trips (see <a href="../../configurations/transportation-modes/">Transportation Mode Detection</a>):</p>
 <ul>
@@ -1412,7 +1456,7 @@ you to:</p>
 <h2 id="getting-the-most-from-the-main-view">Getting the Most from the Main View</h2>
 <ol>
 <li><strong>Analyze Daily Patterns</strong>: Use <strong>24-Hour Aggregate Mode</strong> to identify your regular routines and commute patterns</li>
-<li><strong>Explore Movement History</strong>: Switch between <strong>Standard</strong>, <strong>Raw Path</strong>, <strong>Edge Bundling</strong>, and <strong>Hexagon Grid</strong> modes to analyze your movement data at different levels of detail</li>
+<li><strong>Explore Movement History</strong>: Switch between <strong>Standard</strong>, <strong>Smoothed</strong>, <strong>Raw Path</strong>, <strong>Edge Bundling</strong>, and <strong>Hexagon Grid</strong> modes to analyze your movement data at different levels of detail</li>
 <li><strong>Customize Your View</strong>: Adjust map settings like <strong>3D View</strong>, <strong>Terrain Layer</strong>, and <strong>Satellite View</strong> to match your analysis needs</li>
 <li><strong>Use Live Mode for Real-time Tracking</strong>: Enable live tracking for current movement monitoring or set up a <strong>Kiosk Mode</strong> display for shared viewing</li>
 <li><strong>Leverage Replay Features</strong>: Use the <strong>Replay Controls</strong> with different speeds to review your movements over selected time ranges</li>
@@ -1930,6 +1974,22 @@ you to:</p>
             Path Display Modes
         </a>
         
+        <a href="#raw-path" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#raw-path');">
+            Raw Path
+        </a>
+        
+        <a href="#standard" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#standard');">
+            Standard
+        </a>
+        
+        <a href="#smoothed" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#smoothed');">
+            Smoothed
+        </a>
+        
+        <a href="#edge-bundling" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#edge-bundling');">
+            Edge Bundling
+        </a>
+        
         <a href="#hexagon-grid-mode" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#hexagon-grid-mode');">
             Hexagon Grid Mode
         </a>
@@ -2022,6 +2082,10 @@ you to:</p>
     </div>
 </footer>
     </div>
+     
+
+<script src="../../assets/js/compare-slider.js"></script>
+
      
 <script src="../../assets/javascripts/badge.js" async=""></script>
      
