@@ -41,7 +41,7 @@ Administrators are shown a table of all users with the following columns and act
 From this view an admin can:
 
 - **Add New User** — opens a blank profile form to create an account. This button is hidden when local login
-  is disabled (see [Configuration](#configuration)).
+  is disabled (see [Configuration](../infrastructure/oidc.md)).
 - **Edit** — opens the profile form for an existing user.
 - **Delete** — removes an account after a confirmation prompt. You cannot delete your own account.
 
@@ -86,6 +86,7 @@ Upload your own stylesheet (up to 1 MB, must be a `.css` file) to personalize th
 - **Timezone Override** — a specific timezone, or empty to use the browser timezone
 - **Color Theme** — a preset color or a custom value
 - **Home Location** — latitude/longitude with an interactive map and draggable marker
+- **Start of Day** — Choose the time when a new day begins for you, e.g., the hour you are usually asleep.
 
 ### Creating a User
 

@@ -470,7 +470,7 @@
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../../usage/place-edit/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
-        Edit Places
+        Place Editor
         
 
         
@@ -732,7 +732,7 @@
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../visit-detection/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
-        Visit Detection
+        Visit Sensitivity
         
 
         
@@ -1167,7 +1167,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-08-13T13:50:04+02:00');
+        const date = new Date('2026-09-12T07:22:58+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1238,7 +1238,7 @@ location data is handled).</p>
 <p>From this view an admin can:</p>
 <ul>
 <li><strong>Add New User</strong> — opens a blank profile form to create an account. This button is hidden when local login
-  is disabled (see <a href="#configuration">Configuration</a>).</li>
+  is disabled (see <a href="../../infrastructure/oidc/">Configuration</a>).</li>
 <li><strong>Edit</strong> — opens the profile form for an existing user.</li>
 <li><strong>Delete</strong> — removes an account after a confirmation prompt. You cannot delete your own account.</li>
 </ul>
@@ -1277,6 +1277,7 @@ the following sections:</p>
 <li><strong>Timezone Override</strong> — a specific timezone, or empty to use the browser timezone</li>
 <li><strong>Color Theme</strong> — a preset color or a custom value</li>
 <li><strong>Home Location</strong> — latitude/longitude with an interactive map and draggable marker</li>
+<li><strong>Start of Day</strong> — Choose the time when a new day begins for you, e.g., the hour you are usually asleep.</li>
 </ul>
 <h3 id="creating-a-user">Creating a User</h3>
 <p>Creating a user (admin only) requires a username, display name, and password. Reitti then automatically provisions a
@@ -1350,7 +1351,7 @@ how OIDC users are created and matched, refer to the <a href="../../infrastructu
     
     
     <a data-slot="button" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 ml-auto shadow-none" href="../visit-detection/">
-        <span class="max-[500px]:hidden">Visit Detection</span>
+        <span class="max-[500px]:hidden">Visit Sensitivity</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-arrow-right ">
             <path d="M5 12l14 0"></path>
             <path d="M13 18l6 -6"></path>
@@ -1452,7 +1453,7 @@ how OIDC users are created and matched, refer to the <a href="../../infrastructu
                         
                         <a class="text-2xl font-medium" href="../../usage/place-edit/">
                             
-                            Edit Places
+                            Place Editor
                             
                         </a>
                         
@@ -1554,7 +1555,7 @@ how OIDC users are created and matched, refer to the <a href="../../infrastructu
                         
                         <a class="text-2xl font-medium" href="../visit-detection/">
                             
-                            Visit Detection
+                            Visit Sensitivity
                             
                         </a>
                         

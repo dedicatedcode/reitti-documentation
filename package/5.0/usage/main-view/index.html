@@ -470,7 +470,7 @@
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../place-edit/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
-        Edit Places
+        Place Editor
         
 
         
@@ -732,7 +732,7 @@
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../../configurations/visit-detection/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
-        Visit Detection
+        Visit Sensitivity
         
 
         
@@ -1167,7 +1167,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-09-12T05:10:11+02:00');
+        const date = new Date('2026-09-12T07:22:58+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1212,7 +1212,10 @@ you to:</p>
 <li>For trips: Highlights the route on the map</li>
 <li>For visits: Centers the map on the location</li>
 <li><strong>Click Again to Restore</strong>: Clicking the same entry again restores the previous map view</li>
-<li><strong>Edit Visits</strong>: When a visit is selected, hover over it to reveal an edit icon (pencil) that takes you to <a href="../place-edit/">Edit Place</a></li>
+<li><strong>Edit Visits</strong>: When a visit is selected, hover over it to reveal an edit icon (pencil) that takes you to the <a href="../place-edit/">Place Editor</a></li>
+<li><strong>Delete Visits</strong>: When a visit is selected, hover over it to reveal a delete icon (trash bin)
+  <span class="badge badge-normal version-badge"><span class="sep"> [</span><span class="title">since</span><span class="sep"> : </span><span class="value">v5.5.0</span><span class="sep">] </span></span>
+  Deleting a visit is a <em>temporal deletion</em>: Reitti marks the place and time range of that visit as suppressed, and the visit disappears from your timeline. Future recalculations of that time range will not recreate the visit. Suppressed visits are not lost — you can review and restore them in the <a href="../place-edit/#suppressed-visits">Place Editor</a>. The change is processed in the background, you can monitor the progress under <strong>Settings &gt; Job Status</strong></li>
 <li><strong>Edit Trips</strong>: When a trip is selected, hover over it and click the edit icon to open the <strong>Edit Transport Modes</strong> dialog, where you can adjust the transportation mode of each trip segment individually</li>
 </ul>
 <h3 id="metadata">Metadata</h3>
@@ -1594,7 +1597,7 @@ you to:</p>
                         
                         <a class="text-2xl font-medium" href="../place-edit/">
                             
-                            Edit Places
+                            Place Editor
                             
                         </a>
                         
@@ -1696,7 +1699,7 @@ you to:</p>
                         
                         <a class="text-2xl font-medium" href="../../configurations/visit-detection/">
                             
-                            Visit Detection
+                            Visit Sensitivity
                             
                         </a>
                         

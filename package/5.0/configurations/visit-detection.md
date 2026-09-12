@@ -1,5 +1,5 @@
 ---
-title: "Visit Detection"
+title: "Visit Sensitivity"
 description: "Adjust key parameters for the visit detection"
 weight: 5
 tags: ["configuration"]
@@ -27,11 +27,14 @@ Visit detection enhances your location data by:
 
 To configure visit detection:
 
-1. Navigate to **Settings > Visit Detection**
+1. Navigate to **Settings > Visit Sensitivity**
 2. Choose between **Simple Mode** or **Advanced Mode**
 3. Configure your preferred settings
 4. Use the preview functionality to test your configuration
 5. Save your settings to apply the new parameters
+
+!!! hint "Fine-tune your timeline"
+    The **Visit Sensitivity** page also provides an **Open Place Editor** button. It takes you directly to the [Place Editor](../usage/place-edit.md), where you can delete single visits, create [No-Visit Zones](../usage/place-edit.md#no-visit-zones), and restore [suppressed visits](../usage/place-edit.md#suppressed-visits).
 
 ### Configuration Modes
 

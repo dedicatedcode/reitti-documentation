@@ -14,11 +14,11 @@
     
 
 
-<title>Edit Places</title>
+<title>Place Editor</title>
 
 
 
-<meta name="description" content="How to edit existing places">
+<meta name="description" content="Edit places, draw boundaries, manage No-Visit Zones and restore suppressed visits">
 
 
 
@@ -33,11 +33,11 @@
 
 <!-- Open Graph (Facebook, LinkedIn) -->
 
-<meta property="og:title" content="Edit Places">
+<meta property="og:title" content="Place Editor">
 
 
 
-<meta property="og:description" content="How to edit existing places">
+<meta property="og:description" content="Edit places, draw boundaries, manage No-Visit Zones and restore suppressed visits">
 
 
 
@@ -50,11 +50,11 @@
 
 <!-- Twitter Card -->
 
-<meta name="twitter:title" content="Edit Places">
+<meta name="twitter:title" content="Place Editor">
 
 
 
-<meta name="twitter:description" content="How to edit existing places">
+<meta name="twitter:description" content="Edit places, draw boundaries, manage No-Visit Zones and restore suppressed visits">
 
 
 
@@ -65,9 +65,9 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Edit Places",
+    "headline": "Place Editor",
     "url": "https://www.dedicatedcode.com/projects/reitti/5.0/usage/place-edit/",
-    "description": "How to edit existing places",
+    "description": "Edit places, draw boundaries, manage No-Visit Zones and restore suppressed visits",
     
     
     
@@ -470,7 +470,7 @@
     <a data-slot="sidebar-menu-button" data-active="true" data-sidebar="menu-button" data-size="default" href="./" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
-        Edit Places
+        Place Editor
         
 
         
@@ -732,7 +732,7 @@
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../../configurations/visit-detection/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
-        Visit Detection
+        Visit Sensitivity
         
 
         
@@ -1128,7 +1128,7 @@
     <div class="flex flex-col gap-2">
       <div id="page-header" class="flex items-start justify-between">
         <h1 class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
-          Edit Places
+          Place Editor
         </h1>
 
         <div class="flex items-center gap-2 pt-1.5">
@@ -1167,7 +1167,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-03-27T06:37:41+01:00');
+        const date = new Date('2026-09-12T07:22:58+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1176,8 +1176,9 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <p>Reitti allows you to modify existing place information through two primary access points:</p>
-<h3 id="accessing-place-editing">Accessing Place Editing</h3>
+    <p>The Place Editor is the central tool to manage your significant places. You can edit place details and polygon
+boundaries, find places quickly, create <strong>No-Visit Zones</strong>, and review <strong>suppressed visits</strong>.</p>
+<h3 id="accessing-the-place-editor">Accessing the Place Editor</h3>
 <h4 id="method-1-from-the-timeline">Method 1: From the Timeline</h4>
 <ol>
 <li>Select a place in your timeline</li>
@@ -1191,6 +1192,17 @@
 <li>Find the place you want to modify</li>
 <li>Click the <strong>Edit</strong> button next to the place</li>
 </ol>
+<h4 id="method-3-from-visit-sensitivity">Method 3: From Visit Sensitivity</h4>
+<p><span class="badge badge-normal version-badge"><span class="sep"> [</span><span class="title">since</span><span class="sep"> : </span><span class="value">v5.5.0</span><span class="sep">] </span></span></p>
+<ol>
+<li>Navigate to <strong>Settings &gt; Visit Sensitivity</strong></li>
+<li>Click the <strong>Open Place Editor</strong> button</li>
+</ol>
+<h3 id="finding-places">Finding Places</h3>
+<p><span class="badge badge-normal version-badge"><span class="sep"> [</span><span class="title">since</span><span class="sep"> : </span><span class="value">v5.5.0</span><span class="sep">] </span></span></p>
+<p>Use the search field in the top left corner of the editor to find a place by its name. Selecting a search result
+focuses the place on the map, so you can edit it right away.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/place-editor-search.png" data-title="Place Editor with place search" data-desc-position="bottom"><img alt="Place Editor with place search" src="../../img/place-editor-search.png"></a></p>
 <h3 id="editable-fields">Editable Fields</h3>
 <p>When editing a place, you can modify the following fields:</p>
 <ul>
@@ -1200,8 +1212,15 @@
 <li><strong>Country</strong>: Select from available countries</li>
 <li><strong>Category</strong>: Choose a category for the place</li>
 </ul>
+<h3 id="reverse-geocoding-a-place">Reverse Geocoding a Place</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/edit-place-reverse-geocoding.png" data-title="Reverse Geocoding a place" data-desc-position="bottom"><img alt="Reverse Geocoding a place" src="../../img/edit-place-reverse-geocoding.png"></a></p>
+<p>When a place is selected, press the <strong>Geocode</strong> button to reverse geocode the place with all configured reverse
+geocoders (see <a href="../../configurations/reverse-geocoding/">Reverse Geocoding</a>). The results are displayed in a list grouped
+by reverse geocoder, so you can compare what each service found for the place's location.</p>
+<p>Press <strong>Apply</strong> on a result to copy the parsed response into the input fields of the place, such as name, address,
+city, and country. Review the applied values and save the place as usual.</p>
 <h3 id="polygon-boundaries">Polygon Boundaries</h3>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/edit-place.png" data-title="edit-place.png" data-desc-position="bottom"><img alt="edit-place.png" src="../../img/edit-place.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/edit-place.png" data-title="Showing the polygon boundaries of a place" data-desc-position="bottom"><img alt="Showing the polygon boundaries of a place" src="../../img/edit-place.png"></a></p>
 <h4 id="adding-polygon-boundaries">Adding Polygon Boundaries</h4>
 <ol>
 <li>Click on the map to add points</li>
@@ -1219,7 +1238,7 @@
 <li><strong>Remove Polygon</strong>: Completely drops all boundary information</li>
 </ul>
 <h3 id="geocoding-history">Geocoding History</h3>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/edit-place-geocoding-responses.png" data-title="edit-place-geocoding-responses.png" data-desc-position="bottom"><img alt="edit-place-geocoding-responses.png" src="../../img/edit-place-geocoding-responses.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/edit-place-geocoding-responses.png" data-title="Reverse Geocoding History for a place" data-desc-position="bottom"><img alt="Reverse Geocoding History for a place" src="../../img/edit-place-geocoding-responses.png"></a></p>
 <h4 id="viewing-past-responses">Viewing Past Responses</h4>
 <ol>
 <li>Click <strong>"View Geocoding Response"</strong> to open the geocoding drawer</li>
@@ -1230,7 +1249,7 @@
 <li><strong>Timestamp</strong>: When the geocoding occurred</li>
 </ol>
 <h3 id="boundary-change-warnings">Boundary Change Warnings</h3>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/edit-place-warning.png" data-title="edit-place-warning.png" data-desc-position="bottom"><img alt="edit-place-warning.png" src="../../img/edit-place-warning.png"></a>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/edit-place-warning.png" data-title="Edit Places Warning Messages" data-desc-position="bottom"><img alt="Edit Places Warning Messages" src="../../img/edit-place-warning.png"></a>
 When you make significant changes to polygon boundaries, Reitti will:</p>
 <ol>
 <li>Detect potential conflicts with existing places</li>
@@ -1251,6 +1270,39 @@ When you make significant changes to polygon boundaries, Reitti will:</p>
 <li>Polygon boundaries are used for accurate visit detection</li>
 <li>Consider the impact of boundary changes on historical data before saving</li>
 </ul>
+<h3 id="no-visit-zones">No-Visit Zones</h3>
+<p><span class="badge badge-normal version-badge"><span class="sep"> [</span><span class="title">since</span><span class="sep"> : </span><span class="value">v5.5.0</span><span class="sep">] </span></span></p>
+<p>A <strong>No-Visit Zone</strong> is a drawn area in which Reitti never creates visits. When the location points inside the zone are
+processed, the affected time ranges and locations are marked as suppressed, so no visits are created there. Trips and
+paths through the area are not affected.</p>
+<h4 id="creating-a-zone">Creating a Zone</h4>
+<ol>
+<li>Press <strong>Add Zone</strong></li>
+<li>Draw a polygon on the map by clicking its vertices</li>
+<li>Press <strong>Finish</strong> when the polygon is complete</li>
+<li>Give the zone a name</li>
+<li>Press <strong>Save</strong></li>
+</ol>
+<p>Creating a zone starts a recalculation job that recalculates all location points affected by the new zone.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/no-visit-zones.png" data-title="Drawing a No-Visit Zone" data-desc-position="bottom"><img alt="Drawing a No-Visit Zone" src="../../img/no-visit-zones.png"></a></p>
+<h4 id="modifying-a-zone">Modifying a Zone</h4>
+<ul>
+<li><strong>Move</strong>: Click a zone to select it, then move it to a new position</li>
+<li><strong>Delete</strong>: Remove the zone</li>
+</ul>
+<p>Both actions trigger a recalculation job for all points affected by the change.</p>
+<h3 id="suppressed-visits">Suppressed Visits</h3>
+<p><span class="badge badge-normal version-badge"><span class="sep"> [</span><span class="title">since</span><span class="sep"> : </span><span class="value">v5.5.0</span><span class="sep">] </span></span></p>
+<p>Deleting a visit in the timeline (see <a href="../main-view/">Main View</a>) is a <em>temporal deletion</em>: Reitti marks the place and
+time range of that visit as suppressed instead of removing the underlying data. Recalculations of that time range will
+not recreate the visit.</p>
+<p>The Place Editor lists all suppressed visits of your account. Press <strong>Restore</strong> on a suppressed visit to undo the
+suppression, so visit detection creates the visit again during the next recalculation.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/suppressed-visits.png" data-title="Suppressed visits list" data-desc-position="bottom"><img alt="Suppressed visits list" src="../../img/suppressed-visits.png"></a></p>
+<h3 id="monitoring-recalculations">Monitoring Recalculations</h3>
+<p>Every action in the Place Editor that changes visit detection — creating, moving, or deleting a zone, and restoring a
+suppressed visit — triggers a recalculation job. You can monitor the progress of all jobs under
+<strong>Settings &gt; Job Status</strong>. Once the jobs are done, the timeline displays your data with the new information.</p>
   </div>
   
   <script>
@@ -1374,7 +1426,7 @@ When you make significant changes to polygon boundaries, Reitti will:</p>
                         
                         <a class="text-2xl font-medium" href="./">
                             
-                            Edit Places
+                            Place Editor
                             
                         </a>
                         
@@ -1476,7 +1528,7 @@ When you make significant changes to polygon boundaries, Reitti will:</p>
                         
                         <a class="text-2xl font-medium" href="../../configurations/visit-detection/">
                             
-                            Visit Detection
+                            Visit Sensitivity
                             
                         </a>
                         
@@ -1643,8 +1695,8 @@ When you make significant changes to polygon boundaries, Reitti will:</p>
         
         
         
-        <a href="#accessing-place-editing" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#accessing-place-editing');">
-            Accessing Place Editing
+        <a href="#accessing-the-place-editor" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#accessing-the-place-editor');">
+            Accessing the Place Editor
         </a>
         
         
@@ -1656,11 +1708,27 @@ When you make significant changes to polygon boundaries, Reitti will:</p>
             Method 2: Through Settings
         </a>
         
+        <a href="#method-3-from-visit-sensitivity" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#method-3-from-visit-sensitivity');">
+            Method 3: From Visit Sensitivity
+        </a>
+        
+        
+
+        
+        <a href="#finding-places" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#finding-places');">
+            Finding Places
+        </a>
         
 
         
         <a href="#editable-fields" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#editable-fields');">
             Editable Fields
+        </a>
+        
+
+        
+        <a href="#reverse-geocoding-a-place" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#reverse-geocoding-a-place');">
+            Reverse Geocoding a Place
         </a>
         
 
@@ -1711,6 +1779,34 @@ When you make significant changes to polygon boundaries, Reitti will:</p>
         
         <a href="#important-notes" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#important-notes');">
             Important Notes
+        </a>
+        
+
+        
+        <a href="#no-visit-zones" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#no-visit-zones');">
+            No-Visit Zones
+        </a>
+        
+        
+        <a href="#creating-a-zone" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#creating-a-zone');">
+            Creating a Zone
+        </a>
+        
+        <a href="#modifying-a-zone" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#modifying-a-zone');">
+            Modifying a Zone
+        </a>
+        
+        
+
+        
+        <a href="#suppressed-visits" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#suppressed-visits');">
+            Suppressed Visits
+        </a>
+        
+
+        
+        <a href="#monitoring-recalculations" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#monitoring-recalculations');">
+            Monitoring Recalculations
         </a>
         
 
