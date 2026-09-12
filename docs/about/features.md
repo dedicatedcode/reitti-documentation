@@ -38,6 +38,7 @@ Reitti provides a comprehensive set of features for personal location tracking a
 - **Unit System**: Display distances in the Imperial or Metric system
 - **Queue Monitoring**: Real-time job status and processing queue visibility
 - **Custom Tiles-Server**: Ability to use your own tiles-server
+- **Configurable Start of Day**: Choose when your day begins; journeys crossing that time stay on one day in the timeline (see [User Management](../configurations/user-management.md))
 
 #### Spatial Coverage
 - **H3-Based Coverage Analysis**: See what percentage of a city, district, or country you have explored, with the ability to travel back in time and view your coverage at any point in the past. [Learn more](../configurations/spatial-coverage.md)
@@ -45,6 +46,7 @@ Reitti provides a comprehensive set of features for personal location tracking a
 #### Trip Analysis & Navigation
 - **Multi-Segment Trips**: Trips are automatically split into segments per transportation mode, with color-coded tracks and transition badges where you change modes ([Learn more](../configurations/transportation-modes.md))
 - **Type-to-Jump Navigation**: Jump to any date or range by simply typing it on the main page ([Learn more](../usage/main-view.md))
+- **Visit Suppression & No-Visit Zones**: Temporarily delete visits from your timeline and draw zones where no visits should be created — recalculations respect your changes ([Learn more](../usage/place-edit.md))
 
 ### Data Sharing
 

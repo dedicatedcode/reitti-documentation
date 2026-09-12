@@ -46,7 +46,10 @@ Below the user switcher, the timeline shows a chronological list of all visits a
   - For trips: Highlights the route on the map
   - For visits: Centers the map on the location
 - **Click Again to Restore**: Clicking the same entry again restores the previous map view
-- **Edit Visits**: When a visit is selected, hover over it to reveal an edit icon (pencil) that takes you to [Edit Place](place-edit.md)
+- **Edit Visits**: When a visit is selected, hover over it to reveal an edit icon (pencil) that takes you to the [Place Editor](place-edit.md)
+- **Delete Visits**: When a visit is selected, hover over it to reveal a delete icon (trash bin)
+  |since|v5.5.0|.version-badge|
+  Deleting a visit is a *temporal deletion*: Reitti marks the place and time range of that visit as suppressed, and the visit disappears from your timeline. Future recalculations of that time range will not recreate the visit. Suppressed visits are not lost — you can review and restore them in the [Place Editor](place-edit.md#suppressed-visits). The change is processed in the background, you can monitor the progress under **Settings > Job Status**
 - **Edit Trips**: When a trip is selected, hover over it and click the edit icon to open the **Edit Transport Modes** dialog, where you can adjust the transportation mode of each trip segment individually
 
 ### Metadata
