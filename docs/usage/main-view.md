@@ -193,10 +193,56 @@ On the map, this translates to:
 The Settings menu provides comprehensive control over how your location data is displayed and analyzed:
 
 ### Path Display Modes
-- **Standard**: Displays optimized paths that balance detail with performance by not overwhelming the browser with all points in the time range
-- **Raw Path**: Displays all location data points without any optimizations, showing the complete raw data
+
+The settings menu offers several modes for rendering your location history on the map. The following sections explain each mode and compare it against the **Raw Path** view: drag the slider handle (or focus the image and use the arrow keys) to reveal more or less of the mode on the right.
+
+- **Raw Path**: Renders the raw paths exactly as they are stored in the database — every recorded location point, without any optimization or filtering
+- **Standard**: Applies a little bit of simplification to the raw points, balancing visual detail with performance by not overwhelming the browser with all points in the time range
+- **Smoothed**: Smoothes the paths by filtering out GPS jitter when you are stationary and applying a Kalman filter when you are moving
 - **Edge Bundling**: Bundles paths based on proximity, making it easy to visualize your most frequently used routes within the selected time range
 - **Hexagon Grid**: Replaces paths and visits with the hexagon cells of the [H3 spatial indexing](../configurations/spatial-coverage.md) (see [Hexagon Grid Mode](#hexagon-grid-mode))
+
+### Raw Path
+
+The rawest form of visualization: every location point stored in the database is rendered as-is, without simplification or filtering. This mode is ideal for checking data quality — GPS noise, drift, and gaps become directly visible. It is also the baseline used for the comparisons below.
+
+<!-- TODO: capture the Raw Path view mode (same viewport and date range as hexagon-grid.png) and save it as docs/img/path-raw.png -->
+
+### Standard
+
+The default mode. It applies a little bit of simplification to the raw location points, balancing detail with performance so that even large time ranges stay responsive without overwhelming the browser.
+
+<!-- Screenshots pending: docs/img/path-raw.png (left, shared baseline) -->
+
+<div class="compare-slider" data-left-label="Raw Path" data-right-label="Standard">
+  <img src="../../img/path-raw.png" alt="Raw Path view mode" loading="lazy" decoding="async">
+  <img src="../../img/path-standard.png" alt="Standard view mode" loading="lazy" decoding="async">
+  <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare Raw Path (left) with Standard view mode (right)">
+</div>
+
+### Smoothed
+
+Smoothes the paths by filtering out GPS jitter while you are stationary and applying a Kalman filter while you are moving. The result is clean, natural-looking tracks without the noise of the raw data.
+
+<!-- Screenshots pending: docs/img/path-raw.png (left, shared baseline) and docs/img/path-smoothed.png (right) -->
+
+<div class="compare-slider" data-left-label="Raw Path" data-right-label="Smoothed">
+  <img src="../../img/path-raw.png" alt="Raw Path view mode" loading="lazy" decoding="async">
+  <img src="../../img/path-smoothed.png" alt="Smoothed view mode" loading="lazy" decoding="async">
+  <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare Raw Path (left) with Smoothed view mode (right)">
+</div>
+
+### Edge Bundling
+
+Bundles nearby paths together, so overlapping tracks are highlighted — perfect for marking your most frequently taken routes at a glance. Combine it with a multi-day or year time range (see [Date Picker](#date-picker)) for the best results.
+
+<!-- Screenshots pending: docs/img/path-raw.png (left, shared baseline) and docs/img/path-edge-bundling.png (right) -->
+
+<div class="compare-slider" data-left-label="Raw Path" data-right-label="Edge Bundling">
+  <img src="../../img/path-raw.png" alt="Raw Path view mode" loading="lazy" decoding="async">
+  <img src="../../img/path-edge-bundling.png" alt="Edge Bundling view mode" loading="lazy" decoding="async">
+  <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare Raw Path (left) with Edge Bundling view mode (right)">
+</div>
 
 ### Hexagon Grid Mode
 
@@ -206,7 +252,13 @@ The **Hexagon Grid** view mode hides paths and visits and instead renders the H3
 - **Zoom-Adaptive Resolution**: Cells are aggregated based on the current zoom level. Zoomed out you see large hexagons summarizing whole districts; zooming in splits them into smaller, more precise cells
 - **Replay Support**: During a replay, cells fill up progressively as the replay passes their timestamps, visualizing how your coverage grew over the selected time range
 
-![Hexagon Grid view mode](../img/hexagon-grid.png)
+<!-- Screenshots pending: docs/img/path-raw.png (left, shared baseline) -->
+
+<div class="compare-slider" data-left-label="Raw Path" data-right-label="Hexagon Grid">
+  <img src="../../img/path-raw.png" alt="Raw Path view mode" loading="lazy" decoding="async">
+  <img src="../../img/hexagon-grid.png" alt="Hexagon Grid view mode" loading="lazy" decoding="async">
+  <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare Raw Path (left) with Hexagon Grid view mode (right)">
+</div>
 
 ### Transportation Mode Display
 
@@ -262,7 +314,7 @@ Live mode provides real-time tracking functionality with a kiosk-style display:
 ## Getting the Most from the Main View
 
 1. **Analyze Daily Patterns**: Use **24-Hour Aggregate Mode** to identify your regular routines and commute patterns
-2. **Explore Movement History**: Switch between **Standard**, **Raw Path**, **Edge Bundling**, and **Hexagon Grid** modes to analyze your movement data at different levels of detail
+2. **Explore Movement History**: Switch between **Standard**, **Smoothed**, **Raw Path**, **Edge Bundling**, and **Hexagon Grid** modes to analyze your movement data at different levels of detail
 3. **Customize Your View**: Adjust map settings like **3D View**, **Terrain Layer**, and **Satellite View** to match your analysis needs
 4. **Use Live Mode for Real-time Tracking**: Enable live tracking for current movement monitoring or set up a **Kiosk Mode** display for shared viewing
 5. **Leverage Replay Features**: Use the **Replay Controls** with different speeds to review your movements over selected time ranges
