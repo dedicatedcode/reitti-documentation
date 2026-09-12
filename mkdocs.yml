@@ -31,3 +31,6 @@ markdown_extensions:
   - admonition
 extra_css:
   - assets/css/styles.css
+  - assets/css/compare-slider.css
+extra_javascript:
+  - assets/js/compare-slider.js
