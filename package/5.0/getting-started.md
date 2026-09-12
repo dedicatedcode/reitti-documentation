@@ -37,3 +37,7 @@ Once data is imported, you can:
 - Analyze movement patterns and statistics
 - Browse location-based photos (if Immich is configured)
 - Set up multiple users if needed and display them on one map
+
+!!! hint "Browser support"
+    Reitti renders its map with WebGL. See [Browser Support](usage/browser-support.md) for supported browsers and what
+    to check if the map does not render correctly (e.g. hardened privacy browsers like LibreWolf).
