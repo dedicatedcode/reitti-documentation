@@ -65,7 +65,7 @@ Both OwnTracks and GPSLogger can be configured to send data at any interval; GPS
    1. `Logging interval` to `30`
    2. `Distance filter` to `0`
    3. `Accuracy Filter` to `40`
-6Start logging to begin sending data to Reitti
+6. Start logging to begin sending data to Reitti
 
 #### Manual setup via "Log to custom URL"
 
