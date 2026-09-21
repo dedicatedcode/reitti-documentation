@@ -14,6 +14,7 @@ nav:
   - Integrations:
       - "integrations/mobile-apps.md"
       - "integrations/*"
+  - Add-ons: addons.md
   - Infrastructure:
       - backup.md
       - "infrastructure/*"
