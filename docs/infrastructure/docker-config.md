@@ -32,12 +32,13 @@ If you prefer running the containers with plain `docker run` commands instead of
 
 ### Application Runtime
 
-| Variable      | Description                                                                                                                          | Default Value | Example Value                 |
-|:--------------|:-------------------------------------------------------------------------------------------------------------------------------------|:--------------|:------------------------------|
-| `SERVER_PORT` | Port on which the application server listens.                                                                                        | `8080`        | `8080`                        |
-| `APP_UID`     | User ID under which the application process runs inside the container.                                                               | `1000`        | `1000`                        |
-| `APP_GID`     | Group ID under which the application process runs inside the container.                                                              | `1000`        | `1000`                        |
-| `JAVA_OPTS`   | Additional JVM options passed to the Java process.                                                                                   | *(empty)*     | `-Xmx512m -Xms256m`           |
+| Variable           | Description                                                                                                                                                                                                                                                                              | Default Value | Example Value       |
+|:-------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:--------------------|
+| `SERVER_PORT`      | Port on which the application server listens.                                                                                                                                                                                                                                            | `8080`        | `8080`              |
+| `APP_UID`          | User ID under which the application process runs inside the container.                                                                                                                                                                                                                   | `1000`        | `1000`              |
+| `APP_GID`          | Group ID under which the application process runs inside the container.                                                                                                                                                                                                                  | `1000`        | `1000`              |
+| `APP_EXTRA_GROUPS` | Comma-separated list of additional group IDs (GIDs) the application process is added to on startup. Missing groups are created automatically. Useful for bind-mounted volumes owned by host groups (e.g. media folders or the Docker socket). Works with or without `APP_UID`/`APP_GID`. | *(empty)*     | `999,101`           |
+| `JAVA_OPTS`        | Additional JVM options passed to the Java process.                                                                                                                                                                                                                                       | *(empty)*     | `-Xmx512m -Xms256m` |
 
 ---
 
@@ -147,6 +148,7 @@ services:
       - SERVER_PORT=8080
       - APP_UID=1000
       - APP_GID=1000
+      - APP_EXTRA_GROUPS=999,101
       - JAVA_OPTS=-Xmx512m
 
       # Database
