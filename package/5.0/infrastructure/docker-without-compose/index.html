@@ -1202,7 +1202,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-09-08T16:19:52+02:00');
+        const date = new Date('2026-09-28T10:33:13+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1309,6 +1309,7 @@ open <code>http://localhost:8080</code> in your browser once it is up.</p>
 <p>Useful optional settings (see <a href="../docker-config/">Docker Compose Configuration</a> for the full list):</p>
 <ul>
 <li><code>APP_UID</code> / <code>APP_GID</code>: run the application with a specific user and group ID (useful for host-mounted volumes)</li>
+<li><code>APP_EXTRA_GROUPS</code>: comma-separated list of additional GIDs the application process is added to, e.g. <code>APP_EXTRA_GROUPS=999,101</code> (missing groups are created automatically)</li>
 <li><code>JAVA_OPTS</code>: additional JVM options, e.g. <code>-Xmx512m</code></li>
 <li><code>ADVERTISE_URI</code>: public URI of your instance, used for external links</li>
 </ul>

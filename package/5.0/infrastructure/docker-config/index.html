@@ -1202,7 +1202,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-09-08T16:19:52+02:00');
+        const date = new Date('2026-09-28T10:33:13+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1288,6 +1288,12 @@ refer to that page for the full OIDC configuration guide.</p>
 <td style="text-align: left;">Group ID under which the application process runs inside the container.</td>
 <td style="text-align: left;"><code>1000</code></td>
 <td style="text-align: left;"><code>1000</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>APP_EXTRA_GROUPS</code></td>
+<td style="text-align: left;">Comma-separated list of additional group IDs (GIDs) the application process is added to on startup. Missing groups are created automatically. Useful for bind-mounted volumes owned by host groups (e.g. media folders or the Docker socket). Works with or without <code>APP_UID</code>/<code>APP_GID</code>.</td>
+<td style="text-align: left;"><em>(empty)</em></td>
+<td style="text-align: left;"><code>999,101</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>JAVA_OPTS</code></td>
@@ -1596,6 +1602,7 @@ variables for quick reference.</p>
       - SERVER_PORT=8080
       - APP_UID=1000
       - APP_GID=1000
+      - APP_EXTRA_GROUPS=999,101
       - JAVA_OPTS=-Xmx512m
 
       # Database
