@@ -25,7 +25,7 @@ jobs:
           version: "latest"
 
       - name: Set up Python
-        run: uv python install v3
+        run: uv python install 3.14
 
       - name: Configure Git and Fetch Deploy Branch
         run: |
