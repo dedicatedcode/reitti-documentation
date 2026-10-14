@@ -81,8 +81,9 @@ If you know **Family Sharing** from apps like Life360, this is Reitti's take on 
 
 Reitti supports various integrations to enhance your location tracking experience:
 
-- **Mobile App Integration**: Real-time tracking with OwnTracks and GPSLogger
-- **OwnTracks Recorder**: Alternative data collection method with backup storage
-- **Photo Integration**: Visual timeline enhancement with Immich photo management
+- **Mobile App Integration**: Real-time tracking with OwnTracks and GPSLogger ([Learn more](../integrations/mobile-apps.md))
+- **OwnTracks Recorder**: Alternative data collection method with backup storage ([Learn more](../integrations/owntracks-recorder.md))
+- **intervals.icu**: Import recorded activities from Garmin, Wahoo and other services, including your full past history ([Learn more](../integrations/intervals-icu.md))
+- **Photo Integration**: Visual timeline enhancement with Immich photo management ([Learn more](../configurations/photo-integration.md))
 
 For detailed information about each integration, see the dedicated pages in this section.

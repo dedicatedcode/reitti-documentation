@@ -61,7 +61,7 @@ wget https://raw.githubusercontent.com/dedicatedcode/reitti/refs/heads/main/dock
 docker-compose up -d
 ```
 
-This will make Reitti available at http://localhost:8080 with default credentials **admin:admin**.
+This will make Reitti available at http://localhost:8080.
 
 ### License
 

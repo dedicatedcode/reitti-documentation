@@ -844,6 +844,23 @@
             
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../../integrations/intervals-icu/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        intervals.icu Integration
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../../integrations/owntracks-recorder/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
@@ -1202,7 +1219,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-09-12T07:22:58+02:00');
+        const date = new Date('2026-10-14T20:15:17+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1273,6 +1290,46 @@
 <li><strong>Low Frequency</strong> (every 30 seconds): Conservative settings prevent false detections</li>
 </ul>
 <p>Once configured, visit detection will automatically process your location data to identify meaningful stops and enhance your location timeline analysis.</p>
+<h3 id="sparse-data-handling">Sparse Data Handling</h3>
+<p>Apps that conserve battery often report a point only when they detect movement. If you spent
+six hours at your desk and Reitti received two points for that time, a long stay is
+indistinguishable from a gap in your data unless something fills it.</p>
+<p>Reitti fills gaps between two reported points based on how fast you could plausibly have
+covered the distance between them:</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Implied speed between the two points</th>
+<th style="text-align: left;">What Reitti does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">At or below <code>MAX_STATIONARY_SPEED_KMH</code> (default <code>1.0 km/h</code>)</td>
+<td style="text-align: left;">Treats the whole gap as a stay, so it is detected as one visit</td>
+</tr>
+<tr>
+<td style="text-align: left;">Faster, but no longer than <code>MAX_INTERPOLATION_GAP_HOURS</code> (default <code>12 h</code>)</td>
+<td style="text-align: left;">Treats the gap as movement and draws a straight line between the two points</td>
+</tr>
+<tr>
+<td style="text-align: left;">Faster <strong>and</strong> longer than that</td>
+<td style="text-align: left;">Leaves the gap empty, because the real route is unknown</td>
+</tr>
+</tbody>
+</table></div>
+<p>A stationary fill runs the full length of the gap, so a long stay is detected as a single
+visit rather than being split by empty stretches.</p>
+<p>These two settings are server-wide environment variables rather than per-user settings,
+documented in the <a href="../../infrastructure/docker-config/#data-import--processing">Docker Configuration</a>.
+Lower them only if you see stays being missed; raise them only if visits are appearing where you
+know you were travelling.</p>
+<div class="admonition hint">
+<p class="admonition-title">Seeing more visits than you expect?</p>
+<p>An interval where you were actually driving can be misread as a stay when the device reported
+few points. Raising <code>MAX_STATIONARY_SPEED_KMH</code> makes Reitti less eager to treat slow gaps as
+stationary. Delete individual visits that are wrong in the <a href="../../usage/place-edit/">Place Editor</a>.</p>
+</div>
   </div>
   
   <script>
@@ -1541,6 +1598,12 @@
                             
                         </a>
                         
+                        <a class="text-2xl font-medium" href="../../integrations/intervals-icu/">
+                            
+                            intervals.icu Integration
+                            
+                        </a>
+                        
                         <a class="text-2xl font-medium" href="../../integrations/owntracks-recorder/">
                             
                             OwnTracks Recorder Integration
@@ -1725,6 +1788,12 @@
         
         <a href="#data-frequency-guidelines" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#data-frequency-guidelines');">
             Data Frequency Guidelines
+        </a>
+        
+
+        
+        <a href="#sparse-data-handling" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#sparse-data-handling');">
+            Sparse Data Handling
         </a>
         
 

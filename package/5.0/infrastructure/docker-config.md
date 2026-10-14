@@ -78,9 +78,11 @@ If you prefer running the containers with plain `docker run` commands instead of
 
 ### Local Authentication
 
-| Variable              | Description                                                                                                                               | Default Value | Example Value |
-|:----------------------|:------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:--------------|
-| `DISABLE_LOCAL_LOGIN` | When `true`, disables login with username / password and clears existing stored passwords. Use alongside OIDC to enforce SSO-only access. | `false`       | `true`        |
+| Variable                   | Description                                                                                                                               | Default Value | Example Value |
+|:---------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:--------------|
+| `DISABLE_LOCAL_LOGIN`      | When `true`, disables login with username / password and clears existing stored passwords. Use alongside OIDC to enforce SSO-only access. | `false`       | `true`        |
+| `LOGIN_MAX_FAILURES`       | Number of failed login attempts before the account is temporarily locked. A successful login resets the counter. Set to a very high value to effectively disable the lockout. | `10`          | `5`           |
+| `LOGIN_LOCKOUT_MINUTES`    | How long (in minutes) an account stays locked after reaching `LOGIN_MAX_FAILURES` failed attempts.                                        | `15`          | `30`          |
 
 ---
 
@@ -104,11 +106,21 @@ variables for quick reference.
 
 ### Data Import / Processing
 
-| Variable                   | Description                                                                                                                                                                         | Default Value | Example Value |
-|:---------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:--------------|
-| `PROCESSING_BATCH_SIZE`    | Number of location points processed in a single batch during import. Larger values use more memory and speed up processing.                                                         | `10000`       | `50000`       |
-| `INGESTION_MAX_BATCH_SIZE` | Maximum number of raw location points the server will wait before flushing API request from the ingestion endpoint.                                                                  | `100`         | `500`         |
-| `INGESTION_MAX_IDLE_TIME`  | Maximum time (in seconds) the server will wait before flushing a partially filled batch to the database when receiving data via the live mode / batch ingestion API.                 | `5`           | `10`          |
+| Variable                                   | Description                                                                                                                                                                         | Default Value | Example Value |
+|:-------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:--------------|
+| `PROCESSING_BATCH_SIZE`                    | Number of location points processed in a single batch during import. Larger values use more memory and speed up processing.                                                         | `10000`       | `50000`       |
+| `PROCESSING_MAX_TRIP_DURATION_HOURS`       | Maximum duration (in hours) of a trip between two consecutive visits. If two visits at different places are further apart than this, no trip is created between them.  | `24`          | `12`          |
+| `PROCESSING_MAX_UNTRACKED_MERGE_GAP_HOURS`  | Maximum gap (in hours) between two visits at the same place that are still merged when no location points were tracked in between. Prevents long gaps without tracking data from being collapsed into a single visit. | `48`          | `72`          |
+| `PLACE_OVERRIDE_MATCH_RADIUS_METERS`        | How far (in meters) a detected place may sit from a stored place override and still be treated as the same place. Absorbs GPS jitter when a place is recreated slightly off its previous centroid, so custom names survive reprocessing. Lower it if overrides are applied to neighbouring places. | `25`          | `40`          |
+| `MAX_STATIONARY_SPEED_KMH`                 | Highest speed at which a gap in your data is still read as "you stayed put". Reitti fills such a gap with a stationary cluster, so a long stay is still detected as a visit even when a battery-saving app only reports a point every half hour or so. Raise it if genuine short movements are being turned into visits, lower it if drives are. See [Sparse Data Handling](../configurations/visit-detection.md#sparse-data-handling). | `1.0`         | `2.0`         |
+| `MAX_INTERPOLATION_GAP_HOURS`              | Longest gap Reitti fills with interpolated movement points. Gaps where you clearly moved, but which are shorter than this, get a straight line between the two known points. Longer ones are left empty rather than drawn, because the real route is unknown. Lower it if you would rather have empty gaps than straight-line trips. See [Sparse Data Handling](../configurations/visit-detection.md#sparse-data-handling). | `12`          | `6`           |
+| `INGESTION_MAX_BATCH_SIZE`                 | Maximum number of raw location points the server will wait before flushing API request from the ingestion endpoint.                                                                  | `100`         | `500`         |
+| `INGESTION_MAX_IDLE_TIME`                  | Maximum time (in seconds) the server will wait before flushing a partially filled batch to the database when receiving data via the live mode / batch ingestion API.                 | `5`           | `10`          |
+| `OWNTRACKS_RECORDER_IMPORT_SCHEDULE`       | Cron expression for the scheduled pull from an OwnTracks Recorder instance. [Learn more](../integrations/owntracks-recorder.md)                                                                                            | `0 5/10 * * * *` | `0 0 */2 * * *` |
+| `INTERVALS_ICU_IMPORT_SCHEDULE`            | Cron expression for the scheduled pull of new activities from intervals.icu. Defaults to once per hour, because an activity only reaches intervals.icu after the device sync has run. [Learn more](../integrations/intervals-icu.md) | `0 0 * * * *` | `0 0 */2 * * *` |
+| `INTERVALS_ICU_MAX_ACTIVITIES_PER_RUN`     | Maximum number of activities imported per intervals.icu sync run. Anything beyond this is picked up by the following runs, so lowering it is safe. Set to `-1` for no limit.             | `25`          | `50`           |
+| `INTERVALS_ICU_HISTORY_EARLIEST_DATE`      | Date that a historical intervals.icu import walks back to, as an ISO date (`YYYY-MM-DD`). intervals.icu offers no way to ask for the oldest activity, so the history always starts at this date. | `2010-01-01`  | `2018-01-01`   |
+| `INTERVALS_ICU_SLICE_DELAY_SECONDS`        | Pause in seconds between two slices of a historical intervals.icu import. Keeps the import below the 10 requests per second per IP limit enforced by intervals.icu.                    | `2`           | `5`            |
 
 ---
 
@@ -171,8 +183,20 @@ services:
 
       # Ingestion tuning
       - PROCESSING_BATCH_SIZE=10000
+      - PROCESSING_MAX_TRIP_DURATION_HOURS=24
+      - PROCESSING_MAX_UNTRACKED_MERGE_GAP_HOURS=48
+      - PLACE_OVERRIDE_MATCH_RADIUS_METERS=25
+      - MAX_STATIONARY_SPEED_KMH=1.0
+      - MAX_INTERPOLATION_GAP_HOURS=12
       - INGESTION_MAX_BATCH_SIZE=100
       - INGESTION_MAX_IDLE_TIME=5
+
+      # Scheduled imports from external data stores
+      - OWNTRACKS_RECORDER_IMPORT_SCHEDULE=0 5/10 * * * *
+      - INTERVALS_ICU_IMPORT_SCHEDULE=0 0 * * * *
+      - INTERVALS_ICU_MAX_ACTIVITIES_PER_RUN=25
+      - INTERVALS_ICU_HISTORY_EARLIEST_DATE=2010-01-01
+      - INTERVALS_ICU_SLICE_DELAY_SECONDS=2
 
       # Optional features
       - SPATIAL_COVERAGE=false

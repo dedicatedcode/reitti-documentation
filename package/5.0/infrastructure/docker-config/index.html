@@ -844,6 +844,23 @@
             
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../../integrations/intervals-icu/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        intervals.icu Integration
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../../integrations/owntracks-recorder/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
@@ -1202,7 +1219,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-09-28T10:33:13+02:00');
+        const date = new Date('2026-10-14T20:15:17+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1441,6 +1458,18 @@ refer to that page for the full OIDC configuration guide.</p>
 <td style="text-align: left;"><code>false</code></td>
 <td style="text-align: left;"><code>true</code></td>
 </tr>
+<tr>
+<td style="text-align: left;"><code>LOGIN_MAX_FAILURES</code></td>
+<td style="text-align: left;">Number of failed login attempts before the account is temporarily locked. A successful login resets the counter. Set to a very high value to effectively disable the lockout.</td>
+<td style="text-align: left;"><code>10</code></td>
+<td style="text-align: left;"><code>5</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LOGIN_LOCKOUT_MINUTES</code></td>
+<td style="text-align: left;">How long (in minutes) an account stays locked after reaching <code>LOGIN_MAX_FAILURES</code> failed attempts.</td>
+<td style="text-align: left;"><code>15</code></td>
+<td style="text-align: left;"><code>30</code></td>
+</tr>
 </tbody>
 </table></div>
 <hr>
@@ -1521,6 +1550,36 @@ variables for quick reference.</p>
 <td style="text-align: left;"><code>50000</code></td>
 </tr>
 <tr>
+<td style="text-align: left;"><code>PROCESSING_MAX_TRIP_DURATION_HOURS</code></td>
+<td style="text-align: left;">Maximum duration (in hours) of a trip between two consecutive visits. If two visits at different places are further apart than this, no trip is created between them.</td>
+<td style="text-align: left;"><code>24</code></td>
+<td style="text-align: left;"><code>12</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PROCESSING_MAX_UNTRACKED_MERGE_GAP_HOURS</code></td>
+<td style="text-align: left;">Maximum gap (in hours) between two visits at the same place that are still merged when no location points were tracked in between. Prevents long gaps without tracking data from being collapsed into a single visit.</td>
+<td style="text-align: left;"><code>48</code></td>
+<td style="text-align: left;"><code>72</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PLACE_OVERRIDE_MATCH_RADIUS_METERS</code></td>
+<td style="text-align: left;">How far (in meters) a detected place may sit from a stored place override and still be treated as the same place. Absorbs GPS jitter when a place is recreated slightly off its previous centroid, so custom names survive reprocessing. Lower it if overrides are applied to neighbouring places.</td>
+<td style="text-align: left;"><code>25</code></td>
+<td style="text-align: left;"><code>40</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>MAX_STATIONARY_SPEED_KMH</code></td>
+<td style="text-align: left;">Highest speed at which a gap in your data is still read as "you stayed put". Reitti fills such a gap with a stationary cluster, so a long stay is still detected as a visit even when a battery-saving app only reports a point every half hour or so. Raise it if genuine short movements are being turned into visits, lower it if drives are. See <a href="../../configurations/visit-detection/#sparse-data-handling">Sparse Data Handling</a>.</td>
+<td style="text-align: left;"><code>1.0</code></td>
+<td style="text-align: left;"><code>2.0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>MAX_INTERPOLATION_GAP_HOURS</code></td>
+<td style="text-align: left;">Longest gap Reitti fills with interpolated movement points. Gaps where you clearly moved, but which are shorter than this, get a straight line between the two known points. Longer ones are left empty rather than drawn, because the real route is unknown. Lower it if you would rather have empty gaps than straight-line trips. See <a href="../../configurations/visit-detection/#sparse-data-handling">Sparse Data Handling</a>.</td>
+<td style="text-align: left;"><code>12</code></td>
+<td style="text-align: left;"><code>6</code></td>
+</tr>
+<tr>
 <td style="text-align: left;"><code>INGESTION_MAX_BATCH_SIZE</code></td>
 <td style="text-align: left;">Maximum number of raw location points the server will wait before flushing API request from the ingestion endpoint.</td>
 <td style="text-align: left;"><code>100</code></td>
@@ -1531,6 +1590,36 @@ variables for quick reference.</p>
 <td style="text-align: left;">Maximum time (in seconds) the server will wait before flushing a partially filled batch to the database when receiving data via the live mode / batch ingestion API.</td>
 <td style="text-align: left;"><code>5</code></td>
 <td style="text-align: left;"><code>10</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>OWNTRACKS_RECORDER_IMPORT_SCHEDULE</code></td>
+<td style="text-align: left;">Cron expression for the scheduled pull from an OwnTracks Recorder instance. <a href="../../integrations/owntracks-recorder/">Learn more</a></td>
+<td style="text-align: left;"><code>0 5/10 * * * *</code></td>
+<td style="text-align: left;"><code>0 0 */2 * * *</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>INTERVALS_ICU_IMPORT_SCHEDULE</code></td>
+<td style="text-align: left;">Cron expression for the scheduled pull of new activities from intervals.icu. Defaults to once per hour, because an activity only reaches intervals.icu after the device sync has run. <a href="../../integrations/intervals-icu/">Learn more</a></td>
+<td style="text-align: left;"><code>0 0 * * * *</code></td>
+<td style="text-align: left;"><code>0 0 */2 * * *</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>INTERVALS_ICU_MAX_ACTIVITIES_PER_RUN</code></td>
+<td style="text-align: left;">Maximum number of activities imported per intervals.icu sync run. Anything beyond this is picked up by the following runs, so lowering it is safe. Set to <code>-1</code> for no limit.</td>
+<td style="text-align: left;"><code>25</code></td>
+<td style="text-align: left;"><code>50</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>INTERVALS_ICU_HISTORY_EARLIEST_DATE</code></td>
+<td style="text-align: left;">Date that a historical intervals.icu import walks back to, as an ISO date (<code>YYYY-MM-DD</code>). intervals.icu offers no way to ask for the oldest activity, so the history always starts at this date.</td>
+<td style="text-align: left;"><code>2010-01-01</code></td>
+<td style="text-align: left;"><code>2018-01-01</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>INTERVALS_ICU_SLICE_DELAY_SECONDS</code></td>
+<td style="text-align: left;">Pause in seconds between two slices of a historical intervals.icu import. Keeps the import below the 10 requests per second per IP limit enforced by intervals.icu.</td>
+<td style="text-align: left;"><code>2</code></td>
+<td style="text-align: left;"><code>5</code></td>
 </tr>
 </tbody>
 </table></div>
@@ -1625,8 +1714,20 @@ variables for quick reference.</p>
 
       # Ingestion tuning
       - PROCESSING_BATCH_SIZE=10000
+      - PROCESSING_MAX_TRIP_DURATION_HOURS=24
+      - PROCESSING_MAX_UNTRACKED_MERGE_GAP_HOURS=48
+      - PLACE_OVERRIDE_MATCH_RADIUS_METERS=25
+      - MAX_STATIONARY_SPEED_KMH=1.0
+      - MAX_INTERPOLATION_GAP_HOURS=12
       - INGESTION_MAX_BATCH_SIZE=100
       - INGESTION_MAX_IDLE_TIME=5
+
+      # Scheduled imports from external data stores
+      - OWNTRACKS_RECORDER_IMPORT_SCHEDULE=0 5/10 * * * *
+      - INTERVALS_ICU_IMPORT_SCHEDULE=0 0 * * * *
+      - INTERVALS_ICU_MAX_ACTIVITIES_PER_RUN=25
+      - INTERVALS_ICU_HISTORY_EARLIEST_DATE=2010-01-01
+      - INTERVALS_ICU_SLICE_DELAY_SECONDS=2
 
       # Optional features
       - SPATIAL_COVERAGE=false
@@ -1906,6 +2007,12 @@ variables for quick reference.</p>
                         <a class="text-2xl font-medium" href="../../integrations/home-assistant/">
                             
                             Home-Assistant
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../../integrations/intervals-icu/">
+                            
+                            intervals.icu Integration
                             
                         </a>
                         

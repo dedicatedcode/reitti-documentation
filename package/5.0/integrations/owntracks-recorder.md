@@ -10,7 +10,7 @@ The OwnTracks Recorder integration provides an alternative method for collecting
 
 - **No App Reconfiguration**: If you already have OwnTracks configured to send data to a Recorder instance, there's no need to reconfigure your mobile app
 - **Backup Storage**: The Recorder acts as a reliable backup storage system for your location data
-- **Automatic Data Sync**: Reitti automatically pulls new location data from the Recorder every 5 minutes
+- **Automatic Data Sync**: Reitti automatically pulls new location data from the Recorder every 10 minutes
 - **Resilient Data Collection**: Even if Reitti is temporarily offline, the Recorder continues collecting data which can be synchronized later
 
 ### How It Works
