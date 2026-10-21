@@ -128,7 +128,7 @@ Your OIDC provider must provide these claims for successful authentication:
 This section provides examples of how to configure Reitti with different OpenID Connect providers.
 
 #### PocketId
-PocketId is a self-hosted OpenID Connect provider. You can find more information about the project [here](https://github.com/pfortin/pocketid).
+PocketId is a self-hosted OpenID Connect provider. You can find more information about the project [here](https://pocket-id.org/).
 
 To configure Reitti to use PocketId:
 

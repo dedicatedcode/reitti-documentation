@@ -90,6 +90,7 @@ open `http://localhost:8080` in your browser once it is up.
 Useful optional settings (see [Docker Compose Configuration](./docker-config.md) for the full list):
 
 - `APP_UID` / `APP_GID`: run the application with a specific user and group ID (useful for host-mounted volumes)
+- `APP_EXTRA_GROUPS`: comma-separated list of additional GIDs the application process is added to, e.g. `APP_EXTRA_GROUPS=999,101` (missing groups are created automatically)
 - `JAVA_OPTS`: additional JVM options, e.g. `-Xmx512m`
 - `ADVERTISE_URI`: public URI of your instance, used for external links
 

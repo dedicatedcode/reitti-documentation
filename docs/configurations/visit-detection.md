@@ -1,5 +1,5 @@
 ---
-title: "Visit Detection"
+title: "Visit Sensitivity"
 description: "Adjust key parameters for the visit detection"
 weight: 5
 tags: ["configuration"]
@@ -27,11 +27,14 @@ Visit detection enhances your location data by:
 
 To configure visit detection:
 
-1. Navigate to **Settings > Visit Detection**
+1. Navigate to **Settings > Visit Sensitivity**
 2. Choose between **Simple Mode** or **Advanced Mode**
 3. Configure your preferred settings
 4. Use the preview functionality to test your configuration
 5. Save your settings to apply the new parameters
+
+!!! hint "Fine-tune your timeline"
+    The **Visit Sensitivity** page also provides an **Open Place Editor** button. It takes you directly to the [Place Editor](../usage/place-edit.md), where you can delete single visits, create [No-Visit Zones](../usage/place-edit.md#no-visit-zones), and restore [suppressed visits](../usage/place-edit.md#suppressed-visits).
 
 ### Configuration Modes
 
@@ -74,4 +77,32 @@ The optimal parameters depend on how frequently location data is recorded:
 - **Low Frequency** (every 30 seconds): Conservative settings prevent false detections
 
 Once configured, visit detection will automatically process your location data to identify meaningful stops and enhance your location timeline analysis.
+
+### Sparse Data Handling
+
+Apps that conserve battery often report a point only when they detect movement. If you spent
+six hours at your desk and Reitti received two points for that time, a long stay is
+indistinguishable from a gap in your data unless something fills it.
+
+Reitti fills gaps between two reported points based on how fast you could plausibly have
+covered the distance between them:
+
+| Implied speed between the two points | What Reitti does |
+|:------------------------------------|:------------------|
+| At or below `MAX_STATIONARY_SPEED_KMH` (default `1.0 km/h`) | Treats the whole gap as a stay, so it is detected as one visit |
+| Faster, but no longer than `MAX_INTERPOLATION_GAP_HOURS` (default `12 h`) | Treats the gap as movement and draws a straight line between the two points |
+| Faster **and** longer than that | Leaves the gap empty, because the real route is unknown |
+
+A stationary fill runs the full length of the gap, so a long stay is detected as a single
+visit rather than being split by empty stretches.
+
+These two settings are server-wide environment variables rather than per-user settings,
+documented in the [Docker Configuration](../infrastructure/docker-config.md#data-import--processing).
+Lower them only if you see stays being missed; raise them only if visits are appearing where you
+know you were travelling.
+
+!!! hint "Seeing more visits than you expect?"
+    An interval where you were actually driving can be misread as a stay when the device reported
+    few points. Raising `MAX_STATIONARY_SPEED_KMH` makes Reitti less eager to treat slow gaps as
+    stationary. Delete individual visits that are wrong in the [Place Editor](../usage/place-edit.md).
 
