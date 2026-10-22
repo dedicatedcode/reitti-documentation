@@ -1236,7 +1236,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-10-21T15:28:09+02:00');
+        const date = new Date('2026-10-22T08:41:03+02:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1245,15 +1245,19 @@
     </div>
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
-    <p>The <strong>Statistics</strong> page turns your visits and trips into a report for a month, a year or your whole history. It is reachable through the bar chart icon in the main menu.</p>
+    <p>The <strong>Statistics</strong> page turns your visits and trips into a report for a month, a year or your whole history. It is
+reachable through the bar chart icon in the main menu.</p>
 <h2 id="navigation">Navigation</h2>
 <p>The bar at the top of the page shows the current period.</p>
 <ul>
 <li><strong>Arrows</strong> jump to the previous or next period that contains data.</li>
-<li><strong>Month / Year / All</strong> switches the scope. The report keeps the same structure for every scope, the numbers are aggregated accordingly.</li>
+<li><strong>Month / Year / All</strong> switches the scope. The report keeps the same structure for every scope, the numbers are
+  aggregated accordingly.</li>
 <li><strong>Clicking the period name</strong> opens a picker with every year and month that contains data.</li>
 </ul>
-<p>Every period has its own address, for example <code>/statistics/2026/9</code>, <code>/statistics/2026</code> or <code>/statistics/all</code>, so you can bookmark or share a link to it.</p>
+<p>Every period has its own address, for example <code>/statistics/2026/9</code>, <code>/statistics/2026</code> or <code>/statistics/all</code>, so you can
+bookmark or share a link to it.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/statistics-full.png" data-title="Statistics" data-desc-position="bottom"><img alt="Statistics" src="../../img/statistics-full.png"></a></p>
 <h2 id="what-the-report-contains">What the report contains</h2>
 <div class="table-wrapper"><table>
 <thead>
@@ -1313,31 +1317,56 @@
 </tr>
 </tbody>
 </table></div>
-<p>Every section has a <strong>?</strong> icon next to its title. Clicking it explains what the section shows and how to read the numbers.</p>
-<p>Place names in the routines and top places link to the place, so you can check or edit it. Days mentioned in <em>Odds and ends</em>, for example nights away that never became a memory, link to the timeline of those days.</p>
-<p>All times are shown in your local timezone (or the timezone override from your settings) and respect the configured start of the day.</p>
+<p>Every section has a <strong>?</strong> icon next to its title. Clicking it explains what the section shows and how to read the
+numbers.</p>
+<p>Place names in the routines and top places link to the place, so you can check or edit it. Days mentioned in <em>Odds and
+ends</em>, for example nights away that never became a memory, link to the timeline of those days.</p>
+<p>All times are shown in your local timezone (or the timezone override from your settings) and respect the configured
+start of the day.</p>
 <h3 id="nights-away-without-a-memory">Nights away without a memory</h3>
-<p>The <em>Odds and ends</em> section reminds you of nights away that are not linked to a memory. To keep this list useful, Reitti only includes overnight stays that last at least three consecutive nights and reach a place at least 10 km from home. Shorter stays and stays close to home are left out.</p>
-<p>Matching nights are grouped into one entry per stretch. Each entry links to the timeline for those days, so you can check the nights and decide whether to create a memory.</p>
+<p>The <em>Odds and ends</em> section reminds you of nights away that are not linked to a memory. To keep this list useful, Reitti
+only includes overnight stays that last at least three consecutive nights and reach a place at least 10 km from home.
+Shorter stays and stays close to home are left out.</p>
+<p>Matching nights are grouped into one entry per stretch. Each entry links to the timeline for those days, so you can
+check the nights and decide whether to create a memory.</p>
 <h2 id="comparing-periods">Comparing periods</h2>
-<p>The <em>Comparison and top places</em> section compares the shown period with another one. The selector at the top of the section shows which period is used:</p>
+<p>The <em>Comparison and top places</em> section compares the shown period with another one. The selector at the top of the
+section shows which period is used:</p>
 <ul>
 <li><strong>Previous month</strong> or <strong>previous year</strong> is used by default.</li>
 <li><strong>Same month last year</strong> is offered in the monthly view.</li>
 <li><strong>Any other month or year with data</strong> can be chosen as well.</li>
 </ul>
-<p>Each line shows the value of the shown period first, followed by the value of the chosen period. Check the number of tracked days in the first line before reading the totals: a period with fewer tracked days naturally has lower totals. The selection is part of the address (for example <code>/statistics/2026/9?compare=2025-9</code>), so it survives a reload and can be bookmarked. Moving to another period with the arrows resets the comparison to the previous period.</p>
+<p>Each line shows the value of the shown period first, followed by the value of the chosen period. Check the number of
+tracked days in the first line before reading the totals: a period with fewer tracked days naturally has lower totals.
+The selection is part of the address (for example <code>/statistics/2026/9?compare=2025-9</code>), so it survives a reload and can
+be bookmarked. Moving to another period with the arrows resets the comparison to the previous period.</p>
 <h2 id="how-reitti-determines-your-home">How Reitti determines your home</h2>
-<p>Many numbers depend on knowing where home is. Reitti looks at your <strong>nights</strong>: a night runs from 22:00 until 06:00 in the timezone of the place you were at. The place where you spent most of that time is where you slept. If your phone stopped recording during the night, but you were at the same place before and after, the night still counts for that place.</p>
-<p>For every night, Reitti counts where you slept during the 45 nights before and the 45 nights after it. The place with the most nights becomes home, provided it collected at least 10 nights and 30% of the tracked nights in that window.</p>
-<p>Places marked as <em>Home</em> (see <a href="../place-edit/">Edit Places</a>) are preferred, but only while you actually slept there: a marked place wins as long as it has about as many nights in the window as the leading place. Marking your current home therefore does not rewrite the past. In the years before you moved in, the place where you lived at that time is used as home.</p>
+<p>Many numbers depend on knowing where home is. Reitti looks at your <strong>nights</strong>: a night runs from 22:00 until 06:00 in
+the timezone of the place you were at. The place where you spent most of that time is where you slept. If your phone
+stopped recording during the night, but you were at the same place before and after, the night still counts for that
+place.</p>
+<p>For every night, Reitti counts where you slept during the 45 nights before and the 45 nights after it. The place with
+the most nights becomes home, provided it collected at least 10 nights and 30% of the tracked nights in that window.</p>
+<p>Places marked as <em>Home</em> (see <a href="../place-edit/">Edit Places</a>) are preferred, but only while you actually slept there: a
+marked place wins as long as it has about as many nights in the window as the leading place. Marking your current home
+therefore does not rewrite the past. In the years before you moved in, the place where you lived at that time was used
+as
+a home.</p>
 <h3 id="vacations-and-moving">Vacations and moving</h3>
-<p>Because the window spans roughly three months, a vacation never replaces your home. Three weeks at the coast are 21 nights against about 70 nights at home, so those nights are counted as <strong>nights away</strong> instead. A place where you slept away from home on several separate occasions is listed as a <strong>second base, not a new home</strong>.</p>
-<p>When you move, the new place dominates the window after a few weeks and becomes home from around the date of the move. For the most recent weeks there are no later nights to look at yet. If most recent nights were spent somewhere else, the report says that your home seems to be changing.</p>
+<p>Because the window spans roughly three months, a vacation never replaces your home. Three weeks at the coast are 21
+nights against about 70 nights at home, so those nights are counted as <strong>nights away</strong> instead. A place where you slept
+away from home on several separate occasions is listed as a <strong>second base, not a new home</strong>.</p>
+<p>When you move, the new place dominates the window after a few weeks and becomes home from around the date of the move.
+For the most recent weeks there are no later nights to look at yet. If most recent nights were spent somewhere else, the
+report says that your home seems to be changing.</p>
 <h3 id="home-suggestion">Home suggestion</h3>
-<p>If one place collected most of your last 90 nights and is not marked as Home yet, the statistics page suggests marking it as Home. <em>Mark as Home</em> sets the place type for you, <em>Not my home</em> hides the suggestion for this place.</p>
+<p>If one place collected most of your last 90 nights and is not marked as Home yet, the statistics page suggests marking
+it as Home. <em>Mark as Home</em> sets the place type for you, <em>Not my home</em> hides the suggestion for this place.</p>
 <h2 id="eddington-number">Eddington number</h2>
-<p>The Eddington number E is the largest number for which you have E days with a distance of at least E kilometers (or miles, depending on your unit settings). A single long trip cannot raise it, only many active days can. In the monthly view the number covers the current year up to the selected month.</p>
+<p>The Eddington number E is the largest number for which you have E days with a distance of at least E kilometers (or
+miles, depending on your unit settings). A single long trip cannot raise it, only many active days can. In the monthly
+view, the number covers the current year up to the selected month.</p>
   </div>
   
   <script>
