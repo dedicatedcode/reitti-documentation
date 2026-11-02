@@ -134,6 +134,17 @@ variables for quick reference.
 
 ---
 
+### Notifications
+
+| Variable | Description | Default Value | Example Value |
+|:---------|:------------|:--------------|:--------------|
+| `REITTI_NOTIFICATIONS_ENABLED` | Master switch for the whole notification system. When `false`, no notifications are created at all. | `true` | `true` |
+| `REITTI_NOTIFICATIONS_UPDATE_CHECK_ENABLED` | Enables the daily check for newer Reitti releases, which notifies administrators when a new version is available. [Learn more](../configurations/notifications.md#the-new-version-notification) | `true` | `true` |
+
+All other notification settings (check schedule, job notification threshold, and delivery timeouts) only apply when Reitti runs outside Docker and are documented in [Notifications](../configurations/notifications.md#server-configuration). The per-user part of the notification system — the inbox, notification types, and the ntfy and Apprise channels — is configured in the web UI. See [Notifications](../configurations/notifications.md).
+
+---
+
 ### Reitti Tile Cache
 
 | Variable       | Description                                                                                         | Default               | Example Value               |
