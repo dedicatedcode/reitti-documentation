@@ -18,7 +18,7 @@
 
 
 
-<meta name="description" content="Adjust key parameters for the transportation mode detection">
+<meta name="description" content="Teach Reitti how you usually get around, so it can label your trips correctly">
 
 
 
@@ -37,7 +37,7 @@
 
 
 
-<meta property="og:description" content="Adjust key parameters for the transportation mode detection">
+<meta property="og:description" content="Teach Reitti how you usually get around, so it can label your trips correctly">
 
 
 
@@ -54,7 +54,7 @@
 
 
 
-<meta name="twitter:description" content="Adjust key parameters for the transportation mode detection">
+<meta name="twitter:description" content="Teach Reitti how you usually get around, so it can label your trips correctly">
 
 
 
@@ -67,7 +67,7 @@
     "@type": "Article",
     "headline": "Transportation Mode Detection",
     "url": "https://www.dedicatedcode.com/projects/reitti/5.0/configurations/transportation-modes/",
-    "description": "Adjust key parameters for the transportation mode detection",
+    "description": "Teach Reitti how you usually get around, so it can label your trips correctly",
     
     
     
@@ -1253,7 +1253,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-09-08T15:16:03+02:00');
+        const date = new Date('2026-11-07T05:26:22+01:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1263,95 +1263,167 @@
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
     <p><span class="badge badge-normal version-badge"><span class="sep"> [</span><span class="title">since</span><span class="sep"> : </span><span class="value">v2.0.0</span><span class="sep">] </span></span></p>
-<p>Reitti's transportation mode detection automatically identifies the modes of transportation used during your trips based on speed and other parameters. The detection parameters can be customized to match your specific movement patterns and data frequency.</p>
-<h3 id="why-use-transportation-mode-detection">Why Use Transportation Mode Detection?</h3>
-<p>Transportation mode detection enhances your location data by:</p>
+<p>Reitti can automatically work out how you travelled between two places. It looks at your location history and labels each part of a trip as <strong>Walking</strong>, <strong>Cycling</strong>, <strong>Driving</strong>, <strong>Transit</strong>, or another mode you have enabled.</p>
+<p>The defaults work well for most people. If Reitti often guesses a mode wrongly, the settings on this page let you nudge it towards the way you actually travel.</p>
+<h2 id="why-use-transportation-mode-detection">Why use transportation mode detection?</h2>
 <ul>
-<li><strong>Accurate Categorization</strong>: Automatically classifies trips by mode (e.g., walking, cycling, driving)</li>
-<li><strong>Trip Analysis</strong>: Provides insights into your travel habits and preferences</li>
-<li><strong>Data Enrichment</strong>: Adds context to your movement tracks for better visualization</li>
-<li><strong>Personalized Insights</strong>: Adapts to your unique transportation choices and speeds</li>
+<li><strong>See how you really move</strong> — walking, cycling, driving and public transport are separated automatically.</li>
+<li><strong>Better statistics</strong> — distance, time and average speed are grouped by mode.</li>
+<li><strong>Clearer map</strong> — trips can be colored by mode, with badges where you change from one mode to another.</li>
+<li><strong>Less manual work</strong> — you only need to correct the trips Reitti gets wrong.</li>
 </ul>
-<h3 id="multi-segment-trips">Multi-Segment Trips</h3>
-<p><span class="badge badge-normal version-badge"><span class="sep"> [</span><span class="title">since</span><span class="sep"> : </span><span class="value">v5.3.0</span><span class="sep">] </span></span></p>
-<p>Real journeys rarely use a single mode of travel. A typical commute might combine walking to the parking spot, driving across town, and walking the last stretch to the office. Reitti therefore models a trip as a sequence of <strong>segments</strong>, each with its own transportation mode:</p>
-<ol>
-<li>The algorithm splits each trip into one-minute chunks</li>
-<li>For each chunk, it analyzes speed and other factors to detect the transportation mode</li>
-<li>Consecutive chunks with the same detected mode are combined into one segment</li>
-<li>The result is an ordered list of segments, for example <code>Walking</code> → <code>Driving</code> → <code>Walking</code></li>
-</ol>
-<p>On the map, enable <strong>Display Transportation Modes</strong> in the map settings to color tracks by mode and to show transition badges where the mode changes (see <a href="../../usage/main-view/#transportation-mode-display">Transportation Mode Display</a>).</p>
-<h3 id="configuration">Configuration</h3>
-<p>To configure transportation mode detection:</p>
-<ol>
-<li>Navigate to <strong>Settings &gt; Transportation Modes</strong></li>
-<li>Configure the available transportation modes (see below)</li>
-<li>Use <strong>Reclassify All Trips</strong> to reprocess every known trip with the stored configuration</li>
-</ol>
-<p>Each transportation mode can be customized:</p>
+<h2 id="how-detection-works">How detection works</h2>
+<p>Reitti does not just look at a single speed value. For each short part of a trip it considers:</p>
 <ul>
-<li><strong>Max Speed</strong>: The speed threshold in km/h or mph used during detection. Leave empty for no speed limit</li>
-<li><strong>Color</strong>: The color used to display this mode on the map when transportation mode display is enabled</li>
-<li><strong>Icon</strong>: An optional icon shown on the map and in the timeline</li>
+<li>how fast you moved,</li>
+<li>how steady that speed was,</li>
+<li>how fast you were going at your fastest moment in that part,</li>
+<li>and what happened before and after.</li>
 </ul>
-<p>The following modes are available. The first four come preconfigured, additional modes can be added as needed:</p>
+<p>It then looks at the whole trip and tries to avoid changing modes for a short slow patch. A red light, a traffic jam, or leaving the motorway is normally kept as part of the same drive.</p>
+<div class="admonition hint">
+<p class="admonition-title">You stay in control</p>
+<p>Every automatic result can be corrected. See <a href="#correcting-a-trip">Correcting a trip</a> below.</p>
+</div>
+<h2 id="multi-segment-trips">Multi-segment trips</h2>
+<p>A journey often uses more than one mode. A commute might be <strong>Walking → Driving → Walking</strong>. Reitti splits a trip into segments and labels each one, so the result can be a sequence such as <code>Walking → Driving → Walking</code>.</p>
+<p>On the map, enable <strong>Display Transportation Modes</strong> in the map settings to color tracks by mode and show transition badges where the mode changes (see <a href="../../usage/main-view/#transportation-mode-display">Transportation Mode Display</a>).</p>
+<h2 id="configuring-your-modes">Configuring your modes</h2>
+<p>Open <strong>Settings &gt; Transportation Modes</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/transportation-modes-settings.png" data-title="Transportation mode settings" data-desc-position="bottom"><img alt="Transportation mode settings" src="../../img/transportation-modes-settings.png"></a></p>
+<p>Each mode has its own card. Select <strong>Edit</strong> to change it.</p>
+<h3 id="typical-speed-range">Typical speed range</h3>
+<p>Instead of a single maximum speed, each mode has a <strong>typical speed range</strong> — a lower and an upper number. The units follow your profile setting (km/h or mph).</p>
+<p>Think of it as: <em>“When I use this mode, I usually move somewhere between these two speeds.”</em></p>
+<p>For example:</p>
+<ul>
+<li>Walking: 0–7 km/h</li>
+<li>Cycling: 5–25 km/h</li>
+<li>Driving: 20–130 km/h</li>
+</ul>
+<p>The ranges are allowed to <strong>overlap</strong>. Walking and cycling overlap around 5–7 km/h; cycling and driving overlap around 20–25 km/h. That is normal and intentional — Reitti uses the rest of the trip to decide between them.</p>
+<p>You can also leave a <strong>gap</strong> between two ranges. A gap does not break anything; it simply means Reitti is less certain about speeds that fall inside it. The settings page will still let you save the change.</p>
+<div class="admonition hint">
+<p class="admonition-title">What should I enter?</p>
+<p>Use the speeds you actually see in your own trips. If you often ride an e-bike at 30 km/h, raise the upper end of <strong>Cycling</strong>. If you drive mostly in a city, a lower top speed for <strong>Driving</strong> is fine too.</p>
+</div>
+<h3 id="preference">Preference</h3>
+<p><strong>Preference</strong> tells Reitti how strongly it should favor a mode when the speed evidence could point to more than one mode. The allowed range is <code>0.1</code> to <code>5.0</code>.</p>
+<ul>
+<li><code>1.0</code> is neutral. This is the default.</li>
+<li>Higher values (for example <code>1.2</code> or <code>1.5</code>) make the mode <strong>more likely</strong>.</li>
+<li>Lower values (for example <code>0.7</code> or <code>0.5</code>) make it <strong>less likely</strong>.</li>
+</ul>
+<p>Use it as a gentle nudge, not a switch. For example, if you often cycle at speeds that could also be a slow car, you can raise <strong>Cycling</strong> slightly. If you rarely use public transport, lowering <strong>Transit</strong> a little helps.</p>
+<div class="admonition hint">
+<p class="admonition-title">Preference is not a guarantee</p>
+<p>A very high preference cannot force a mode when the movement clearly does not match it. Keep the value close to <code>1.0</code> unless you have a specific reason to change it.</p>
+</div>
+<p>The default <strong>Transit</strong> preference is <code>0.7</code>, because public transport is easy to confuse with driving.</p>
+<h3 id="enabled">Enabled</h3>
+<p>Turn off modes you never use. If you never take the train, disable <strong>Train</strong>; if you do not own a car, disable <strong>Driving</strong>. Fewer available modes means fewer wrong guesses.</p>
+<h3 id="color-and-icon">Color and icon</h3>
+<p>These only affect how the mode is shown on the map and in the timeline. They do not change detection.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/transportation-modes-edit.png" data-title="Editing a transportation mode" data-desc-position="bottom"><img alt="Editing a transportation mode" src="../../img/transportation-modes-edit.png"></a></p>
+<h2 id="mode-change-sensitivity">Mode change sensitivity</h2>
+<p>The <strong>Mode change sensitivity</strong> setting controls how quickly Reitti switches from one mode to another.</p>
+<ul>
+<li><strong>Low — fewer mode changes</strong>: Reitti keeps a mode for longer and only switches when it is very sure. Good for commutes and long drives.</li>
+<li><strong>Medium</strong>: the default balance.</li>
+<li><strong>High — more responsive</strong>: Reitti switches sooner. Good for trips that genuinely mix modes, such as walking to a station and then taking a train.</li>
+</ul>
+<p>If you see too many short, unlikely mode changes, choose <strong>Low</strong>. If a real mode change is being missed, choose <strong>High</strong>.</p>
+<h2 id="how-confident-is-reitti">How confident is Reitti?</h2>
+<p>When you open a trip for editing, Reitti shows how sure it is about each segment, for example <strong>“Detected with 89% confidence”</strong>.</p>
+<ul>
+<li><strong>High confidence</strong> means the movement fitted the mode well.</li>
+<li><strong>Low confidence</strong> means the movement could fit more than one mode. It is a good hint that the segment is worth checking.</li>
+<li><strong>Manual</strong> means you set that segment yourself.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/transportation-mode-confidence.png" data-title="The trip editor shows the detected mode and its confidence" data-desc-position="bottom"><img alt="The trip editor shows the detected mode and its confidence" src="../../img/transportation-mode-confidence.png"></a></p>
+<h2 id="correcting-a-trip">Correcting a trip</h2>
+<p>If a segment is wrong:</p>
+<ol>
+<li>Open the timeline.</li>
+<li>Select the trip, hover over it and click the pencil icon.</li>
+<li>Choose the correct mode for each segment.</li>
+<li>Click <strong>Save Changes</strong>.</li>
+</ol>
+<p>Your correction is remembered. When trips are recalculated later, Reitti keeps your manual choice instead of overwriting it.</p>
+<h2 id="reclassifying-existing-trips">Reclassifying existing trips</h2>
+<p>Changing the settings only affects new trips by default. To apply them to trips that already exist:</p>
+<ol>
+<li>Open <strong>Settings &gt; Transportation Modes</strong>.</li>
+<li>Click <strong>Reclassify All Trips</strong>.</li>
+<li>The work runs in the background. You can follow it on the <strong>Job Status</strong> page.</li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Manual changes survive</p>
+<p>Reclassifying does not throw away your manual corrections. They are applied again after the automatic detection.</p>
+</div>
+<h2 id="getting-the-best-results">Getting the best results</h2>
+<ul>
+<li><strong>Start with the defaults.</strong> They work well for most people.</li>
+<li><strong>Adjust the typical speed range first.</strong> It has the biggest effect.</li>
+<li><strong>Disable modes you never use.</strong> This is often more effective than lowering a preference.</li>
+<li><strong>Use preference sparingly.</strong> Small changes are enough.</li>
+<li><strong>Correct the obvious mistakes.</strong> Your manual fixes are kept.</li>
+<li><strong>Reclassify after bigger changes.</strong> It updates your history to match the new settings.</li>
+</ul>
+<h2 id="default-settings">Default settings</h2>
+<p>The table below shows the values Reitti uses for a new installation. If you upgraded from an older version, your previous maximum speeds are kept as the upper end of each range, so your numbers may look different.</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
 <th>Mode</th>
-<th>Default Max Speed</th>
+<th>Typical speed range</th>
+<th>Preference</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Walking</td>
-<td>7 km/h</td>
+<td>0–7 km/h</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Cycling</td>
-<td>20 km/h</td>
+<td>5–25 km/h</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Driving</td>
-<td>120 km/h</td>
+<td>20–130 km/h</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>Transit</td>
-<td>No limit</td>
+<td>10–200 km/h</td>
+<td>0.7</td>
 </tr>
 <tr>
 <td>Train</td>
-<td>unconfigured</td>
+<td>not configured</td>
+<td>—</td>
 </tr>
 <tr>
 <td>Motorcycle</td>
-<td>unconfigured</td>
+<td>not configured</td>
+<td>—</td>
 </tr>
 <tr>
 <td>E-Scooter</td>
-<td>unconfigured</td>
+<td>not configured</td>
+<td>—</td>
 </tr>
 <tr>
 <td>Airplane</td>
-<td>unconfigured</td>
+<td>not configured</td>
+<td>—</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="reclassifying-existing-trips">Reclassifying Existing Trips</h3>
-<p>New and reprocessed trips automatically use the multi-segment model. To apply your current configuration (or the new multi-segment detection) to historical data:</p>
-<ol>
-<li>Navigate to <strong>Settings &gt; Transportation Modes</strong></li>
-<li>Click <strong>Reclassify All Trips</strong></li>
-<li>The reclassification runs as a background job. You can watch its progress on the <strong>Job Status</strong> page</li>
-</ol>
-<h3 id="best-practices">Best Practices</h3>
-<ul>
-<li><strong>Calibrate Speeds</strong>: Adjust the speed thresholds based on your typical speeds for each mode</li>
-<li><strong>Consider Terrain</strong>: Urban vs. rural areas may require different thresholds</li>
-<li><strong>Use Reclassification</strong>: After changing your configuration, use <strong>Reclassify All Trips</strong> to update existing trips</li>
-</ul>
-<p>Once configured, transportation mode detection will automatically process your location data to categorize trips and enhance your travel analysis.</p>
+<p>You can add any of the unconfigured modes with <strong>Add Transportation Mode</strong> if you use them.</p>
   </div>
   
   <script>
@@ -1775,31 +1847,79 @@
         
         
         <a href="#why-use-transportation-mode-detection" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#why-use-transportation-mode-detection');">
-            Why Use Transportation Mode Detection?
+            Why use transportation mode detection?
+        </a>
+        
+
+        
+        <a href="#how-detection-works" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#how-detection-works');">
+            How detection works
         </a>
         
 
         
         <a href="#multi-segment-trips" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#multi-segment-trips');">
-            Multi-Segment Trips
+            Multi-segment trips
         </a>
         
 
         
-        <a href="#configuration" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#configuration');">
-            Configuration
+        <a href="#configuring-your-modes" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#configuring-your-modes');">
+            Configuring your modes
+        </a>
+        
+        
+        <a href="#typical-speed-range" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#typical-speed-range');">
+            Typical speed range
+        </a>
+        
+        <a href="#preference" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#preference');">
+            Preference
+        </a>
+        
+        <a href="#enabled" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#enabled');">
+            Enabled
+        </a>
+        
+        <a href="#color-and-icon" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#color-and-icon');">
+            Color and icon
+        </a>
+        
+        
+
+        
+        <a href="#mode-change-sensitivity" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#mode-change-sensitivity');">
+            Mode change sensitivity
+        </a>
+        
+
+        
+        <a href="#how-confident-is-reitti" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#how-confident-is-reitti');">
+            How confident is Reitti?
+        </a>
+        
+
+        
+        <a href="#correcting-a-trip" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#correcting-a-trip');">
+            Correcting a trip
         </a>
         
 
         
         <a href="#reclassifying-existing-trips" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#reclassifying-existing-trips');">
-            Reclassifying Existing Trips
+            Reclassifying existing trips
         </a>
         
 
         
-        <a href="#best-practices" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#best-practices');">
-            Best Practices
+        <a href="#getting-the-best-results" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#getting-the-best-results');">
+            Getting the best results
+        </a>
+        
+
+        
+        <a href="#default-settings" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#default-settings');">
+            Default settings
         </a>
         
 

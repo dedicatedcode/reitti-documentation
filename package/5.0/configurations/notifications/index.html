@@ -1253,7 +1253,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-11-02T19:56:09+01:00');
+        const date = new Date('2026-11-07T05:26:22+01:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1263,7 +1263,7 @@
   </div>
   <div class="typography w-full flex-1 *:data-[slot=alert]:first:mt-0">
     <p><span class="badge badge-normal version-badge"><span class="sep"> [</span><span class="title">since</span><span class="sep"> : </span><span class="value">v5.9.0</span><span class="sep">] </span></span></p>
-<p>Reitti can notify you about things that happen in the background: long-running import and processing jobs that finish or fail, new Reitti versions, and failed login attempts. Notifications are delivered to a <strong>per-user inbox</strong> inside Reitti, and can additionally be forwarded to external channels like <strong>ntfy</strong> and <strong>Apprise</strong> so you can receive them on your phone or desktop.</p>
+<p>Reitti can notify you about things that happen in the background: long-running import and processing jobs that finish or fail, new Reitti versions, failed login attempts, and devices that stop sending location data. Notifications are delivered to a <strong>per-user inbox</strong> inside Reitti, and can additionally be forwarded to external channels like <strong>ntfy</strong> and <strong>Apprise</strong> so you can receive them on your phone or desktop.</p>
 <h3 id="how-it-works">How It Works</h3>
 <ol>
 <li>Something happens in Reitti (a job finishes, a new version is published, …). These events are created by <em>producers</em>.</li>
@@ -1279,7 +1279,7 @@
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">Who receives what</p>
-<p>Some events are targeted at specific users: job notifications go to the user who started the job, and new version notifications are only sent to <strong>administrators</strong>. Failed login notifications go to the owner of the account that was targeted.</p>
+<p>Some events are targeted at specific users: job notifications go to the user who started the job, and new version notifications are only sent to <strong>administrators</strong>. Failed login notifications go to the owner of the account that was targeted. Device inactivity notifications go to the owner of the configured device.</p>
 </div>
 <h3 id="the-notification-settings">The Notification Settings</h3>
 <p>Navigate to <strong>Settings &gt; Notifications</strong>. The page has three sections:</p>
@@ -1288,6 +1288,7 @@
 <li><strong>Notification Types</strong>: choose which events should create a notification. Disabled types are ignored by <strong>all</strong> channels.</li>
 <li><strong>Notification Channels</strong>: configure where notifications should be delivered. Each channel can be enabled or disabled per user, and each channel has a <strong>Send test notification</strong> button.</li>
 </ul>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/notifications-settings.png" data-title="Notification settings" data-desc-position="bottom"><img alt="Notification settings" src="../../img/notifications-settings.png"></a></p>
 <h3 id="notification-types">Notification Types</h3>
 <div class="table-wrapper"><table>
 <thead>
@@ -1319,12 +1320,31 @@
 <td style="text-align: left;">The owner of the account</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>Device inactivity</strong></td>
+<td style="text-align: left;">A configured device has not sent any location data for the configured number of hours.</td>
+<td style="text-align: left;">The owner of the device</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>Test notification</strong></td>
 <td style="text-align: left;">Triggered manually by the <strong>Send test</strong> button in the channel settings.</td>
 <td style="text-align: left;">You</td>
 </tr>
 </tbody>
 </table></div>
+<h3 id="device-inactivity">Device Inactivity</h3>
+<p>The <strong>Device inactivity</strong> type warns you when one of your devices stops sending location data.</p>
+<ol>
+<li>Enable <strong>Device inactivity</strong> in <strong>Settings &gt; Notifications &gt; Notification Types</strong>.</li>
+<li>A list of your devices appears directly below the type. Select the devices you want to monitor.</li>
+<li>Set how many hours without data are allowed before Reitti notifies you.</li>
+<li>Save the notification type settings.</li>
+</ol>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/notifications-device-inactivity.png" data-title="Device inactivity settings" data-desc-position="bottom"><img alt="Device inactivity settings" src="../../img/notifications-device-inactivity.png"></a></p>
+<p>Reitti sends only one notification per inactivity period. When the device starts sending data again, the state is reset, so a later inactivity period triggers a new notification. Uncheck a device to stop monitoring it. Disabling the <strong>Device inactivity</strong> type hides the device list and suspends all device inactivity notifications.</p>
+<div class="admonition hint">
+<p class="admonition-title">Choosing the threshold</p>
+<p>Use a value that is longer than your device's normal upload interval. A phone that uploads every few minutes may be fine with 1–2 hours, while a GPS tracker that syncs once a day needs a higher threshold.</p>
+</div>
 <h3 id="the-new-version-notification">The New Version Notification</h3>
 <p>Reitti periodically asks GitHub for the latest release and notifies administrators when it is newer than the running version.</p>
 <ul>
@@ -1481,6 +1501,11 @@ volumes:
 <td style="text-align: left;"><code>5</code></td>
 </tr>
 <tr>
+<td style="text-align: left;"><code>reitti.notifications.device-inactivity.cron</code></td>
+<td style="text-align: left;">Cron expression controlling how often Reitti checks configured devices for missing location data. The check always runs and does nothing when no devices are configured.</td>
+<td style="text-align: left;"><code>0 */15 * * * *</code> (every 15 minutes)</td>
+</tr>
+<tr>
 <td style="text-align: left;"><code>reitti.notifications.external.timeout-seconds</code></td>
 <td style="text-align: left;">Connect and read timeout in seconds for delivering notifications to ntfy and Apprise.</td>
 <td style="text-align: left;"><code>10</code></td>
@@ -1499,6 +1524,7 @@ volumes:
 <h3 id="troubleshooting">Troubleshooting</h3>
 <ul>
 <li><strong>No notifications arrive in the inbox</strong>: check that notifications are enabled for your account and that the notification <em>type</em> is enabled. Types disabled in the settings are ignored by every channel.</li>
+<li><strong>No device inactivity notification arrives</strong>: make sure the <strong>Device inactivity</strong> type and the specific device are enabled in the notification settings. Reitti sends only one notification per inactivity period and does not repeat it until the device sends data again.</li>
 <li><strong>Nothing arrives via ntfy/Apprise</strong>: send a test notification from the channel settings and check the Reitti server logs. Also make sure the URL is reachable from the Reitti container (a <code>localhost</code> URL is wrong when Reitti runs in Docker, use the container/service name instead).</li>
 <li><strong>External notifications have no click link</strong>: configure <code>ADVERTISE_URI</code> so Reitti can build absolute URLs.</li>
 <li><strong>You never received a "New version available" notification</strong>: the check only runs on a schedule (default once per day) and only for administrators. A version that was announced before you enabled the type will not be re-announced.</li>
@@ -1939,6 +1965,12 @@ volumes:
         
         <a href="#notification-types" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#notification-types');">
             Notification Types
+        </a>
+        
+
+        
+        <a href="#device-inactivity" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="2" onclick="deferSetActiveTocLink('#device-inactivity');">
+            Device Inactivity
         </a>
         
 

@@ -6,7 +6,7 @@ tags: ["configuration", "notifications"]
 ---
 |since|v5.9.0|.version-badge|
 
-Reitti can notify you about things that happen in the background: long-running import and processing jobs that finish or fail, new Reitti versions, and failed login attempts. Notifications are delivered to a **per-user inbox** inside Reitti, and can additionally be forwarded to external channels like **ntfy** and **Apprise** so you can receive them on your phone or desktop.
+Reitti can notify you about things that happen in the background: long-running import and processing jobs that finish or fail, new Reitti versions, failed login attempts, and devices that stop sending location data. Notifications are delivered to a **per-user inbox** inside Reitti, and can additionally be forwarded to external channels like **ntfy** and **Apprise** so you can receive them on your phone or desktop.
 
 ### How It Works
 
@@ -22,7 +22,7 @@ Delivery is per user:
 - Both are configured individually by every user, so an admin can get version updates on their phone while other users don't see them at all.
 
 !!! hint "Who receives what"
-    Some events are targeted at specific users: job notifications go to the user who started the job, and new version notifications are only sent to **administrators**. Failed login notifications go to the owner of the account that was targeted.
+    Some events are targeted at specific users: job notifications go to the user who started the job, and new version notifications are only sent to **administrators**. Failed login notifications go to the owner of the account that was targeted. Device inactivity notifications go to the owner of the configured device.
 
 ### The Notification Settings
 
@@ -32,6 +32,8 @@ Navigate to **Settings > Notifications**. The page has three sections:
 - **Notification Types**: choose which events should create a notification. Disabled types are ignored by **all** channels.
 - **Notification Channels**: configure where notifications should be delivered. Each channel can be enabled or disabled per user, and each channel has a **Send test notification** button.
 
+![Notification settings](../img/notifications-settings.png)
+
 ### Notification Types
 
 | Type | What triggers it | Who receives it |
@@ -40,7 +42,24 @@ Navigate to **Settings > Notifications**. The page has three sections:
 | **Failed jobs** | A background job failed. | The user who started the job; system jobs are sent to all admins |
 | **New version available** | Reitti found a newer version on GitHub. | Administrators only |
 | **Failed login attempts** | Someone failed to log in to your account too often, and the account was locked. | The owner of the account |
+| **Device inactivity** | A configured device has not sent any location data for the configured number of hours. | The owner of the device |
 | **Test notification** | Triggered manually by the **Send test** button in the channel settings. | You |
+
+### Device Inactivity
+
+The **Device inactivity** type warns you when one of your devices stops sending location data.
+
+1. Enable **Device inactivity** in **Settings > Notifications > Notification Types**.
+2. A list of your devices appears directly below the type. Select the devices you want to monitor.
+3. Set how many hours without data are allowed before Reitti notifies you.
+4. Save the notification type settings.
+
+![Device inactivity settings](../img/notifications-device-inactivity.png)
+
+Reitti sends only one notification per inactivity period. When the device starts sending data again, the state is reset, so a later inactivity period triggers a new notification. Uncheck a device to stop monitoring it. Disabling the **Device inactivity** type hides the device list and suspends all device inactivity notifications.
+
+!!! hint "Choosing the threshold"
+    Use a value that is longer than your device's normal upload interval. A phone that uploads every few minutes may be fine with 1–2 hours, while a GPS tracker that syncs once a day needs a higher threshold.
 
 ### The New Version Notification
 
@@ -135,6 +154,7 @@ These settings are instance-wide and are set in your `application.properties`. W
 | `reitti.notifications.update-check.cron` | Cron expression controlling how often the new version check runs. | `0 0 4 * * *` (daily at 4 AM) |
 | `reitti.notifications.update-check.url` | URL of the JSON endpoint that returns the latest release. Points to the official Reitti repository and only needs changing for air-gapped or mirrored setups. | `https://api.github.com/repos/dedicatedcode/reitti/releases/latest` |
 | `reitti.notifications.jobs.completion-min-duration-minutes` | Minimum duration in minutes a job must run before its completion triggers a "Completed job" notification. Short jobs finish silently. | `5` |
+| `reitti.notifications.device-inactivity.cron` | Cron expression controlling how often Reitti checks configured devices for missing location data. The check always runs and does nothing when no devices are configured. | `0 */15 * * * *` (every 15 minutes) |
 | `reitti.notifications.external.timeout-seconds` | Connect and read timeout in seconds for delivering notifications to ntfy and Apprise. | `10` |
 | `reitti.notifications.external.dispatch-threads` | Number of threads used to deliver notifications to external channels. A slow or hanging external endpoint never blocks Reitti itself. | `4` |
 
@@ -144,6 +164,7 @@ These settings are instance-wide and are set in your `application.properties`. W
 ### Troubleshooting
 
 - **No notifications arrive in the inbox**: check that notifications are enabled for your account and that the notification *type* is enabled. Types disabled in the settings are ignored by every channel.
+- **No device inactivity notification arrives**: make sure the **Device inactivity** type and the specific device are enabled in the notification settings. Reitti sends only one notification per inactivity period and does not repeat it until the device sends data again.
 - **Nothing arrives via ntfy/Apprise**: send a test notification from the channel settings and check the Reitti server logs. Also make sure the URL is reachable from the Reitti container (a `localhost` URL is wrong when Reitti runs in Docker, use the container/service name instead).
 - **External notifications have no click link**: configure `ADVERTISE_URI` so Reitti can build absolute URLs.
 - **You never received a "New version available" notification**: the check only runs on a schedule (default once per day) and only for administrators. A version that was announced before you enabled the type will not be re-announced.
