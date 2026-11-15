@@ -134,9 +134,10 @@ To share your location data with other users:
 
 1. Navigate to **Settings > Share Access > Share with other Users**
 2. Browse or search for the users you want to share with
-3. Select the users from the list. They will be able to view your timeline and location history
+3. Select the users from the list. By default they will be able to view your timeline and location history
 4. Optionally enable the **Share my photos** toggle next to a selected user to also share your photos with them (see below)
-5. Changes take effect immediately
+5. Optionally enable the **Latest location only** toggle to share only your latest location with that user (see below)
+6. Changes take effect immediately
 
 ![Share Access](../img/share-access.png)
 
@@ -149,6 +150,24 @@ Next to each user you share with, a **Share my photos** toggle is revealed. When
 - The photos from your Immich integration are shared with this user
 - They will see your photos on the map when viewing your timeline
 - Requires an enabled [Immich integration](../configurations/photo-integration.md)
+
+!!! note
+    Photo sharing is not available for users with **Latest location only** enabled. The toggle is disabled for those users, because photos can reveal historical locations.
+
+### Sharing Only Your Latest Location
+
+|since|v5.11.0|.version-badge|
+
+If you want someone to see where you are right now without exposing your location history, enable the **Latest location only** toggle next to that user. When enabled:
+
+- The user only sees your latest location as an avatar on the map
+- Your timeline, significant places, visits, trips, coverage and location history are not shared
+- Your photos are not shared, even if photo sharing was previously enabled for that user
+- The avatar is shown when the user views today's data or is in live mode
+
+This behaves like a [Latest Location only magic link](#latest-location-only), but for a registered user on the same instance. It is useful for family sharing when you want to coordinate in real time without giving access to your complete history.
+
+To enable it, select the user on **Settings > Share Access > Share with other Users** and enable **Latest location only**. Disable the toggle again to return to full history sharing.
 
 ### Managing Shared Accounts
 
@@ -231,6 +250,7 @@ No additional configuration is required beyond:
 
 - **Regular review**: Periodically check who has access to your data
 - **Appropriate permissions**: Only grant the minimum access level needed
+- **Latest location only**: Use the **Latest location only** toggle when you only want to share your current position without exposing your history
 - **Photo awareness**: Photo sharing is opt-in per user, so only enable "Share my photos" for people you trust
 - **Color coordination**: Use distinct colors for each user to avoid confusion on multi-user maps
 - **Communication**: Coordinate with your team about sharing preferences and color choices

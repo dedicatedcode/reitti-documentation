@@ -468,6 +468,23 @@
             
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../../usage/coverage/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Coverage
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../../usage/import-data/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
@@ -1253,7 +1270,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-08-14T07:30:09+02:00');
+        const date = new Date('2026-11-15T19:54:12+01:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1336,6 +1353,11 @@ reitti.h3.path=/data/h3
 <h4 id="controls">Controls</h4>
 <p>At the <strong>bottom right</strong>, you can switch between different devices and connected users to view each one's coverage individually.</p>
 <p>At the <strong>bottom</strong>, a <strong>time slider</strong> lets you travel backward in time — see what your coverage looked like a week, a month, or years ago.</p>
+<h4 id="all-time-exploration">All-time Exploration</h4>
+<p>The <strong>Show all</strong> link at the top of the area explorer opens the <a href="../../usage/coverage/">all-time exploration page</a>. It
+lists your areas as columns from continent down to district and marks every entry as <em>Discovered</em> or <em>Not discovered</em> —
+a quick way to see where you have already been and where not. It always uses your complete history, while the coverage
+map keeps the time slider.</p>
 <h3 id="disabling-the-feature">Disabling the Feature</h3>
 <p>If you decide you no longer want spatial coverage:</p>
 <ol>
@@ -1468,6 +1490,12 @@ reitti.h3.path=/data/h3
                         <a class="text-2xl font-medium" href="../../usage/browser-support/">
                             
                             Browser Support
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../../usage/coverage/">
+                            
+                            Coverage
                             
                         </a>
                         
@@ -1823,6 +1851,10 @@ reitti.h3.path=/data/h3
         
         <a href="#controls" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#controls');">
             Controls
+        </a>
+        
+        <a href="#all-time-exploration" class="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground text-[0.8rem] no-underline transition-colors data-[depth=3]:pl-4 data-[depth=4]:pl-6" data-active="false" data-depth="3" onclick="deferSetActiveTocLink('#all-time-exploration');">
+            All-time Exploration
         </a>
         
         

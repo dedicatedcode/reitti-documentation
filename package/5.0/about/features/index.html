@@ -468,6 +468,23 @@
             
             
             <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
+    <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../../usage/coverage/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
+
+        
+        Coverage
+        
+
+        
+
+        
+
+        
+    </a>
+</li>
+            
+            
+            
+            <li data-slot="sidebar-menu-item" data-sidebar="menu-item" class="group/menu-item relative">
     <a data-slot="sidebar-menu-button" data-active="false" data-sidebar="menu-button" data-size="default" href="../../usage/import-data/" class="peer/menu-button flex items-center gap-2 rounded-md p-2 text-left ring-sidebar-ring outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48">
 
         
@@ -1253,7 +1270,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-10-14T20:15:17+02:00');
+        const date = new Date('2026-11-15T19:54:12+01:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1302,6 +1319,7 @@
 <h4 id="spatial-coverage">Spatial Coverage</h4>
 <ul>
 <li><strong>H3-Based Coverage Analysis</strong>: See what percentage of a city, district, or country you have explored, with the ability to travel back in time and view your coverage at any point in the past. <a href="../../configurations/spatial-coverage/">Learn more</a></li>
+<li><strong>All-time Exploration</strong>: Browse continents, countries, regions and cities as columns to see at a glance which places you have already discovered and which are still unexplored. <a href="../../usage/coverage/">Learn more</a></li>
 </ul>
 <h4 id="trip-analysis-navigation">Trip Analysis &amp; Navigation</h4>
 <ul>
@@ -1315,6 +1333,7 @@
 <p>If you know <strong>Family Sharing</strong> from apps like Life360, this is Reitti's take on it: share your live location, timeline, significant places, and trips (plus photos) with the people close to you, while keeping full control over who sees what.</p>
 <ul>
 <li><strong>User-to-User Sharing</strong>: Share your data with registered users on the same instance via <strong>Settings &gt; Share Access</strong> (<a href="../../usage/share-access/">Learn more</a>)</li>
+<li><strong>Latest Location Only</strong>: A per-user "Latest location only" toggle shares only your avatar on the map — no timeline, places, trips or photos (<a href="../../usage/share-access/#sharing-only-your-latest-location">Learn more</a>)</li>
 <li><strong>Photo Sharing</strong>: A per-user "Share my photos" toggle also shares the photos from your Immich integration, so recipients see your photos on the map when viewing your timeline (requires an enabled Immich integration)</li>
 <li><strong>Multi-User Map View</strong>: Shared users appear alongside your own tracks, each with an individually assignable color</li>
 <li><strong>One-Directional by Default</strong>: Sharing is not mutual, other users need to separately share their data with you</li>
@@ -1464,6 +1483,12 @@
                         <a class="text-2xl font-medium" href="../../usage/browser-support/">
                             
                             Browser Support
+                            
+                        </a>
+                        
+                        <a class="text-2xl font-medium" href="../../usage/coverage/">
+                            
+                            Coverage
                             
                         </a>
                         
