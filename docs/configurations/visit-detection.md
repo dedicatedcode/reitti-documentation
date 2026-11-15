@@ -97,7 +97,7 @@ A stationary fill runs the full length of the gap, so a long stay is detected as
 visit rather than being split by empty stretches.
 
 These two settings are server-wide environment variables rather than per-user settings,
-documented in the [Docker Configuration](../infrastructure/docker-config.md#data-import--processing).
+documented in the [Docker Configuration](../infrastructure/docker-config.md#data-import-processing).
 Lower them only if you see stays being missed; raise them only if visits are appearing where you
 know you were travelling.
 
