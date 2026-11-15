@@ -42,6 +42,7 @@ Reitti provides a comprehensive set of features for personal location tracking a
 
 #### Spatial Coverage
 - **H3-Based Coverage Analysis**: See what percentage of a city, district, or country you have explored, with the ability to travel back in time and view your coverage at any point in the past. [Learn more](../configurations/spatial-coverage.md)
+- **All-time Exploration**: Browse continents, countries, regions and cities as columns to see at a glance which places you have already discovered and which are still unexplored. [Learn more](../usage/coverage.md)
 
 #### Trip Analysis & Navigation
 - **Multi-Segment Trips**: Trips are automatically split into segments per transportation mode, with color-coded tracks and transition badges where you change modes ([Learn more](../configurations/transportation-modes.md))
@@ -57,6 +58,7 @@ Reitti offers several ways to share your location data: with people on the same 
 If you know **Family Sharing** from apps like Life360, this is Reitti's take on it: share your live location, timeline, significant places, and trips (plus photos) with the people close to you, while keeping full control over who sees what.
 
 - **User-to-User Sharing**: Share your data with registered users on the same instance via **Settings > Share Access** ([Learn more](../usage/share-access.md))
+- **Latest Location Only**: A per-user "Latest location only" toggle shares only your avatar on the map — no timeline, places, trips or photos ([Learn more](../usage/share-access.md#sharing-only-your-latest-location))
 - **Photo Sharing**: A per-user "Share my photos" toggle also shares the photos from your Immich integration, so recipients see your photos on the map when viewing your timeline (requires an enabled Immich integration)
 - **Multi-User Map View**: Shared users appear alongside your own tracks, each with an individually assignable color
 - **One-Directional by Default**: Sharing is not mutual, other users need to separately share their data with you

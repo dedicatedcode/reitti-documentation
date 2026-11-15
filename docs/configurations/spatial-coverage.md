@@ -102,6 +102,13 @@ At the **bottom right**, you can switch between different devices and connected 
 
 At the **bottom**, a **time slider** lets you travel backward in time — see what your coverage looked like a week, a month, or years ago.
 
+#### All-time Exploration
+
+The **Show all** link at the top of the area explorer opens the [all-time exploration page](../usage/coverage.md). It
+lists your areas as columns from continent down to district and marks every entry as *Discovered* or *Not discovered* —
+a quick way to see where you have already been and where not. It always uses your complete history, while the coverage
+map keeps the time slider.
+
 ### Disabling the Feature
 
 If you decide you no longer want spatial coverage:
