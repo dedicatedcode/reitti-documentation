@@ -46,17 +46,21 @@ curl https://your-reitti-instance/api/v1/latest-location?token=your-api-token
 
 The endpoint returns a JSON response with information about the latest location data:
 
-```
+```json
 {
-  "point": {
-    "latitude": 53.86329752,
-    "longitude": 10.70105392,
-    "timestamp": "2026-01-27T12:25:35Z",
-    "accuracyMeters": 10.951032638549805,
-    "elevationMeters": null,
-    "valid": true
+  "hasLocation": true,
+  "measurements": {
+    "timestampMs": 1793950958716,
+    "ageMs": 951906899
   },
-  "hasLocation": true
+  "point": {
+    "accuracyMeters": 10.0,
+    "elevationMeters": null,
+    "latitude": 53.86323511,
+    "longitude": 10.70114815,
+    "timestamp": "2026-11-06T07:42:38.716Z",
+    "valid": true
+  }
 }
 ```
 
@@ -66,6 +70,8 @@ The endpoint returns a JSON response with information about the latest location 
   `latitude`, `longitude`, `timestamp`, `accuracyMeters`, `elevationMeters`, and `valid`.
 - **hasLocation** (boolean): Indicates whether any location data exists for the user. If `false`, the `point` field will
   be absent.
+- **measurements** (object, optional): If the latest point is available, this contains `timestampMs` and `ageMs`, which can 
+  be used in integrations to not have to calculate them.
 
 ### Examples
 
