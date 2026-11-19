@@ -204,7 +204,7 @@ A generic geocoder that supports any service returning GeoJSON format. This prov
 
 ## Geocoding Execution Controls
 
-At the bottom of the **Settings > Geocoding** page, you'll find controls for managing geocoding execution:
+On the **Settings > Places** page, you'll find the **Geocoding Execution** controls for managing geocoding execution:
 
 ![Geocoding Execution Controls](../img/geocoding-execution-controls.png) 
 
