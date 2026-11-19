@@ -1244,7 +1244,7 @@
 <script>
     const updatedAt = document.getElementById("updated_at");
     if (updatedAt) {
-        const date = new Date('2026-06-16T20:46:58+02:00');
+        const date = new Date('2026-11-17T09:20:57+01:00');
         updatedAt.textContent = date.toLocaleDateString();
     }
 </script>
@@ -1297,16 +1297,20 @@ curl https://your-reitti-instance/api/v1/latest-location?token=your-api-token
 </table></div>
 <h3 id="response">Response</h3>
 <p>The endpoint returns a JSON response with information about the latest location data:</p>
-<pre class="codehilite"><code>{
-  "point": {
-    "latitude": 53.86329752,
-    "longitude": 10.70105392,
-    "timestamp": "2026-01-27T12:25:35Z",
-    "accuracyMeters": 10.951032638549805,
-    "elevationMeters": null,
-    "valid": true
+<pre class="codehilite"><code class="language-json">{
+  "hasLocation": true,
+  "measurements": {
+    "timestampMs": 1793950958716,
+    "ageMs": 951906899
   },
-  "hasLocation": true
+  "point": {
+    "accuracyMeters": 10.0,
+    "elevationMeters": null,
+    "latitude": 53.86323511,
+    "longitude": 10.70114815,
+    "timestamp": "2026-11-06T07:42:38.716Z",
+    "valid": true
+  }
 }
 </code></pre>
 
@@ -1316,6 +1320,8 @@ curl https://your-reitti-instance/api/v1/latest-location?token=your-api-token
   <code>latitude</code>, <code>longitude</code>, <code>timestamp</code>, <code>accuracyMeters</code>, <code>elevationMeters</code>, and <code>valid</code>.</li>
 <li><strong>hasLocation</strong> (boolean): Indicates whether any location data exists for the user. If <code>false</code>, the <code>point</code> field will
   be absent.</li>
+<li><strong>measurements</strong> (object, optional): If the latest point is available, this contains <code>timestampMs</code> and <code>ageMs</code>, which can 
+  be used in integrations to not have to calculate them.</li>
 </ul>
 <h3 id="examples">Examples</h3>
 <h4 id="uptime-kuma">Uptime Kuma</h4>
